@@ -1,0 +1,6 @@
+<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#DD714C" stroke-width="3" opacity=".85">
+    <path d="M20 20H200M20 60H200M20 100H200M20 140H200M20 180H200"/>
+    <path d="M20 20V200M60 20V200M100 20V200M140 20V200M180 20V200"/>
+  </g>
+</svg>
