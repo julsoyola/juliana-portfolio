@@ -4,7 +4,7 @@ export default function Footer() {
       id="contact"
       className="relative overflow-hidden bg-[var(--mustard)] px-6 py-20 lg:px-10"
     >
-      <div className="mx-auto max-w-7xl text-center">
+      <div className="relative z-10 mx-auto max-w-7xl text-center">
         <h2 className="font-display text-5xl leading-tight text-[var(--forest)] sm:text-6xl">
           Let&apos;s build something meaningful.
         </h2>
@@ -43,11 +43,11 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="absolute -bottom-16 -left-10 h-44 w-64 rotate-[-8deg] rounded-[45%_55%_40%_60%] bg-[var(--forest)]" />
+      <div className="absolute -bottom-28 -left-24 h-44 w-64 rotate-[-8deg] rounded-[45%_55%_40%_60%] bg-[var(--forest)] sm:-bottom-16 sm:-left-10" />
 
-      <div className="absolute -bottom-20 -right-8 h-52 w-52 rounded-[55%_45%_60%_40%] bg-[var(--sky)]" />
+      <div className="absolute -bottom-28 -right-24 h-52 w-52 rounded-[55%_45%_60%_40%] bg-[var(--sky)] sm:-bottom-20 sm:-right-8" />
 
-      <div className="absolute bottom-5 left-8 grid grid-cols-4 gap-1.5">
+      <div className="absolute -bottom-2 left-4 grid grid-cols-4 gap-1.5 sm:bottom-5 sm:left-8">
         {Array.from({ length: 16 }).map((_, index) => (
           <span
             key={index}
