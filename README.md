@@ -16,7 +16,7 @@ Designed with a focus on clean typography, subtle motion, accessibility, and res
 
 ## Preview
 
-![Portfolio Sections](docs/portfolio-preview1.png)
+![Portfolio sections preview](./docs/portfolio-preview1.png)
 
 ---
 
