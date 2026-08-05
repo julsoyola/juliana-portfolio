@@ -70,9 +70,16 @@ export default function Hero() {
             className="absolute right-[-40px] top-8 w-[360px] sm:right-0 sm:w-[460px]"
           />
 
-          <span className="text-sm uppercase tracking-[0.15em] text-[var(--muted)]">
-            Hero image
-          </span>
+          <div className="absolute right-[18px] top-[72px] z-10 h-[285px] w-[230px] rotate-[1deg] overflow-hidden rounded-[36px] border-[6px] border-[var(--paper)] shadow-xl sm:right-[52px] sm:top-[82px] sm:h-[360px] sm:w-[290px]">
+            <Image
+              src="/images/heroImg.jpg"
+              alt="Portrait of Juliana Oyola-Pabon"
+              fill
+              priority
+              sizes="(max-width: 640px) 230px, 290px"
+              className="object-cover object-[58%_40%] transition duration-500 hover:scale-[1.03]"
+            />
+          </div>
 
           <Image
             src="/illustrations/grid.svg"
@@ -87,7 +94,7 @@ export default function Hero() {
             alt=""
             width={110}
             height={110}
-            className="float-slow absolute left-2 top-[300px] w-20 sm:left-[10px] sm:top-[340px] sm:w-[110px]"
+            className="float-slow absolute left-4 top-[290px] z-20 w-20 sm:left-[22px] sm:top-[330px] sm:w-[110px]"
           />
 
           <Image
