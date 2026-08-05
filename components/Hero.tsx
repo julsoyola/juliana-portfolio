@@ -70,10 +70,14 @@ export default function Hero() {
             className="absolute right-[-40px] top-8 w-[360px] sm:right-0 sm:w-[460px]"
           />
 
-          <div className="absolute right-[18px] top-[72px] flex h-[285px] w-[230px] items-center justify-center rounded-[32px] bg-[#F3EEE6] text-center shadow-lg sm:right-[52px] sm:top-[82px] sm:h-[360px] sm:w-[290px]">
-            <span className="text-sm uppercase tracking-[0.15em] text-[var(--muted)]">
-              Hero image
-            </span>
+          <div className="px-6 text-center">
+            <p className="font-display text-3xl text-[var(--forest)]">
+              Visual coming soon
+            </p>
+
+            <p className="mt-2 text-sm text-[var(--muted)]">
+              A personal image or illustration will live here.
+            </p>
           </div>
 
           <Image
