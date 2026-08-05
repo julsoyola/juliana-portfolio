@@ -6,13 +6,15 @@ export default function Footer() {
     >
       <div className="relative z-10 mx-auto max-w-7xl text-center">
         <h2 className="font-display text-5xl leading-tight text-[var(--forest)] sm:text-6xl">
-          Let&apos;s build something meaningful.
+          Let's Connect.
         </h2>
 
         <div className="mx-auto mt-4 h-1.5 w-48 rounded-full bg-[var(--terracotta)]" />
 
-        <p className="mx-auto mt-6 max-w-xl text-lg text-[var(--text)]">
-          I&apos;m always open to thoughtful projects and conversations.
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[var(--text)]">
+          I'm currently seeking software engineering opportunities where I can build
+          reliable systems, grow alongside talented teams, and solve meaningful
+          technical problems.
         </p>
 
         <div className="mt-10 flex flex-wrap justify-center gap-4">

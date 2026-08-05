@@ -1,19 +1,38 @@
 const skills = [
   {
     title: "Languages",
-    items: ["Java", "Python", "JavaScript", "TypeScript", "SQL", "C++"],
+    items: ["Java", "Python", "TypeScript", "JavaScript", "SQL"],
   },
   {
-    title: "Backend",
-    items: ["Spring Boot", "REST APIs", "Distributed Systems", "ETL Pipelines"],
+    title: "Backend & Architecture",
+    items: [
+      "Spring Boot",
+      "REST APIs",
+      "Microservices",
+      "Event-Driven Systems",
+      "Distributed Systems",
+    ],
   },
   {
-    title: "Cloud",
-    items: ["AWS Lambda", "S3", "DynamoDB", "API Gateway", "CloudWatch", "CDK"],
+    title: "Cloud & AWS",
+    items: [
+      "AWS",
+      "Lambda",
+      "DynamoDB",
+      "S3",
+      "API Gateway",
+      "CloudWatch",
+      "AWS CDK",
+    ],
   },
   {
-    title: "Tools",
-    items: ["Git", "Docker", "Linux", "CI/CD"],
+    title: "Developer Tools",
+    items: [
+      "Docker",
+      "Git",
+      "Linux",
+      "CI/CD",
+    ],
   },
 ];
 
@@ -47,16 +66,25 @@ export default function Skills() {
       </div>
 
       <div className="flex items-center bg-[var(--mustard)] px-8 py-20 lg:px-16">
-        <div>
+        <div className="max-w-xl">
           <p className="text-sm font-bold uppercase tracking-[0.16em] text-[var(--terracotta)]">
             How I work
           </p>
 
           <div className="mt-3 h-1.5 w-28 rounded-full bg-[var(--terracotta)]" />
 
-          <h2 className="font-display mt-8 max-w-lg text-5xl leading-tight text-[var(--forest)]">
-            Thoughtful systems, clear communication, and dependable execution.
+          <h2 className="font-display mt-8 text-5xl leading-[1.05] text-[var(--forest)]">
+            Reliable systems.
+            <br />
+            Simple solutions.
+            <br />
+            Built to last.
           </h2>
+
+          <p className="mt-8 max-w-md text-lg leading-8 text-[var(--forest)]/85">
+            I enjoy building backend systems that are scalable, maintainable, and
+            reliable in production.
+          </p>
         </div>
       </div>
     </section>
