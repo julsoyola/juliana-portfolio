@@ -4,32 +4,32 @@ const jobs = [
     company: "Amazon Prime Video",
     role: "Software Engineer",
     description:
-      "Built backend services and AWS infrastructure for a unified metadata platform managing millions of content records.",
-    stack: "Java • AWS • Distributed Systems",
+      "Designed and delivered Java microservices and AWS infrastructure for Prime Video’s next-generation Unified Metadata Platform. Helped replace fragmented legacy catalog systems with a centralized, event-driven architecture supporting millions of content records and production publishing workflows.",
+    stack: "Java • Spring Boot • AWS • Event-Driven Architecture",
   },
   {
     year: "2023",
     company: "Amazon Prime Video",
     role: "Software Engineer Intern",
     description:
-      "Designed and deployed an automated metadata ingestion service that reduced hours of manual file preparation.",
-    stack: "Java • Lambda • DynamoDB",
+      "Designed, implemented, and deployed a serverless metadata ingestion service that validated and transformed partner-submitted content before publication. Automated malformed-file handling and eliminated approximately six hours of manual preprocessing from internal publishing workflows.",
+    stack: "Java • AWS Lambda • DynamoDB • API Gateway",
   },
   {
     year: "2022",
     company: "Amazon Care",
     role: "Software Development Engineer Intern",
     description:
-      "Developed backend services and routing systems supporting healthcare scheduling and delivery workflows.",
-    stack: "Java • REST APIs • AWS",
+      "Developed Java backend services supporting appointment scheduling, prescription delivery, and patient notifications. Designed a proximity-based routing algorithm that replaced FIFO assignment and improved how providers and delivery resources were matched to patient needs.",
+    stack: "Java • REST APIs • AWS • Route Optimization",
   },
   {
     year: "2020–2021",
     company: "Green Bank Observatory",
     role: "Web Developer Intern",
     description:
-      "Built APIs and data workflows for the Skynet Robotic Telescope Network.",
-    stack: "REST APIs • SQL • Data Processing",
+      "Developed REST APIs and data-processing workflows for the Skynet Robotic Telescope Network, supporting remote astronomical observations for researchers and educators. Improved the storage, retrieval, and accessibility of large volumes of observational data.",
+    stack: "REST APIs • SQL • Data Processing • Backend Automation",
   },
 ];
 
@@ -40,20 +40,15 @@ export default function Experience() {
 
         {/* Left Column */}
 
-        <div className="lg:sticky lg:top-28">
-
+        <div className="flex flex-col justify-center">
           <p className="text-sm font-bold uppercase tracking-[0.16em] text-[var(--terracotta)]">
             Experience
           </p>
-
-          <div className="mt-3 mb-8 h-1.5 w-24 rounded-full bg-[var(--terracotta)]" />
-
-          <h2 className="font-display text-6xl leading-[0.95] text-[var(--forest)]">
-            A few places
+          <div className="mt-4 h-1.5 w-24 rounded-full bg-[var(--terracotta)]" />
+          <h2 className="font-display mt-12 text-6xl leading-[1.02] text-[var(--forest)]">
+            Where
             <br />
-            I've learned
-            <br />
-            and grown.
+            I&apos;ve worked
           </h2>
 
         </div>
