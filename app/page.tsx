@@ -22,11 +22,11 @@ export default function Home() {
       </Reveal>
 
       <Reveal>
-        <Projects />
+        <Experience />
       </Reveal>
 
-      <Reveal>
-        <Experience />
+       <Reveal>
+        <Resume />
       </Reveal>
 
       <Reveal>
@@ -34,7 +34,7 @@ export default function Home() {
       </Reveal>
 
       <Reveal>
-        <Resume />
+        <Projects />
       </Reveal>
 
       <Reveal>

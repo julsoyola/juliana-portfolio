@@ -18,21 +18,22 @@ export default function Navigation() {
         </a>
 
         <nav className="hidden items-center gap-7 text-sm font-semibold md:flex">
-          <a className="nav-link" href="#work">
-            work
-          </a>
+
           <a className="nav-link" href="#experience">
-            experience
-          </a>
-          <a className="nav-link" href="#skills">
-            skills
-          </a>
+          experience
+        </a>
           <a className="nav-link" href="#resume">
-            resume
-          </a>
-          <a className="nav-link" href="#contact">
-            contact
-          </a>
+          resume
+        </a>
+        <a className="nav-link" href="#skills">
+          skills
+        </a>
+        <a className="nav-link" href="#work">
+          work
+        </a>
+        <a className="nav-link" href="#contact">
+          contact
+        </a>
         </nav>
 
         <a
@@ -59,10 +60,10 @@ export default function Navigation() {
           className="mx-auto mt-4 flex max-w-7xl flex-col gap-3 rounded-[24px] bg-[var(--paper)] p-5 shadow-lg md:hidden"
         >
           {[
-            ["work", "#work"],
             ["experience", "#experience"],
-            ["skills", "#skills"],
             ["resume", "#resume"],
+            ["skills", "#skills"],
+            ["work", "#work"],
             ["contact", "#contact"],
           ].map(([label, href]) => (
             <a
