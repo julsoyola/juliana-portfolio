@@ -7,30 +7,30 @@ export default function Hero() {
         {/* Text */}
         <div className="relative z-10 max-w-xl">
           <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-[var(--sage)]">
-            Software Engineer
+            Backend · Platform · Cloud
           </p>
 
           <div className="relative">
             <h1 className="font-display text-[4.2rem] font-bold leading-[0.86] tracking-[-0.05em] text-[var(--forest)] sm:text-[6.5rem] lg:text-[7.8rem]">
-              Building
-              <br />
-              <span className="text-[var(--terracotta)]">thoughtful</span>
-              <br />
-              software.
-            </h1>
+            Building reliable
+            <br />
+            <span className="text-[var(--terracotta)]">software</span>
+            <br />
+            at scale.
+          </h1>
 
             <Image
               src="/illustrations/orange-squiggle.svg"
               alt=""
-              width={230}
+              width={200}
               height={70}
-              className="absolute -bottom-12 left-6 w-40 sm:left-14 sm:w-56"
+              className="wiggle-line absolute -bottom-18 left-10 w-35 sm:left-35 sm:w-70"
             />
           </div>
 
-          <p className="mt-16 max-w-sm text-base leading-7 text-[var(--text)] sm:text-lg">
-            Former Amazon Prime Video engineer designing dependable systems
-            with care, curiosity, and intention.
+          <p className="mt-16 max-w-md text-base leading-7 text-[var(--text)] sm:text-lg">
+            Former Amazon Prime Video software engineer specializing in backend
+            systems, cloud infrastructure, and production-ready services.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-5">
@@ -77,7 +77,7 @@ export default function Hero() {
               fill
               priority
               sizes="(max-width: 640px) 230px, 290px"
-              className="object-cover object-[58%_40%] transition duration-500 hover:scale-[1.03]"
+              className="object-cover object-[58%_40%] transition duration-500 hover:scale-[1.04] hover:-rotate-1"
             />
           </div>
 
@@ -102,7 +102,7 @@ export default function Hero() {
             alt=""
             width={85}
             height={85}
-            className="float-slower absolute bottom-4 right-5 w-16 sm:bottom-[35px] sm:right-[35px] sm:w-[85px]"
+            className="float-fast absolute bottom-4 right-5 w-16 sm:bottom-[35px] sm:right-[35px] sm:w-[85px]"
           />
         </div>
       </div>
