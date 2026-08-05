@@ -1,16 +1,24 @@
 # Juliana Oyola-Pabon — Portfolio
 
-A responsive personal portfolio showcasing my experience in backend engineering, cloud infrastructure, distributed systems, and production software development.
+![Portfolio Preview](docs/portfolio-preview.png)
 
-## Live Site
+A responsive software engineering portfolio showcasing my experience in backend engineering, cloud infrastructure, distributed systems, and production software development.
 
-[View the live portfolio](https://juliana-portfolio-two.vercel.app)
+🌐 **Live Site:** https://juliana-portfolio-two.vercel.app
+
+---
 
 ## Overview
 
 This portfolio highlights my engineering experience, technical strengths, selected work, and role-specific resumes.
 
-The site is designed to be professional, easy to scan, responsive, and visually distinctive across desktop and mobile devices.
+Designed with a focus on clean typography, subtle motion, accessibility, and responsive design.
+
+## Preview
+
+![Portfolio Sections](docs/portfolio-preview1.png)
+
+---
 
 ## Tech Stack
 
@@ -21,21 +29,43 @@ The site is designed to be professional, easy to scan, responsive, and visually 
 - Framer Motion
 - Vercel
 
+---
+
 ## Features
 
-- Responsive single-page layout
+- Responsive design
 - Mobile navigation
-- Scroll reveal and parallax motion
+- Scroll animations
 - Interactive project cards
-- Experience and skills sections
-- Role-specific resume downloads
-- Reduced-motion accessibility support
-- Automatic deployment through Vercel
+- Engineering experience timeline
+- Multiple tailored resumes
+- Accessible motion support
+- Automatic Vercel deployment
 
-## Run Locally
+---
 
-Clone the repository:
+## Running Locally
 
 ```bash
 git clone https://github.com/julsoyola/juliana-portfolio.git
+
 cd juliana-portfolio
+
+npm install
+
+npm run dev
+```
+
+---
+
+## Deployment
+
+Automatically deployed with **Vercel** on every push to `main`.
+
+---
+
+## Contact
+
+- Portfolio: https://juliana-portfolio-two.vercel.app
+- LinkedIn: https://linkedin.com/in/julianaoyola
+- GitHub: https://github.com/julsoyola
