@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ResumeMotion from "@/components/ResumeMotion";
 
 const resumes = [
   {
@@ -54,34 +55,36 @@ export default function Resume() {
           </h2>
         </div>
 
-        <div className="grid gap-7 md:grid-cols-3">
-          {resumes.map((resume) => (
-            <a
-              key={resume.title}
-              href={resume.pdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${resume.rotation} group relative min-h-[290px] rounded-[26px] bg-[var(--paper)] p-8 shadow-md transition duration-300 hover:-translate-y-2 hover:rotate-0 hover:shadow-xl`}
-            >
-              <div className="absolute right-5 top-5 h-4 w-14 rotate-6 bg-[var(--mustard)]/65" />
+        <ResumeMotion>
+            <div className="grid gap-7 md:grid-cols-3">
+            {resumes.map((resume) => (
+                <a
+                key={resume.title}
+                href={resume.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${resume.rotation} group relative min-h-[290px] rounded-[26px] bg-[var(--paper)] p-8 shadow-md transition duration-300 hover:-translate-y-2 hover:rotate-0 hover:shadow-xl`}
+                >
+                <div className="absolute right-5 top-5 h-4 w-14 rotate-6 bg-[var(--mustard)]/65" />
 
-              <h3 className="font-display mt-8 text-3xl leading-tight text-[var(--forest)]">
-                {resume.title}
-              </h3>
+                <h3 className="font-display mt-8 text-3xl leading-tight text-[var(--forest)]">
+                    {resume.title}
+                </h3>
 
-              <p className="mt-6 max-w-xs leading-7 text-[var(--muted)]">
-                {resume.description}
-              </p>
+                <p className="mt-6 max-w-xs leading-7 text-[var(--muted)]">
+                    {resume.description}
+                </p>
 
-              <p className="absolute bottom-8 left-8 font-semibold text-[var(--forest)]">
-                View Resume{" "}
-                <span className="inline-block transition group-hover:translate-x-1">
-                  ↗
-                </span>
-              </p>
-            </a>
-          ))}
-        </div>
+                <p className="absolute bottom-8 left-8 font-semibold text-[var(--forest)]">
+                    View Resume{" "}
+                    <span className="inline-block transition group-hover:translate-x-1">
+                    ↗
+                    </span>
+                </p>
+                </a>
+            ))}
+            </div>
+        </ResumeMotion>
       </div>
     </section>
   );

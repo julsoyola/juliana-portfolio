@@ -40,7 +40,7 @@ export default function Experience() {
 
         {/* Left Column */}
 
-        <div className="flex flex-col justify-center">
+       <div className="flex flex-col justify-center lg:sticky lg:top-32 lg:self-start">
           <p className="text-sm font-bold uppercase tracking-[0.16em] text-[var(--terracotta)]">
             Experience
           </p>

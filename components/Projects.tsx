@@ -60,11 +60,11 @@ export default function Projects() {
             {projects.map((project) => (
           <Tilt
             key={project.title}
-            className="h-full"
+            className="h-full project-scroll-card"
             glareEnable={false}
-            tiltMaxAngleX={5}
-            tiltMaxAngleY={5}
-            scale={1.02}
+            tiltMaxAngleX={4}
+            tiltMaxAngleY={4}
+            scale={1.015}
             transitionSpeed={1200}
           >
             <article

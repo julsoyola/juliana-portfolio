@@ -1,4 +1,6 @@
 import Image from "next/image";
+import HeroParallax from "@/components/HeroParallax";
+
 
 export default function Hero() {
   return (
@@ -53,7 +55,8 @@ export default function Hero() {
         </div>
 
         {/* Collage */}
-        <div className="relative flex min-h-[460px] items-center justify-center sm:min-h-[540px] lg:min-h-[620px]">
+        <HeroParallax>
+          <div className="relative flex min-h-[460px] items-center justify-center sm:min-h-[540px] lg:min-h-[620px]">
           <Image
             src="/illustrations/yellow-blob.svg"
             alt=""
@@ -104,7 +107,8 @@ export default function Hero() {
             height={85}
             className="float-fast absolute bottom-4 right-5 w-16 sm:bottom-[35px] sm:right-[35px] sm:w-[85px]"
           />
-        </div>
+         </div>
+      </HeroParallax>
       </div>
     </section>
   );
