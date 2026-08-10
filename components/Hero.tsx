@@ -80,7 +80,7 @@ export default function Hero() {
               fill
               priority
               sizes="(max-width: 640px) 230px, 290px"
-              className="object-cover object-[58%_40%] transition duration-500 hover:scale-[1.04] hover:-rotate-1"
+              className="object-cover object-[58%_40%] saturate-[1.5] contrast-[1.03] transition duration-500 hover:scale-[1.03]"
             />
           </div>
 
