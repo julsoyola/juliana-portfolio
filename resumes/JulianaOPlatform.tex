@@ -1,0 +1,176 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[
+    left=0.48in,
+    right=0.48in,
+    top=0.34in,
+    bottom=0.32in
+]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+% Improve ATS text extraction
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\urlstyle{same}
+
+\definecolor{Accent}{HTML}{7B2D4F}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=Accent,
+    linkcolor=Accent,
+    pdfauthor={Juliana Oyola-Pabon},
+    pdftitle={Juliana Oyola-Pabon - Platform Software Engineer Resume}
+}
+
+% Compact but readable bullets
+\setlist[itemize]{
+    leftmargin=0.18in,
+    label=\textbullet,
+    itemsep=0.75pt,
+    topsep=2.5pt,
+    parsep=0pt,
+    partopsep=0pt
+}
+
+% Section formatting
+\titleformat{\section}
+    {\color{Accent}\bfseries\normalsize}
+    {}
+    {0pt}
+    {\MakeUppercase}
+    [\vspace{1.5pt}\color{Accent}\titlerule]
+
+\titlespacing*{\section}
+    {0pt}
+    {8pt}
+    {5pt}
+
+% Company / role formatting
+\newcommand{\job}[4]{%
+    \textbf{#1}\hfill #2\par
+    \textit{#3}\hfill \textit{#4}\par
+    \vspace{-0.5pt}
+}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+% HEADER
+%----------------------------------------------------------------------------------------
+
+\begin{center}
+{\LARGE\bfseries\color{Accent} Juliana Oyola-Pabon}\\[4pt]
+San Bruno, CA
+\;|\;
+\href{mailto:julianaaoyola@gmail.com}{\textbf{Email}}
+\;|\;
+\href{https://linkedin.com/in/julianaoyola}{\textbf{LinkedIn}}
+\;|\;
+\href{https://juliana-portfolio-two.vercel.app/}{\textbf{Portfolio}}
+\;|\;
+\href{https://github.com/julsoyola}{\textbf{GitHub}}
+\end{center}
+
+% SKILLS
+%----------------------------------------------------------------------------------------
+
+\section*{Skills}
+
+\textbf{Languages:} Java, Python, SQL, JavaScript, TypeScript, C++ \\
+\textbf{Backend:} Spring Boot, REST APIs, Distributed Systems, Event-Driven Architecture, ETL Pipelines, Microservices \\
+\textbf{Cloud:} AWS (Lambda, API Gateway, S3, DynamoDB, CloudWatch, IAM, CDK) \\
+\textbf{Databases:} DynamoDB, PostgreSQL, MySQL, Amazon Keyspaces, Amazon DocumentDB, MemoryDB \\
+\textbf{Infrastructure:} Docker, CI/CD, Git, Linux
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section*{Professional Experience}
+
+\job{Amazon}{Seattle, WA}{Software Engineer -- Prime Video}{May 2024 -- September 2025}
+
+\begin{itemize}
+
+\item Developed distributed Java backend services for Prime Video's unified metadata platform, replacing fragmented legacy catalog systems with a centralized service managing millions of content records powering internal publishing infrastructure.
+
+\item Designed and implemented scalable metadata ingestion pipelines that validated, normalized, and modeled complex relationships across movies, television series, actors, artwork, trailers, release information, and partner-supplied assets.
+
+\item Built production cloud infrastructure using AWS CDK, Lambda, API Gateway, DynamoDB, S3, IAM, and CloudWatch supporting backend APIs, distributed processing, deployment automation, monitoring, and operational reliability.
+
+\item Engineered fault-tolerant ingestion workflows for malformed and large partner-submitted metadata, overcoming Lambda execution constraints while preserving referential integrity across distributed processing pipelines.
+
+\item Authored technical design documents, participated in architecture and code reviews, mentored a newly hired software engineer, and supported production deployments, monitoring, debugging, and operational excellence.
+
+\end{itemize}
+
+\vspace{3pt}
+
+\job{Amazon}{Seattle, WA}{Software Engineer Intern -- Prime Video}{May 2023 -- August 2023}
+
+\begin{itemize}
+
+\item Designed and implemented a distributed metadata ingestion service that automated validation, transformation, and processing of partner-submitted metadata.
+
+\item Built Java backend services and AWS cloud infrastructure using CDK, Lambda, DynamoDB, S3, CloudWatch, and IAM supporting scalable ingestion workflows.
+
+\item Eliminated approximately six hours of manual preprocessing per malformed submission by automating schema validation and metadata correction.
+
+\item Independently authored the technical design and delivered the project through implementation, testing, deployment, and production rollout.
+
+\end{itemize}
+
+\vspace{3pt}
+
+\job{Amazon}{Seattle, WA}{Software Development Engineer Intern -- Amazon Care}{May 2022 -- August 2022}
+
+\begin{itemize}
+
+\item Developed Java backend services supporting scheduling, prescription delivery, and patient notifications for Amazon Care.
+
+\item Designed and implemented a proximity-based routing algorithm replacing FIFO scheduling to improve operational efficiency across appointment and delivery workflows.
+
+\item Analyzed behavioral data from more than 25,000 monthly active users, contributing to product improvements that doubled engagement while reducing customer drop-off by 30\%.
+
+\end{itemize}
+
+\vspace{3pt}
+
+\job{Green Bank Observatory}{Green Bank, WV}{Web Developer Intern}{January 2020 -- May 2021}
+
+\begin{itemize}
+
+\item Developed backend services and REST APIs supporting the Skynet Robotic Telescope Network, processing more than 10,000 live telescope observations daily.
+
+\item Consolidated and optimized millions of astronomical records, reducing storage requirements by 20\% while improving long-term data accessibility.
+
+\item Engineered API-driven backend automation supporting more than 100,000 monthly user interactions while improving storage and retrieval performance by 30\%.
+
+\end{itemize}
+%----------------------------------------------------------------------------------------
+% EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section*{Education}
+
+\textbf{Florida State University} \hfill May 2024 \\
+B.S. Computer Science
+
+\vspace{3pt}
+
+\textbf{Santa Fe College} \hfill August 2020  \\
+A.A. Psychology, Honors
+
+\end{document}

@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "resumes": "mkdir -p .resume-build && pdflatex -interaction=nonstopmode -halt-on-error -output-directory=.resume-build resumes/JulianaOBackend.tex && pdflatex -interaction=nonstopmode -halt-on-error -output-directory=.resume-build resumes/JulianaOPlatform.tex && pdflatex -interaction=nonstopmode -halt-on-error -output-directory=.resume-build resumes/JulianaOProduct.tex && cp .resume-build/JulianaOBackend.pdf .resume-build/JulianaOPlatform.pdf .resume-build/JulianaOProduct.pdf public/resumes/ && rm -rf .resume-build",
+    "coverletter": "mkdir -p .resume-build && pdflatex -interaction=nonstopmode -halt-on-error -output-directory=.resume-build resumes/CoverLetter.tex && cp .resume-build/CoverLetter.pdf public/resumes/CoverLetter.pdf && rm -rf .resume-build",
+    "techRecruiting": "mkdir -p .resume-build && pdflatex -interaction=nonstopmode -halt-on-error -output-directory=.resume-build resumes/JulianaOTechnicalRecruiting.tex && cp .resume-build/JulianaOTechnicalRecruiting.pdf public/resumes/JulianaOTechnicalRecruiting.pdf && rm -rf .resume-build",
+    "resume": "mkdir -p .resume-build && pdflatex -interaction=nonstopmode -halt-on-error -output-directory=.resume-build resumes/JulianaOyolaResume.tex && cp .resume-build/JulianaOyolaResume.pdf public/resumes/JulianaOyolaResume.pdf && rm -rf .resume-build",
+    "build:resumes": "pdflatex -output-directory=public/resumes resumes/*.tex && rm -f public/resumes/*.aux public/resumes/*.log public/resumes/*.out"
   },
   "dependencies": {
     "framer-motion": "^12.43.0",

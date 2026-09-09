@@ -1,0 +1,172 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[
+    left=0.48in,
+    right=0.48in,
+    top=0.34in,
+    bottom=0.32in
+]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+% Improve ATS text extraction
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\urlstyle{same}
+
+\definecolor{Accent}{HTML}{7B2D4F}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=Accent,
+    linkcolor=Accent,
+    pdfauthor={Juliana Oyola-Pabon},
+    pdftitle={Juliana Oyola-Pabon - Systems and Robotics Resume}
+}
+
+% Compact but readable bullets
+\setlist[itemize]{
+    leftmargin=0.18in,
+    label=\textbullet,
+    itemsep=0.75pt,
+    topsep=2.5pt,
+    parsep=0pt,
+    partopsep=0pt
+}
+
+% Section formatting
+\titleformat{\section}
+    {\color{Accent}\bfseries\normalsize}
+    {}
+    {0pt}
+    {\MakeUppercase}
+    [\vspace{1.5pt}\color{Accent}\titlerule]
+
+\titlespacing*{\section}
+    {0pt}
+    {8pt}
+    {5pt}
+
+% Company / role formatting
+\newcommand{\job}[4]{%
+    \textbf{#1}\hfill #2\par
+    \textit{#3}\hfill \textit{#4}\par
+    \vspace{-0.5pt}
+}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+% HEADER
+%----------------------------------------------------------------------------------------
+
+\begin{center}
+{\LARGE\bfseries\color{Accent} Juliana Oyola-Pabon}\\[4pt]
+San Bruno, CA
+\;|\;
+\href{mailto:julianaaoyola@gmail.com}{\textbf{Email}}
+\;|\;
+\href{https://linkedin.com/in/julianaoyola}{\textbf{LinkedIn}}
+\;|\;
+\href{https://juliana-portfolio-two.vercel.app/}{\textbf{Portfolio}}
+\;|\;
+\href{https://github.com/julsoyola}{\textbf{GitHub}}
+\end{center}
+
+% SKILLS
+%----------------------------------------------------------------------------------------
+
+\section*{Skills}
+
+\textbf{Diagnostics \& Systems:} Log Parsing, Failure Analysis (RCA), Telemetry Data Analysis, Root-Cause Investigation, System Observability \\
+\textbf{Languages \& Scripting:} Python, Java, SQL, JavaScript, TypeScript, C++, Bash \\
+\textbf{Data \& Telemetry:} REST APIs, Distributed Systems, Data Pipelines, High-Throughput Ingestion \\
+\textbf{Cloud \& Infrastructure:} AWS (CloudWatch, Lambda, DynamoDB, S3, API Gateway, CDK), Docker, Linux, Git, CI/CD
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section*{Professional Experience}
+
+\job{Amazon}{Seattle, WA}{Software Engineer -- Prime Video}{May 2024 -- September 2025}
+
+\begin{itemize}
+
+\item Led technical triage and root-cause analysis (RCA) for complex production failures across distributed services by analyzing system logs, tracing request lifecycles, and resolving reliability bottlenecks.
+
+\item Designed and operated production AWS infrastructure using CloudWatch, Lambda, API Gateway, DynamoDB, S3, and IAM, implementing system metrics and monitoring to maintain operational health.
+
+\item Engineered fault-tolerant ingestion pipelines handling complex, malformed data payloads, overcoming execution limits while preserving data integrity across distributed operational workflows.
+
+\item Developed distributed Java backend microservices for centralized data management, replacing legacy systems to process millions of records powering core downstream infrastructure.
+
+\item Authored technical diagnostic docs and design specs, mentored junior engineers, and supported production operations, debugging, and shift handoffs.
+
+\end{itemize}
+
+\vspace{3pt}
+
+\job{Amazon}{Seattle, WA}{Software Engineer Intern -- Prime Video}{May 2023 -- August 2023}
+
+\begin{itemize}
+
+\item Built an automated validation and transformation service that eliminated approximately six hours of manual operational debugging per malformed submission.
+
+\item Implemented log monitoring and automated schema correction pipelines using AWS Lambda, DynamoDB, S3, CloudWatch, and CDK.
+
+\item Owned project execution from technical diagnostic design through implementation, testing, deployment, and production rollout.
+
+\end{itemize}
+
+\vspace{3pt}
+
+\job{Amazon}{Seattle, WA}{Software Development Engineer Intern -- Amazon Care}{May 2022 -- August 2022}
+
+\begin{itemize}
+
+\item Designed and deployed a proximity-based geographic routing algorithm replacing FIFO scheduling, optimizing real-world physical appointment and delivery logistics.
+
+\item Analyzed behavioral telemetry and system usage data across 25,000+ monthly active users, driving operational fixes that doubled user engagement and reduced drop-offs by 30\%.
+
+\end{itemize}
+
+\vspace{3pt}
+
+\job{Green Bank Observatory}{Green Bank, WV}{Web Developer Intern}{January 2020 -- May 2021}
+
+\begin{itemize}
+
+\item Engineered backend services, REST APIs, and automated data workflows supporting the Skynet Robotic Telescope Network, processing telemetry for 10,000+ daily live robotic observations.
+
+\item Consolidated and optimized millions of astronomical observational records, reducing data storage requirements by 20\% while improving query retrieval performance by 30\%.
+
+\item Provided continuous backend automation and diagnostic support for network workflows serving over 100,000 monthly user interactions.
+
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+% EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section*{Education}
+
+\textbf{Florida State University} \hfill May 2024 \\
+B.S. Computer Science
+
+\vspace{3pt}
+
+\textbf{Santa Fe College} \hfill August 2020  \\
+A.A. Psychology, Honors
+
+\end{document}

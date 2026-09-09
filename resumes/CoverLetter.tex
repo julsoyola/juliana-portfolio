@@ -1,0 +1,146 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[
+left=0.78in,
+right=0.78in,
+top=0.68in,
+bottom=0.70in
+]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% Improve ATS PDF text extraction
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt}
+\setlength{\emergencystretch}{2em}
+
+\definecolor{Text}{HTML}{222222}
+\definecolor{Rule}{HTML}{777777}
+
+\hypersetup{
+colorlinks=true,
+urlcolor=Text,
+linkcolor=Text,
+pdfauthor={Juliana Oyola-Pabon},
+pdftitle={Juliana Oyola-Pabon - Cover Letter}
+}
+
+% ============================================================
+% APPLICATION
+% ============================================================
+
+\newcommand{\company}{Google}
+\newcommand{\position}{Software Engineer, Early Career, Campus}
+\newcommand{\companylocation}{San Bruno, CA}
+
+% ============================================================
+
+\begin{document}
+
+% ============================================================
+% CONTACT
+% ============================================================
+
+{\small
+\textbf{Juliana Oyola-Pabon}\\
+San Bruno, CA\\
+\href{mailto:julianaaoyola@gmail.com}{julianaaoyola@gmail.com}\\
+\href{https://juliana-portfolio-two.vercel.app/}{Portfolio}
+\enspace|\enspace
+\href{https://linkedin.com/in/julianaoyola}{LinkedIn}
+\enspace|\enspace
+\href{https://github.com/julsoyola}{GitHub}
+}
+
+\vspace{22pt}
+
+% ============================================================
+% RECIPIENT
+% ============================================================
+
+\textbf{\company}\\
+\companylocation
+
+\vspace{4pt}
+
+\today
+
+\vspace{28pt}
+
+% ============================================================
+% HEADING
+% ============================================================
+
+{\large\bfseries \position}
+
+\vspace{5pt}
+
+{\color{Rule}\rule{\textwidth}{0.6pt}}
+
+\vspace{20pt}
+
+% ============================================================
+% BODY
+% ============================================================
+
+Dear Google Hiring Team,
+
+I am applying for the Software Engineer, Early Career, Campus position at
+Google. I earned my B.S. in Computer Science from Florida State University
+and most recently worked as a Software Engineer at Amazon Prime Video, where
+I built backend services, distributed data-processing systems, and AWS
+infrastructure for a large-scale metadata platform.
+
+At Prime Video, I worked on the Unified Metadata Platform, which was built to
+replace fragmented catalog systems with centralized services managing millions
+of content records. I developed Java backend services, designed ingestion
+pipelines for partner-supplied metadata, and built the supporting AWS
+infrastructure. My work regularly crossed application and infrastructure
+boundaries, particularly when unusual production inputs exposed failure cases
+that were difficult to reproduce in development.
+
+One project I am especially proud of started during my Prime Video internship.
+I designed and built a metadata ingestion service that automated validation
+and transformation for malformed partner submissions. Before that service,
+some submissions required roughly six hours of manual preprocessing. I owned
+the project from technical design through implementation, testing, deployment,
+and production rollout. I later returned to the same organization full-time
+and continued working on the larger platform and its distributed processing
+systems.
+
+My experience has also taken me outside backend development. At the University
+of Central Florida's VR Lab, I built interactive applications using Unity,
+Unreal Engine, C\#, and VR tooling. At Green Bank Observatory, I worked on
+APIs and data systems supporting the Skynet Robotic Telescope Network. More
+recently, I have incorporated AI-assisted development tools into my daily
+workflow to explore codebases, debug problems, iterate on implementations,
+and reduce repetitive development work.
+
+What appeals to me about this role is the breadth. I do not want to limit
+myself to one narrow layer of software engineering this early in my career.
+I have developed a strong foundation in backend and distributed systems, but
+I also enjoy learning unfamiliar technologies and moving across a system when
+the problem requires it. Google's ability to let engineers grow across
+products, systems, and technical areas is a strong match for how I want to
+develop as an engineer.
+
+Thank you for considering my application. I would welcome the opportunity to
+bring the production experience I have gained so far to Google while continuing
+to grow across large-scale systems and product engineering.
+
+\vspace{16pt}
+
+Sincerely,
+
+\vspace{4pt}
+
+\textbf{Juliana Oyola-Pabon}
+
+\end{document}

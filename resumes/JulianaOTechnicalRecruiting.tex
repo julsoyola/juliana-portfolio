@@ -1,0 +1,232 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[
+left=0.48in,
+right=0.48in,
+top=0.34in,
+bottom=0.32in
+]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+% Improve ATS text extraction
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\urlstyle{same}
+
+\definecolor{Accent}{HTML}{7B2D4F}
+
+\hypersetup{
+colorlinks=true,
+urlcolor=Accent,
+linkcolor=Accent,
+pdfauthor={Juliana Oyola-Pabon},
+pdftitle={Juliana Oyola-Pabon - Technical Recruiting Resume}
+}
+
+\setlist[itemize]{
+leftmargin=0.18in,
+label=\textbullet,
+itemsep=0.75pt,
+topsep=2.5pt,
+parsep=0pt,
+partopsep=0pt
+}
+
+\titleformat{\section}
+{\color{Accent}\bfseries\normalsize}
+{}
+{0pt}
+{\MakeUppercase}
+[\vspace{1.5pt}\color{Accent}\titlerule]
+
+\titlespacing*{\section}
+{0pt}
+{7pt}
+{4pt}
+
+\newcommand{\job}[4]{%
+\textbf{#1}\hfill #2\par
+\textit{#3}\hfill \textit{#4}\par
+\vspace{-0.5pt}
+}
+
+\begin{document}
+
+% ============================================================
+% HEADER
+% ============================================================
+
+\begin{center}
+{\LARGE\bfseries\color{Accent} Juliana Oyola-Pabon}\\[4pt]
+
+San Bruno, CA
+\enspace|\enspace
+\href{mailto:julianaaoyola@gmail.com}{\textbf{Email}}
+\enspace|\enspace
+\href{https://linkedin.com/in/julianaoyola}{\textbf{LinkedIn}}
+\enspace|\enspace
+\href{https://juliana-portfolio-two.vercel.app/}{\textbf{Portfolio}}
+\end{center}
+
+\vspace{-2pt}
+
+% ============================================================
+% SUMMARY
+% ============================================================
+
+\section*{Professional Summary}
+
+Software engineer with a B.S. in Computer Science and experience at Amazon
+Prime Video, complemented by a background in mentoring, tutoring, student
+leadership, and customer-facing roles. Experienced working with technical
+teams, communicating complex ideas, supporting early-career professionals,
+and taking ownership of projects and programs. Interested in bringing firsthand
+engineering experience and a people-centered approach to technical recruiting
+and university talent programs.
+
+% ============================================================
+% CORE STRENGTHS
+% ============================================================
+
+\section*{Core Strengths}
+
+\textbf{People \& Leadership:}
+Mentoring, Tutoring, Training, Student Leadership, Relationship Building,
+Cross-Functional Collaboration, Customer Communication \\
+
+\textbf{Technical Fluency:}
+Software Engineering, Backend Systems, Cloud Infrastructure, Java, Python,
+JavaScript, TypeScript, AWS, REST APIs \\
+
+\textbf{Program \& Communication:}
+Project Ownership, Technical Documentation, Presentations, Event Coordination,
+Organization, Written Communication \\
+
+\textbf{Languages:}
+English, Spanish (Native)
+
+% ============================================================
+% PROFESSIONAL EXPERIENCE
+% ============================================================
+
+\section*{Professional Experience}
+
+\job{Amazon}{Seattle, WA}
+{Software Engineer -- Prime Video}{May 2024 -- September 2025}
+
+\begin{itemize}
+\item Collaborated with engineers across the development lifecycle, including
+technical design, architecture discussions, code reviews, implementation,
+deployment, and production operations.
+
+\item Mentored a newly hired software engineer, providing technical context,
+development support, and guidance while they became familiar with the team's
+systems and engineering practices.
+
+\item Authored technical design documents and communicated implementation
+decisions for distributed backend systems supporting Prime Video's metadata
+platform.
+
+\item Built production Java and AWS systems supporting millions of content
+records, providing firsthand experience with the skills, responsibilities,
+and working environments of software engineering teams.
+
+\item Worked independently across ambiguous technical problems while
+coordinating with teammates and stakeholders to move projects from design
+through production.
+\end{itemize}
+
+\vspace{2pt}
+
+\job{Amazon}{Seattle, WA}
+{Software Engineer Intern -- Prime Video}{May 2023 -- August 2023}
+
+\begin{itemize}
+\item Independently owned a software project from technical design through
+implementation, testing, deployment, and production rollout while working
+closely with experienced engineers and incorporating feedback through reviews.
+
+\item Built a metadata ingestion service that eliminated approximately six
+hours of manual preprocessing per malformed submission through automation.
+
+\item Developed experience navigating the university-to-industry transition
+through Amazon's technical internship program and subsequent return to
+full-time software engineering.
+\end{itemize}
+
+\vspace{2pt}
+
+\job{Amazon}{Seattle, WA}
+{Software Development Engineer Intern -- Amazon Care}{May 2022 -- August 2022}
+
+\begin{itemize}
+\item Worked on a cross-functional healthcare technology team developing
+backend services supporting scheduling, prescription delivery, and patient
+communications.
+
+\item Analyzed behavioral data from more than 25,000 monthly active users and
+used findings to contribute to product and customer-experience improvements.
+\end{itemize}
+
+% ============================================================
+% EDUCATION & MENTORING
+% ============================================================
+
+\section*{Education \& Mentoring Experience}
+
+\textbf{University of Central Florida} \hfill Orlando, FL\\
+\textit{Physics Learning Assistant / Tutor}
+
+\begin{itemize}
+\item Tutored students individually and in small groups, adapting explanations
+to different learning styles and helping students strengthen their
+understanding of course material.
+
+\item Observed student progress, provided individualized support, and
+communicated concepts clearly to students with varying levels of experience.
+\end{itemize}
+
+\vspace{2pt}
+
+\textbf{Student Leadership \& Community Involvement}
+
+\begin{itemize}
+\item Held multiple student leadership positions, including section leader and
+Tri-M Music Honor Society Secretary, helping organize activities, coordinate
+students, and support community-service initiatives.
+
+\item Helped establish a new women's lacrosse organization when the local
+school did not offer the sport, working with other students to build
+participation and advocate for the program.
+
+\item Participated in Student-to-Student (S2S), a student organization focused
+on creating a welcoming environment and helping students integrate into a new
+school community.
+\end{itemize}
+
+% ============================================================
+% EDUCATION
+% ============================================================
+
+\section*{Education}
+
+\textbf{Florida State University} \hfill May 2024\\
+B.S. Computer Science
+
+\vspace{2pt}
+
+\textbf{Santa Fe College} \hfill August 2020\\
+A.A. Psychology, Honors
+
+\end{document}
