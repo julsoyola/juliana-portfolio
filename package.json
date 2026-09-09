@@ -11,7 +11,8 @@
     "coverletter": "mkdir -p .resume-build && pdflatex -interaction=nonstopmode -halt-on-error -output-directory=.resume-build resumes/CoverLetter.tex && cp .resume-build/CoverLetter.pdf public/resumes/CoverLetter.pdf && rm -rf .resume-build",
     "techRecruiting": "mkdir -p .resume-build && pdflatex -interaction=nonstopmode -halt-on-error -output-directory=.resume-build resumes/JulianaOTechnicalRecruiting.tex && cp .resume-build/JulianaOTechnicalRecruiting.pdf public/resumes/JulianaOTechnicalRecruiting.pdf && rm -rf .resume-build",
     "resume": "mkdir -p .resume-build && pdflatex -interaction=nonstopmode -halt-on-error -output-directory=.resume-build resumes/JulianaOyolaResume.tex && cp .resume-build/JulianaOyolaResume.pdf public/resumes/JulianaOyolaResume.pdf && rm -rf .resume-build",
-    "build:resumes": "pdflatex -output-directory=public/resumes resumes/*.tex && rm -f public/resumes/*.aux public/resumes/*.log public/resumes/*.out"
+    "build:resumes": "pdflatex -output-directory=public/resumes resumes/*.tex && rm -f public/resumes/*.aux public/resumes/*.log public/resumes/*.out",
+    "build:resume": "TEXINPUTS=./resumes//: pdflatex -output-directory=public/resumes"
   },
   "dependencies": {
     "framer-motion": "^12.43.0",
