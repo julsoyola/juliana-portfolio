@@ -1,0 +1,55 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{resume}[2026/09/09 Common Resume Styling]
+
+\RequirePackage[
+    left=0.48in,
+    right=0.48in,
+    top=0.34in,
+    bottom=0.32in
+]{geometry}
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\RequirePackage{enumitem}
+\RequirePackage{xcolor}
+\RequirePackage{hyperref}
+\RequirePackage{titlesec}
+
+% Improve ATS text extraction
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\urlstyle{same}
+
+\definecolor{Accent}{HTML}{7B2D4F}
+
+% Compact but readable bullets
+\setlist[itemize]{
+    leftmargin=0.18in,
+    label=\textbullet,
+    itemsep=0.75pt,
+    topsep=2.5pt,
+    parsep=0pt,
+    partopsep=0pt
+}
+
+% Section formatting
+\titleformat{\section}
+    {\color{Accent}\bfseries\normalsize}
+    {}
+    {0pt}
+    {\MakeUppercase}
+    [\vspace{1.5pt}\color{Accent}\titlerule]
+
+\titlespacing*{\section}{0pt}{8pt}{5pt}
+
+% Company / role formatting
+\newcommand{\job}[4]{%
+    \textbf{#1}\hfill #2\par
+    \textit{#3}\hfill \textit{#4}\par
+    \vspace{-0.5pt}
+}

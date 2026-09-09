@@ -49,35 +49,5 @@ next-env.d.ts
 *.fdb_latexmk
 *.synctex.gz
 
-# LaTeX build artifacts
-*.aux
-*.log
-*.out
-*.toc
-*.fls
-*.fdb_latexmk
-*.synctex.gz
-
-# LaTeX build artifacts
-*.aux
-*.log
-*.out
-*.toc
-*.fls
-*.fdb_latexmk
-*.synctex.gz
-
-# Ensure compiled PDFs in public are tracked
-!public/resumes/*.pdf
-
-# LaTeX build artifacts
-*.aux
-*.log
-*.out
-*.toc
-*.fls
-*.fdb_latexmk
-*.synctex.gz
-
 # Ensure compiled PDFs in public are tracked
 !public/resumes/*.pdf
