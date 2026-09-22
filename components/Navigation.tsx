@@ -38,7 +38,7 @@ export default function Navigation() {
 
         <a
           href="#contact"
-          className="hidden rounded-full bg-[var(--mustard)] px-5 py-3 text-sm font-semibold text-[var(--text)] transition hover:-translate-y-1 md:inline-flex"
+          className="hidden rounded-full bg-[var(--mustard)] px-5 py-3 text-sm font-semibold text-[var(--text)] transition hover:-translate-y-1 lg:inline-flex"
         >
           let&apos;s connect ↗
         </a>
