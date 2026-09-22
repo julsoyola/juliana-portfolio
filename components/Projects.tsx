@@ -34,80 +34,100 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="work" className="px-6 py-24 lg:px-10">
+    <section
+      id="work"
+      aria-labelledby="projects-heading"
+      className="px-6 py-24 lg:px-10"
+    >
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-10 lg:grid-cols-[220px_1fr]">
-          <div>
+        <div className="grid gap-12 lg:grid-cols-[240px_1fr] lg:gap-16">
+          <div className="lg:sticky lg:top-32 lg:self-start">
             <p className="text-sm font-bold uppercase tracking-[0.12em] text-[var(--terracotta)]">
               Selected Work
             </p>
 
             <div className="mt-3 h-1.5 w-28 rounded-full bg-[var(--terracotta)]" />
 
-            <p className="mt-6 max-w-[180px] text-lg leading-7 text-[var(--text)]">
+            <h2
+              id="projects-heading"
+              className="font-display mt-8 text-5xl leading-[1.05] text-[var(--forest)]"
+            >
+              Projects
+            </h2>
+
+            <p className="mt-6 max-w-[220px] text-lg leading-7 text-[var(--text)]">
               A few projects showcasing how I think, build, and solve problems.
             </p>
 
             <a
-              href="#work"
-              className="mt-8 inline-flex rounded-full bg-[var(--mustard)] px-6 py-3 text-sm font-semibold text-[var(--text)] transition hover:-translate-y-1"
+              href="#project-list"
+              className="mt-8 inline-flex rounded-full bg-[var(--mustard)] px-5 py-3 text-sm font-semibold text-[var(--text)] transition hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--terracotta)]"
             >
-              View all projects ↗
+              View project list{" "}
+              <span aria-hidden="true" className="ml-2">
+                ↘
+              </span>
             </a>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div id="project-list" className="grid gap-6 md:grid-cols-3">
             {projects.map((project) => (
-          <Tilt
-            key={project.title}
-            className="h-full project-scroll-card"
-            glareEnable={false}
-            tiltMaxAngleX={4}
-            tiltMaxAngleY={4}
-            scale={1.015}
-            transitionSpeed={1200}
-          >
-            <article
-              className={`${project.tone} flex h-full min-h-[470px] flex-col rounded-[28px] p-6 shadow-sm transition duration-300 hover:shadow-lg`}
-            >
-                <div className="relative flex h-52 items-center justify-center overflow-hidden rounded-[22px] bg-white/35">
-                  <div className="absolute h-36 w-44 rotate-[-7deg] rounded-[45%_55%_58%_42%] bg-[var(--paper)]/55" />
+              <Tilt
+                key={project.title}
+                className="h-full project-scroll-card"
+                glareEnable={false}
+                tiltMaxAngleX={4}
+                tiltMaxAngleY={4}
+                scale={1.015}
+                transitionSpeed={1200}
+              >
+                <article
+                  className={`${project.tone} flex h-full min-h-[470px] flex-col rounded-[28px] p-6 shadow-sm transition duration-300 hover:shadow-lg`}
+                >
+                  <div className="relative flex h-52 items-center justify-center overflow-hidden rounded-[22px] bg-white/35">
+                    <div className="absolute h-36 w-44 rotate-[-7deg] rounded-[45%_55%_58%_42%] bg-[var(--paper)]/55" />
 
-                  <Image
-                    src={project.image}
-                    alt=""
-                    width={180}
-                    height={180}
-                    className={`float-slower relative z-10 ${project.imageClass}`}
-                  />
-                </div>
-
-                <div className="mt-7 flex flex-1 flex-col">
-                  <h3 className="font-display text-3xl font-semibold leading-tight text-[var(--forest)]">
-                    {project.title}
-                  </h3>
-
-                  <p className="mt-4 text-sm leading-6 text-[var(--text)]">
-                    {project.description}
-                  </p>
-
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {project.stack.map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-full bg-[var(--paper)]/75 px-3 py-1.5 text-xs font-medium text-[var(--text)]"
-                      >
-                        {item}
-                      </span>
-                    ))}
+                    <Image
+                      src={project.image}
+                      alt=""
+                      width={180}
+                      height={180}
+                      aria-hidden="true"
+                      className={`float-slower relative z-10 ${project.imageClass}`}
+                    />
                   </div>
 
-                  <span className="mt-auto self-end pt-8 text-3xl text-[var(--forest)]">
-                    →
-                  </span>
-                </div>
-              </article>
-            </Tilt>
+                  <div className="mt-7 flex flex-1 flex-col">
+                    <h3 className="font-display text-3xl font-semibold leading-tight text-[var(--forest)]">
+                      {project.title}
+                    </h3>
+
+                    <p className="mt-4 text-base leading-7 text-[var(--text)]">
+                      {project.description}
+                    </p>
+
+                    <div className="mt-auto border-t border-[var(--forest)]/20 pt-5">
+                      <p className="text-xs font-bold uppercase tracking-[0.12em] text-[var(--forest)]/75">
+                        Technologies
+                      </p>
+
+                      <ul
+                        className="mt-3 flex flex-wrap gap-2"
+                        aria-label={`${project.title} technologies`}
+                      >
+                        {project.stack.map((item) => (
+                          <li
+                            key={item}
+                            className="rounded-full bg-[var(--paper)]/75 px-3 py-1.5 text-xs font-medium text-[var(--text)]"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+              </Tilt>
             ))}
           </div>
         </div>
