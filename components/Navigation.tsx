@@ -17,31 +17,32 @@ export default function Navigation() {
           <span className="sm:hidden">Juliana</span>
         </a>
 
-        <nav className="hidden items-center gap-7 text-sm font-semibold md:flex">
+        <div className="flex items-center gap-5 lg:gap-8">
+          <nav className="hidden items-center gap-7 text-sm font-semibold md:flex">
+            <a className="nav-link" href="#experience">
+              experience
+            </a>
+            <a className="nav-link" href="#resume">
+              resume
+            </a>
+            <a className="nav-link" href="#skills">
+              skills
+            </a>
+            <a className="nav-link" href="#work">
+              work
+            </a>
+            <a className="nav-link" href="#contact">
+              contact
+            </a>
+          </nav>
 
-          <a className="nav-link" href="#experience">
-          experience
-        </a>
-          <a className="nav-link" href="#resume">
-          resume
-        </a>
-        <a className="nav-link" href="#skills">
-          skills
-        </a>
-        <a className="nav-link" href="#work">
-          work
-        </a>
-        <a className="nav-link" href="#contact">
-          contact
-        </a>
-        </nav>
-
-        <a
-          href="#contact"
-          className="hidden rounded-full bg-[var(--mustard)] px-5 py-3 text-sm font-semibold text-[var(--text)] transition hover:-translate-y-1 lg:inline-flex"
-        >
-          let&apos;s connect ↗
-        </a>
+          <a
+            href="#contact"
+            className="hidden rounded-full bg-[var(--mustard)] px-5 py-3 text-sm font-semibold text-[var(--text)] transition hover:-translate-y-1 lg:inline-flex"
+          >
+            let&apos;s connect ↗
+          </a>
+        </div>
 
         <button
           type="button"
