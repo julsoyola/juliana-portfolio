@@ -35,17 +35,17 @@ const jobs = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="px-6 py-28 lg:px-10">
-      <div className="grid gap-16 lg:grid-cols-[320px_1fr]">
+    <section id="experience" className="border-t border-[var(--forest)]/20 px-6 py-20 lg:px-10">
+      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[240px_1fr] lg:gap-14">
 
         {/* Left Column */}
 
-       <div className="flex flex-col justify-center lg:sticky lg:top-32 lg:self-start">
+       <div className="flex flex-col justify-center lg:sticky lg:top-28 lg:self-start">
           <p className="text-sm font-bold uppercase tracking-[0.16em] text-[var(--terracotta)]">
             Experience
           </p>
-          <div className="mt-4 h-1.5 w-24 rounded-full bg-[var(--terracotta)]" />
-          <h2 className="font-display mt-12 text-6xl leading-[1.02] text-[var(--forest)]">
+          <div className="mt-4 h-1 w-24 bg-[var(--terracotta)]" />
+          <h2 className="font-display mt-8 text-5xl leading-[1.02] text-[var(--forest)]">
             Where
             <br />
             I&apos;ve worked
@@ -55,33 +55,49 @@ export default function Experience() {
 
         {/* Timeline */}
 
-        <div className="rounded-[34px] border border-[var(--border)] bg-[var(--paper)] p-10 shadow-sm">
+        <div>
 
-          {jobs.map((job) => (
+          {jobs.map((job, index) => (
             <div
               key={job.company + job.year}
-              className="grid gap-8 border-b border-[var(--border)] py-10 last:border-none lg:grid-cols-[110px_220px_1fr]"
+              className="grid gap-4 border-b border-[var(--forest)]/20 py-6 last:border-none lg:grid-cols-[44px_80px_190px_1fr] lg:gap-5"
             >
-              <p className="font-semibold text-[var(--sage)]">
-                {job.year}
-              </p>
+              <div className="flex items-center gap-4 lg:contents">
+                <p
+                  className={`text-xs font-semibold tracking-[0.16em] ${
+                    index === 0
+                      ? "text-[var(--terracotta)]"
+                      : index === 1
+                        ? "text-[var(--pink)]"
+                        : index === 2
+                          ? "text-[var(--sky)]"
+                          : "text-[var(--sage)]"
+                  }`}
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </p>
 
-              <div>
-                <h3 className="font-display text-4xl leading-tight text-[var(--forest)]">
-                  {job.company}
-                </h3>
-
-                <p className="mt-2 italic text-[var(--muted)]">
-                  {job.role}
+                <p className="font-semibold text-[var(--sage)]">
+                  {job.year}
                 </p>
               </div>
 
               <div>
+                <h3 className="font-display text-3xl leading-tight text-[var(--forest)]">
+                  {job.company}
+                </h3>
+
+                <p className="mt-1 italic text-[var(--muted)]">
+                  {job.role}
+                </p>
+              </div>
+
+              <div className="max-w-2xl">
                 <p className="leading-7 text-[var(--text)]">
                   {job.description}
                 </p>
 
-                <p className="mt-4 text-sm font-semibold text-[var(--sage)]">
+                <p className="mt-3 text-sm font-semibold text-[var(--sage)]">
                   {job.stack}
                 </p>
               </div>
