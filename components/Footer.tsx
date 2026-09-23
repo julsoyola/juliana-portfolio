@@ -2,25 +2,30 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="relative overflow-hidden bg-[var(--mustard)] px-6 py-20 lg:px-10"
+      className="px-6 py-16 lg:px-10"
     >
-      <div className="relative z-10 mx-auto max-w-7xl text-center">
-        <h2 className="font-display text-5xl leading-tight text-[var(--forest)] sm:text-6xl">
-          Let's Connect.
-        </h2>
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-8 rounded-[24px] bg-[var(--forest)] px-6 py-9 text-[var(--paper)] sm:px-10 lg:grid-cols-[0.3fr_0.45fr_0.25fr] lg:items-center lg:gap-10 lg:py-10">
+        <div>
+          <h2 className="font-display text-5xl leading-tight text-[var(--paper)] sm:text-6xl">
+            Let's Connect.
+          </h2>
 
-        <div className="mx-auto mt-4 h-1.5 w-48 rounded-full bg-[var(--terracotta)]" />
+          <div className="mt-4 h-1 w-24 bg-[var(--terracotta)]" />
+          <span aria-hidden="true" className="mt-4 inline-block font-display text-2xl text-[var(--terracotta)]">
+            ✳
+          </span>
+        </div>
 
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[var(--text)]">
+        <p className="max-w-2xl text-lg leading-8 text-[var(--paper)]/85">
           I'm currently seeking software engineering opportunities where I can build
           reliable systems, grow alongside talented teams, and solve meaningful
           technical problems.
         </p>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
+        <div className="flex flex-col items-stretch gap-3 lg:ml-auto lg:w-36">
           <a
             href="mailto:julianaaoyola@gmail.com"
-            className="rounded-full border border-[var(--forest)] px-6 py-3 font-semibold text-[var(--forest)] transition hover:-translate-y-1 hover:bg-[var(--paper)]"
+            className="flex min-h-11 items-center justify-center rounded-full border border-[var(--paper)]/60 px-3 py-2.5 text-center text-sm font-semibold text-[var(--paper)] transition hover:bg-[var(--paper)] hover:text-[var(--forest)]"
           >
             Email
           </a>
@@ -29,7 +34,7 @@ export default function Footer() {
             href="https://linkedin.com/in/julianaoyola"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-[var(--forest)] px-6 py-3 font-semibold text-[var(--forest)] transition hover:-translate-y-1 hover:bg-[var(--paper)]"
+            className="flex min-h-11 items-center justify-center rounded-full border border-[var(--paper)]/60 px-3 py-2.5 text-center text-sm font-semibold text-[var(--paper)] transition hover:bg-[var(--paper)] hover:text-[var(--forest)]"
           >
             LinkedIn
           </a>
@@ -38,25 +43,13 @@ export default function Footer() {
             href="https://github.com/julsoyola"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-[var(--forest)] px-6 py-3 font-semibold text-[var(--forest)] transition hover:-translate-y-1 hover:bg-[var(--paper)]"
+            className="flex min-h-11 items-center justify-center rounded-full border border-[var(--paper)]/60 px-3 py-2.5 text-center text-sm font-semibold text-[var(--paper)] transition hover:bg-[var(--paper)] hover:text-[var(--forest)]"
           >
             GitHub
           </a>
         </div>
       </div>
 
-      <div className="absolute -bottom-28 -left-24 h-44 w-64 rotate-[-8deg] rounded-[45%_55%_40%_60%] bg-[var(--forest)] sm:-bottom-16 sm:-left-10" />
-
-      <div className="absolute -bottom-28 -right-24 h-52 w-52 rounded-[55%_45%_60%_40%] bg-[var(--sky)] sm:-bottom-20 sm:-right-8" />
-
-      <div className="absolute -bottom-2 left-4 grid grid-cols-4 gap-1.5 sm:bottom-5 sm:left-8">
-        {Array.from({ length: 16 }).map((_, index) => (
-          <span
-            key={index}
-            className="h-5 w-5 bg-[var(--terracotta)]"
-          />
-        ))}
-      </div>
     </footer>
   );
 }

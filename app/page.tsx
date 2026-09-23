@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import StatementBand from "@/components/StatementBand";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
@@ -15,10 +14,6 @@ export default function Home() {
 
       <Reveal>
         <Hero />
-      </Reveal>
-
-      <Reveal>
-        <StatementBand />
       </Reveal>
 
       <Reveal>
