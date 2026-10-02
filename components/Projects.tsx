@@ -1,12 +1,12 @@
 const projects = [
   {
-    title: "Full-Stack Product",
+    title: "MacWipe",
     description:
-      "A modern web application focused on usability, clean architecture, and a polished user experience.",
-    stack: ["React", "TypeScript", "PostgreSQL"],
+      "I built the frontend for a retro Mac cleanup dashboard demo, with category previews and a selection and review workflow using local example data.",
+    stack: ["HTML", "CSS", "JavaScript"],
     tone: "bg-[var(--sky)]",
-    liveUrl: null,
-    githubUrl: null,
+    liveUrl: "https://macwipe.vercel.app/",
+    githubUrl: "https://github.com/julsoyola/macwipe",
   },
   {
     title: "Backend Systems",
