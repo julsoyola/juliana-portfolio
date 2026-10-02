@@ -1,3 +1,6 @@
+import Image from "next/image";
+import googleCleanerScreenshot from "@/public/images/googlecleaner-review.png";
+
 const projects = [
   {
     title: "Full-Stack Product",
@@ -14,11 +17,20 @@ const projects = [
     tone: "bg-[var(--mustard)]",
   },
   {
-    title: "AI Workflow",
+    title: "GoogleCleaner",
     description:
-      "An experimental product exploring practical AI tools for everyday use.",
-    stack: ["Python", "LLMs", "APIs"],
+      "A Chrome extension to find, filter, and review Google Drive files and folders, then move selected items to Trash. Supports Google sign-in, background cleanup jobs, progress tracking, and retries for failed items.",
+    stack: ["JavaScript", "Chrome Extensions", "Google Drive API"],
     tone: "bg-[var(--pink)]",
+    status: "Chrome Web Store review pending",
+    image: {
+      src: googleCleanerScreenshot,
+      alt: "GoogleCleaner file list with search, filters, and item selection",
+    },
+    link: {
+      label: "View project",
+      url: "https://github.com/julsoyola/googleCleaner#readme",
+    },
   },
   {
     title: "Developer Toolkit",
@@ -78,50 +90,63 @@ export default function Projects() {
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
-                    <div
-                      aria-hidden="true"
-                      className="relative mt-4 h-16 border-b border-[var(--forest)]/25"
-                    >
-                      {index === 0 && (
-                        <div className="absolute inset-x-4 top-2 h-10 rounded-md border-2 border-[var(--forest)]/60 p-2">
-                          <div className="h-1.5 w-10 bg-[var(--terracotta)]/70" />
-                          <div className="mt-2 grid grid-cols-3 gap-1">
-                            <span className="h-3 bg-[var(--paper)]/70" />
-                            <span className="h-3 bg-[var(--pink)]/70" />
-                            <span className="h-3 bg-[var(--paper)]/70" />
+                    {project.image ? (
+                      <div className="relative mb-5 mt-4 h-48 overflow-hidden rounded-md border border-[var(--forest)]/25 bg-[var(--paper)]">
+                        <Image
+                          src={project.image.src}
+                          alt={project.image.alt}
+                          fill
+                          sizes="(min-width: 1280px) 310px, (min-width: 900px) 25vw, (min-width: 768px) 45vw, 90vw"
+                          className="object-cover object-top"
+                        />
+                      </div>
+                    ) : (
+                      <div
+                        aria-hidden="true"
+                        className="relative mt-4 h-16 border-b border-[var(--forest)]/25"
+                      >
+                        {index === 0 && (
+                          <div className="absolute inset-x-4 top-2 h-10 rounded-md border-2 border-[var(--forest)]/60 p-2">
+                            <div className="h-1.5 w-10 bg-[var(--terracotta)]/70" />
+                            <div className="mt-2 grid grid-cols-3 gap-1">
+                              <span className="h-3 bg-[var(--paper)]/70" />
+                              <span className="h-3 bg-[var(--pink)]/70" />
+                              <span className="h-3 bg-[var(--paper)]/70" />
+                            </div>
                           </div>
-                        </div>
-                      )}
-                      {index === 1 && (
-                        <div className="absolute inset-x-8 top-4 flex items-center justify-between">
-                          <span className="h-3 w-3 rounded-full border-2 border-[var(--forest)]/70" />
-                          <span className="h-px flex-1 bg-[var(--forest)]/60" />
-                          <span className="h-3 w-3 rounded-full border-2 border-[var(--forest)]/70" />
-                          <span className="h-px flex-1 bg-[var(--forest)]/60" />
-                          <span className="h-3 w-3 rounded-full border-2 border-[var(--forest)]/70" />
-                        </div>
-                      )}
-                      {index === 2 && (
-                        <div className="absolute right-8 top-1 font-display text-4xl text-[var(--terracotta)]/80">
-                          ✳
-                        </div>
-                      )}
-                      {index === 3 && (
-                        <svg
-                          aria-hidden="true"
-                          viewBox="0 0 64 48"
-                          className="absolute right-8 top-1 h-12 w-16 fill-none stroke-[var(--forest)]/70"
-                          strokeWidth="2"
-                        >
-                          <path d="M14 18h36v22H14zM20 18v-6h24v6M20 27h24M20 34h10" />
-                          <path d="m39 28 5-5 6 6-5 5zM44 23l3-3 6 6-3 3" />
-                        </svg>
-                      )}
-                    </div>
+                        )}
+                        {index === 1 && (
+                          <div className="absolute inset-x-8 top-4 flex items-center justify-between">
+                            <span className="h-3 w-3 rounded-full border-2 border-[var(--forest)]/70" />
+                            <span className="h-px flex-1 bg-[var(--forest)]/60" />
+                            <span className="h-3 w-3 rounded-full border-2 border-[var(--forest)]/70" />
+                            <span className="h-px flex-1 bg-[var(--forest)]/60" />
+                            <span className="h-3 w-3 rounded-full border-2 border-[var(--forest)]/70" />
+                          </div>
+                        )}
+                        {index === 3 && (
+                          <svg
+                            aria-hidden="true"
+                            viewBox="0 0 64 48"
+                            className="absolute right-8 top-1 h-12 w-16 fill-none stroke-[var(--forest)]/70"
+                            strokeWidth="2"
+                          >
+                            <path d="M14 18h36v22H14zM20 18v-6h24v6M20 27h24M20 34h10" />
+                            <path d="m39 28 5-5 6 6-5 5zM44 23l3-3 6 6-3 3" />
+                          </svg>
+                        )}
+                      </div>
+                    )}
 
                     <h3 className="font-display text-[1.7rem] font-semibold leading-tight text-[var(--forest)]">
                       {project.title}
                     </h3>
+
+                    {project.status && (
+                      <span className="mt-3 self-start rounded-full border border-[var(--forest)]/25 bg-[var(--paper)]/80 px-3 py-1.5 text-xs font-medium text-[var(--forest)]">
+                        {project.status}
+                      </span>
+                    )}
 
                     <p className="mt-3 text-base leading-7 text-[var(--text)]">
                       {project.description}
@@ -146,6 +171,18 @@ export default function Projects() {
                         ))}
                       </ul>
                     </div>
+
+                    {project.link && (
+                      <a
+                        href={project.link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-5 inline-flex self-start items-center border border-[var(--forest)] bg-[var(--mustard)] px-5 py-3 text-sm font-semibold text-[var(--text)] transition hover:bg-[var(--terracotta)] hover:text-[var(--paper)]"
+                      >
+                        {project.link.label}
+                        <span aria-hidden="true" className="ml-2">↗</span>
+                      </a>
+                    )}
                   </div>
                 </article>
               </div>
