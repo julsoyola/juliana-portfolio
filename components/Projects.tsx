@@ -2,8 +2,8 @@ const projects = [
   {
     title: "MacWipe",
     description:
-      "I built the frontend for a retro Mac cleanup dashboard demo, with category previews and a selection and review workflow using local example data.",
-    stack: ["HTML", "CSS", "JavaScript"],
+      "I built a Swift macOS app and a retro web dashboard for Mac cleanup. The dashboard demo includes category previews and a selection and review workflow using local example data.",
+    stack: ["Swift", "HTML", "CSS", "JavaScript"],
     tone: "bg-[var(--sky)]",
     liveUrl: "https://macwipe.vercel.app/",
     githubUrl: "https://github.com/julsoyola/macwipe",
