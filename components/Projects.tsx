@@ -5,6 +5,8 @@ const projects = [
       "A modern web application focused on usability, clean architecture, and a polished user experience.",
     stack: ["React", "TypeScript", "PostgreSQL"],
     tone: "bg-[var(--sky)]",
+    liveUrl: null,
+    githubUrl: null,
   },
   {
     title: "Backend Systems",
@@ -12,6 +14,8 @@ const projects = [
       "A distributed backend platform focused on event-driven architecture, reliability, and observability.",
     stack: ["Java", "Spring Boot", "AWS"],
     tone: "bg-[var(--mustard)]",
+    liveUrl: null,
+    githubUrl: null,
   },
   {
     title: "GoogleCleaner",
@@ -19,10 +23,8 @@ const projects = [
       "A Chrome extension for reviewing, filtering, and moving selected Google Drive files to Trash.",
     stack: ["JavaScript", "Chrome Extensions", "Google Drive API"],
     tone: "bg-[var(--pink)]",
-    link: {
-      label: "View project",
-      url: "https://github.com/julsoyola/googleCleaner#readme",
-    },
+    liveUrl: "https://chromewebstore.google.com/detail/googlecleaner/acijddppbcekpnlddndfomahlpgcnfoe",
+    githubUrl: "https://github.com/julsoyola/googleCleaner#readme",
   },
   {
     title: "Developer Toolkit",
@@ -30,11 +32,13 @@ const projects = [
       "A collection of developer utilities focused on automation, workflow efficiency, and internal tooling.",
     stack: ["TypeScript", "Node.js", "Automation"],
     tone: "bg-[#F3AD87]",
+    liveUrl: null,
+    githubUrl: null,
   },
 ];
 
 const projectControlClassName =
-  "mt-5 inline-flex min-h-11 self-start items-center justify-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold";
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold";
 
 export default function Projects() {
   return (
@@ -165,25 +169,35 @@ export default function Projects() {
                       </ul>
                     </div>
 
-                    {project.link ? (
-                      <a
-                        href={project.link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`${projectControlClassName} border-[var(--forest)]/40 bg-[var(--paper)] text-[var(--forest)] transition-colors hover:border-[var(--forest)]/70 hover:bg-[var(--paper)]/80`}
-                      >
-                        {project.link.label}
-                        <span aria-hidden="true" className="inline-flex h-4 w-4 items-center justify-center leading-none">↗</span>
-                      </a>
-                    ) : (
-                      <button
-                        type="button"
-                        disabled
-                        className={`${projectControlClassName} cursor-default border-[var(--forest)]/20 bg-[var(--paper)]/60 text-[var(--forest)]/45`}
-                      >
-                        View project
-                      </button>
-                    )}
+                    <div className="mt-5 flex gap-[8px]">
+                      {[
+                        { label: "View project", url: project.liveUrl },
+                        { label: "src", url: project.githubUrl },
+                      ].map(({ label, url }) =>
+                        url ? (
+                          <a
+                            key={label}
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`${projectControlClassName} border-[var(--forest)]/40 bg-[var(--paper)] text-[var(--forest)] transition-colors hover:border-[var(--forest)]/70 hover:bg-[var(--paper)]/80`}
+                          >
+                            {label}
+                            <span aria-hidden="true" className="inline-flex h-4 w-4 items-center justify-center leading-none">↗</span>
+                          </a>
+                        ) : (
+                          <button
+                            key={label}
+                            type="button"
+                            disabled
+                            className={`${projectControlClassName} pointer-events-none cursor-not-allowed border-[var(--forest)]/20 bg-[var(--paper)]/60 text-[var(--forest)]/45 opacity-50`}
+                          >
+                            {label}
+                            <span aria-hidden="true" className="inline-flex h-4 w-4 items-center justify-center leading-none">↗</span>
+                          </button>
+                        ),
+                      )}
+                    </div>
                   </div>
                 </article>
               </div>
