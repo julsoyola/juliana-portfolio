@@ -53,7 +53,7 @@ export default function Projects() {
     <section
       id="work"
       aria-labelledby="projects-heading"
-      className="border-t border-[var(--forest)]/20 px-6 py-16 lg:px-10"
+      className="border-t border-[var(--forest)]/20 px-6 py-20 lg:px-10"
     >
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 min-[900px]:grid-cols-[0.25fr_repeat(3,minmax(0,1fr))] min-[900px]:items-start min-[900px]:gap-6">
