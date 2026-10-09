@@ -9,13 +9,13 @@ const projects = [
     githubUrl: "https://github.com/julsoyola/macwipe",
   },
   {
-    title: "Backend Systems",
+    title: "FigmaCleaner",
     description:
-      "A distributed backend platform focused on event-driven architecture, reliability, and observability.",
-    stack: ["Java", "Spring Boot", "AWS"],
+      "A native Figma plugin designed to automate canvas tree maintenance, purge hidden layers, and optimize rendering performance.",
+    stack: ["TypeScript", "Figma Plugin API", "HTML/CSS", "Node.js"],
     tone: "bg-[var(--mustard)]",
-    liveUrl: null,
-    githubUrl: null,
+    liveUrl: "https://github.com/julsoyola/figmaCleaner",
+    githubUrl: "https://github.com/julsoyola/figmaCleaner",
   },
   {
     title: "GoogleCleaner",
