@@ -22,14 +22,14 @@ export default function Navigation() {
             <a className="nav-link" href="#experience">
               experience
             </a>
-            <a className="nav-link" href="#resume">
-              resume
+            <a className="nav-link" href="#work">
+              work
             </a>
             <a className="nav-link" href="#skills">
               skills
             </a>
-            <a className="nav-link" href="#work">
-              work
+            <a className="nav-link" href="#resume">
+              resume
             </a>
             <a className="nav-link" href="#contact">
               contact
@@ -62,9 +62,9 @@ export default function Navigation() {
         >
           {[
             ["experience", "#experience"],
-            ["resume", "#resume"],
-            ["skills", "#skills"],
             ["work", "#work"],
+            ["skills", "#skills"],
+            ["resume", "#resume"],
             ["contact", "#contact"],
           ].map(([label, href]) => (
             <a
