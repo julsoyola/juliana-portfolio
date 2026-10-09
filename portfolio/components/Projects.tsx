@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const projects = [
   {
     title: "MacWipe",
@@ -14,6 +16,7 @@ const projects = [
       "A native Figma plugin designed to automate canvas tree maintenance, purge hidden layers, and optimize rendering performance.",
     stack: ["TypeScript", "Figma Plugin API", "HTML/CSS", "Node.js"],
     tone: "bg-[var(--mustard)]",
+    caseStudyUrl: "/work/figmacleaner",
     liveUrl: "https://github.com/julsoyola/figmaCleaner",
     githubUrl: "https://github.com/julsoyola/figmaCleaner",
   },
@@ -171,20 +174,20 @@ export default function Projects() {
 
                     <div className="mt-5 flex gap-[8px]">
                       {[
-                        { label: "View project", url: project.liveUrl },
-                        { label: "src", url: project.githubUrl },
+                        { label: project.caseStudyUrl ? "Case Study" : "View project", url: project.caseStudyUrl ?? project.liveUrl },
+                        { label: project.caseStudyUrl ? "GitHub" : "src", url: project.githubUrl },
                       ].map(({ label, url }) =>
                         url ? (
-                          <a
+                          <Link
                             key={label}
                             href={url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`${projectControlClassName} border-[var(--forest)]/40 bg-[var(--paper)] text-[var(--forest)] transition-colors hover:border-[var(--forest)]/70 hover:bg-[var(--paper)]/80`}
+                            target={url.startsWith("/") ? undefined : "_blank"}
+                            rel={url.startsWith("/") ? undefined : "noopener noreferrer"}
+                            className={`${projectControlClassName} border-[var(--forest)]/40 ${label === "Case Study" ? "bg-[var(--forest)] text-[var(--paper)] hover:bg-[var(--forest)]/90" : "bg-[var(--paper)] text-[var(--forest)] hover:bg-[var(--paper)]/80"} transition-colors hover:border-[var(--forest)]/70`}
                           >
                             {label}
                             <span aria-hidden="true" className="inline-flex h-4 w-4 items-center justify-center leading-none">↗</span>
-                          </a>
+                          </Link>
                         ) : (
                           <button
                             key={label}
