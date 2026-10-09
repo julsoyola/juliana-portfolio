@@ -41,7 +41,12 @@ const projects = [
 ];
 
 const projectControlClassName =
-  "inline-flex min-h-11 items-center justify-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold";
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition-colors";
+
+const primaryControlClassName =
+  "border-[#1C2A1A] bg-[#1C2A1A] text-white hover:bg-[#1E2E1E]";
+const secondaryControlClassName =
+  "border-[var(--forest)]/40 bg-white/80 text-slate-900 hover:border-[var(--forest)]/70 hover:bg-white";
 
 export default function Projects() {
   return (
@@ -174,16 +179,16 @@ export default function Projects() {
 
                     <div className="mt-5 flex gap-[8px]">
                       {[
-                        { label: project.caseStudyUrl ? "Case Study" : "View project", url: project.caseStudyUrl ?? project.liveUrl },
-                        { label: project.caseStudyUrl ? "GitHub" : "src", url: project.githubUrl },
-                      ].map(({ label, url }) =>
+                        { label: project.caseStudyUrl ? "Case Study" : "View project", url: project.caseStudyUrl ?? project.liveUrl, style: primaryControlClassName },
+                        { label: "GitHub", url: project.githubUrl, style: secondaryControlClassName },
+                      ].map(({ label, url, style }) =>
                         url ? (
                           <Link
                             key={label}
                             href={url}
                             target={url.startsWith("/") ? undefined : "_blank"}
                             rel={url.startsWith("/") ? undefined : "noopener noreferrer"}
-                            className={`${projectControlClassName} border-[var(--forest)]/40 ${label === "Case Study" ? "bg-[var(--forest)] text-[var(--paper)] hover:bg-[var(--forest)]/90" : "bg-[var(--paper)] text-[var(--forest)] hover:bg-[var(--paper)]/80"} transition-colors hover:border-[var(--forest)]/70`}
+                            className={`${projectControlClassName} ${style}`}
                           >
                             {label}
                             <span aria-hidden="true" className="inline-flex h-4 w-4 items-center justify-center leading-none">↗</span>
@@ -193,7 +198,7 @@ export default function Projects() {
                             key={label}
                             type="button"
                             disabled
-                            className={`${projectControlClassName} pointer-events-none cursor-not-allowed border-[var(--forest)]/20 bg-[var(--paper)]/60 text-[var(--forest)]/45 opacity-50`}
+                            className={`${projectControlClassName} ${style} pointer-events-none cursor-not-allowed opacity-50`}
                           >
                             {label}
                             <span aria-hidden="true" className="inline-flex h-4 w-4 items-center justify-center leading-none">↗</span>
