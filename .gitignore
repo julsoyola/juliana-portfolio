@@ -1,24 +1,24 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
+/portfolio/node_modules
+/portfolio/.pnp
 .pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+portfolio/.yarn/*
+!portfolio/.yarn/patches
+!portfolio/.yarn/plugins
+!portfolio/.yarn/releases
+!portfolio/.yarn/versions
 
 # testing
-/coverage
+/portfolio/coverage
 
 # next.js
-/.next/
-/out/
+/portfolio/.next/
+/portfolio/out/
 
 # production
-/build
+/portfolio/build
 
 # misc
 .DS_Store
@@ -50,4 +50,9 @@ next-env.d.ts
 *.synctex.gz
 
 # Ensure compiled PDFs in public are tracked
-!public/resumes/*.pdf
+!portfolio/public/resumes/*.pdf
+
+# Local-only UX resume
+/resumes/JulianaOyolaUX.tex
+/resumes/JulianaOyolaUX.pdf
+/portfolio/public/resumes/JulianaOyolaUX.pdf

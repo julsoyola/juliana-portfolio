@@ -2,10 +2,10 @@
 set -euo pipefail
 
 root=$(cd "$(dirname "$0")/.." && pwd)
-output_dir=${LATEX_OUTPUT_DIR:-"$root/public/resumes"}
+output_dir=${LATEX_OUTPUT_DIR:-"$root/portfolio/public/resumes"}
 
 if [[ ${1:-} == --clean ]]; then
-  for dir in "$root/resumes" "$root/public/resumes" "$root/.resume-build"; do
+  for dir in "$root/resumes" "$root/portfolio/public/resumes" "$root/.resume-build"; do
     [[ -d "$dir" ]] || continue
     find "$dir" -type f \( -name '*.aux' -o -name '*.log' -o -name '*.out' \
       -o -name '*.toc' -o -name '*.fls' -o -name '*.fdb_latexmk' \
@@ -21,7 +21,8 @@ trap 'exit 130' INT
 trap 'exit 143' TERM
 
 if [[ $# == 0 ]]; then
-  set -- "$root"/resumes/*.tex
+  set -- "$root/resumes/JulianaOBackend.tex" \
+    "$root/resumes/JulianaOPlatform.tex" "$root/resumes/JulianaOProduct.tex"
 fi
 
 mkdir -p "$output_dir"
