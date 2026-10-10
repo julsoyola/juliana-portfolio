@@ -3,6 +3,7 @@ import Link from "next/link";
 const projects = [
   {
     title: "MacWipe",
+    caseStudyUrl: "/work/macwipe",
     description:
       "A native macOS system utility and storage manager designed to clean caches, logs, and downloads",
     stack: ["Swift", "HTML", "CSS", "JavaScript"],
@@ -177,10 +178,11 @@ export default function Projects() {
                       </ul>
                     </div>
 
-                    <div className="mt-5 flex gap-[8px]">
+                    <div className="mt-5 flex flex-wrap gap-[8px]">
                       {[
-                        { label: project.caseStudyUrl ? "Case Study" : "View project", url: project.caseStudyUrl ?? project.liveUrl, style: primaryControlClassName },
-                        { label: "GitHub", url: project.githubUrl, style: secondaryControlClassName },
+                        { label: project.title === "MacWipe" ? "View Project" : project.caseStudyUrl ? "Case Study" : "View project", url: project.title === "MacWipe" ? project.liveUrl : project.caseStudyUrl ?? project.liveUrl, style: primaryControlClassName },
+                        ...(project.title === "MacWipe" ? [{ label: "Case Study", url: project.caseStudyUrl, style: secondaryControlClassName }] : []),
+                        ...(project.title === "MacWipe" ? [] : [{ label: "GitHub", url: project.githubUrl, style: secondaryControlClassName }]),
                       ].map(({ label, url, style }) =>
                         url ? (
                           <Link
