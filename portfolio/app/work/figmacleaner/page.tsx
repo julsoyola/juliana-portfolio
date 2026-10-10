@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import Link from "next/link";
+import CaseStudySection from "@/components/CaseStudySection";
 import Footer from "@/components/Footer";
 import FigmaCleanerSandbox from "@/components/FigmaCleanerSandbox";
 import FigmaCleanerCode from "@/components/FigmaCleanerCode";
@@ -30,19 +30,6 @@ const comparison = [
   { title: "Cleaned Canvas", label: "After / only visible, active layers", tree: formatLayerTree(cleanCanvas(initialCanvas, "all").layers) },
 ];
 const actionClassName = "inline-flex min-h-11 items-center justify-center gap-2 rounded-full border px-5 py-3 text-sm font-semibold transition-colors";
-
-function CaseStudySection({ number, title, children }: { number: string; title: string; children: ReactNode }) {
-  const id = `section-${number}`;
-  return (
-    <section aria-labelledby={id} className="min-w-0 rounded-2xl border border-[#E5E0D8] bg-white/30 p-6 shadow-sm sm:p-10 lg:p-12">
-      <div className="flex items-start gap-4 sm:gap-6">
-        <span className="pt-2 text-sm font-semibold tracking-[0.16em] text-[#E07A5F]">{number}</span>
-        <h2 id={id} className="font-display text-3xl leading-tight text-[#1C2A1A] sm:text-4xl">{title}</h2>
-      </div>
-      {children}
-    </section>
-  );
-}
 
 export default function FigmaCleanerCaseStudy() {
   return (
