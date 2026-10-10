@@ -106,6 +106,7 @@ export default function MacWipeCaseStudy() {
             <p className={styles.intro}>A native macOS utility for reviewing local files before moving selected items to Trash. Open a message below to explore the case study.</p>
             <div className={styles.actions}>
               <a href="https://macwipe.vercel.app/" target="_blank" rel="noopener noreferrer" className={styles.primary}>View Project ↗</a>
+              <a href={repository} target="_blank" rel="noopener noreferrer" className={styles.control}>GitHub ↗</a>
             </div>
             <div className={styles.divider} />
             <h2 className={styles.topicsHeading}>case study messages</h2>
