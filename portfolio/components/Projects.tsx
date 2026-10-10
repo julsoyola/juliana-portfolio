@@ -23,6 +23,7 @@ const projects = [
   },
   {
     title: "GoogleCleaner",
+    caseStudyUrl: "/work/googlecleaner",
     description:
       "A Chrome extension for reviewing, filtering, and moving selected Google Drive files to Trash.",
     stack: ["JavaScript", "Chrome Extensions", "Google Drive API"],
@@ -180,9 +181,9 @@ export default function Projects() {
 
                     <div className="mt-5 flex flex-wrap gap-[8px]">
                       {[
-                        { label: project.title === "MacWipe" ? "View Project" : project.caseStudyUrl ? "Case Study" : "View project", url: project.title === "MacWipe" ? project.liveUrl : project.caseStudyUrl ?? project.liveUrl, style: primaryControlClassName },
-                        ...(project.title === "MacWipe" ? [{ label: "Case Study", url: project.caseStudyUrl, style: secondaryControlClassName }] : []),
-                        ...(project.title === "MacWipe" ? [] : [{ label: "GitHub", url: project.githubUrl, style: secondaryControlClassName }]),
+                        { label: (project.title === "MacWipe" || project.title === "GoogleCleaner") ? "View Project" : project.caseStudyUrl ? "Case Study" : "View project", url: (project.title === "MacWipe" || project.title === "GoogleCleaner") ? project.liveUrl : project.caseStudyUrl ?? project.liveUrl, style: primaryControlClassName },
+                        ...((project.title === "MacWipe" || project.title === "GoogleCleaner") ? [{ label: "Case Study", url: project.caseStudyUrl, style: secondaryControlClassName }] : []),
+                        ...((project.title === "MacWipe" || project.title === "GoogleCleaner") ? [] : [{ label: "GitHub", url: project.githubUrl, style: secondaryControlClassName }]),
                       ].map(({ label, url, style }) =>
                         url ? (
                           <Link
