@@ -1,0 +1,13 @@
+/* Browser adaptation only. The original extension stylesheet remains intact. */
+body { width: 100%; }
+.demo-header { padding: 12px; border: 1px solid var(--plum); background: var(--lavender-pale); font-size: 12px; }
+.demo-header p { margin: 6px 0; }
+.window { height: 680px; }
+.dropdown-row { flex-wrap: wrap; }
+select.dropdown { flex: 1 1 140px; }
+.dialog, .dialog-wide { width: min(480px, calc(100% - 24px)); max-height: calc(100dvh - 24px); }
+.dialog-body { overflow-y: auto; }
+.dialog-wide .file-list { min-height: 100px; max-height: 300px; }
+.bottom-bar-row, .selection-row { flex-wrap: wrap; }
+.date-sub-controls { max-width: 100%; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
