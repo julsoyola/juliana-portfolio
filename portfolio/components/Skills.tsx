@@ -1,108 +1,97 @@
 const skills = [
   {
-    title: "Languages",
-    items: ["Java", "Python", "TypeScript", "JavaScript", "SQL"],
+    title: "Languages & Frameworks",
+    items: ["Java", "Python", "TypeScript", "JavaScript", "SQL", "C++", "React", "Next.js", "Spring Boot", "HTML & CSS"],
+    numberColor: "text-[#963e5b]",
   },
   {
-    title: "Backend & Architecture",
-    items: [
-      "Spring Boot",
-      "REST APIs",
-      "Microservices",
-      "Event-Driven Systems",
-      "Distributed Systems",
-    ],
+    title: "Backend & Systems",
+    items: ["REST API Design", "Distributed Systems", "Microservices", "Event-Driven Architecture", "ETL Pipelines", "Data Modeling", "Metadata Ingestion & Validation", "System Design", "Backend Automation"],
+    numberColor: "text-[#35606b]",
   },
   {
-    title: "Cloud & AWS",
-    items: [
-      "AWS",
-      "Lambda",
-      "DynamoDB",
-      "S3",
-      "API Gateway",
-      "CloudWatch",
-      "AWS CDK",
-    ],
+    title: "Cloud & Infrastructure",
+    items: ["AWS", "Lambda", "S3", "DynamoDB", "API Gateway", "AWS CDK", "CloudWatch", "IAM", "PostgreSQL", "MySQL", "Docker", "CI/CD", "Git", "Linux"],
+    numberColor: "text-[#696021]",
   },
   {
-    title: "Developer Tools",
-    items: [
-      "Docker",
-      "Git",
-      "Linux",
-      "CI/CD",
-    ],
+    title: "Product Design & Development",
+    items: ["UX Design", "UI Design", "Interaction Design", "Responsive Web Design", "Information Architecture", "Technical Prototyping", "Accessibility Fundamentals", "Frontend Development", "Human-Centered Design"],
+    numberColor: "text-[#a43b05]",
+  },
+];
+
+const approachCards = [
+  {
+    id: "how-i-work",
+    label: "HOW I WORK",
+    headline: "Understand. Build. Refine.",
+    body: "I clarify requirements, break problems into manageable pieces, and test the details that make a solution dependable.",
+    tone: "bg-[var(--mustard)]",
+  },
+  {
+    id: "what-i-bring",
+    label: "WHAT I BRING",
+    headline: "Backend depth. Product perspective.",
+    body: "I connect APIs, data models, and automation with the experience of the people using them.",
+    tone: "bg-[#DCE5D5]",
+  },
+  {
+    id: "what-i-care-about",
+    label: "WHAT I CARE ABOUT",
+    headline: "Less friction. More clarity.",
+    body: "I’m drawn to tools that simplify complex workflows, make errors understandable, and reduce repetitive work.",
+    tone: "bg-[#F2DCCE]",
   },
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="border-t border-[var(--forest)]/20 px-6 py-20 lg:px-10">
-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-start">
-        <div>
-          <p className="text-sm font-bold uppercase tracking-[0.16em] text-[var(--sage)]">
+    <section id="skills" aria-labelledby="skills-heading" className="border-t border-[var(--forest)]/20 px-6 py-20 lg:px-10">
+      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
+        <div className="flex min-w-0 flex-col">
+          <h2 id="skills-heading" className="text-sm font-bold uppercase tracking-[0.16em] text-[var(--forest)]">
             Skills
-          </p>
-
+          </h2>
           <div className="mt-3 h-1 w-20 bg-[var(--terracotta)]" />
 
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          <div className="mt-6 grid gap-x-6 gap-y-6 md:grid-cols-2 lg:flex-1">
             {skills.map((group, index) => (
-              <div key={group.title} className="border-t border-[var(--forest)]/20 pt-4">
+              <section key={group.title} aria-labelledby={`skill-group-${index}`} className="min-w-0 border-t border-[var(--forest)]/20 pt-4">
                 <div className="flex items-baseline justify-between gap-4">
-                  <h3 className="font-display text-2xl text-[var(--forest)]">
+                  <h3 id={`skill-group-${index}`} className="font-display text-2xl text-[var(--forest)] lg:text-xl xl:text-2xl">
                     {group.title}
                   </h3>
-                  <span
-                    className={`text-xs font-semibold tracking-[0.16em] ${
-                      index === 0
-                        ? "text-[var(--pink)]"
-                        : index === 1
-                          ? "text-[var(--sky)]"
-                          : index === 2
-                            ? "text-[var(--sage)]"
-                            : "text-[var(--terracotta)]"
-                    }`}
-                  >
+                  <span className={`shrink-0 text-xs font-semibold tracking-[0.16em] ${group.numberColor}`}>
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
-
-                <ul className="mt-3 space-y-1 text-sm leading-6 text-[var(--forest)]">
-                  {group.items.map((item) => (
-                    <li key={item}>{item}</li>
+                <ul className="mt-3 text-sm leading-6 text-[var(--forest)]">
+                  {group.items.map((item, itemIndex) => (
+                    <li key={item} className="inline">
+                      {item}{itemIndex < group.items.length - 1 && <span aria-hidden="true"> · </span>}
+                    </li>
                   ))}
                 </ul>
-              </div>
+              </section>
             ))}
           </div>
         </div>
 
-        <div className="rounded-[24px] bg-[var(--mustard)] p-7 lg:p-8">
-          <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
-            <p className="text-sm font-bold uppercase tracking-[0.16em] text-[var(--terracotta)]">
-              How I work
-            </p>
-
-            <div className="max-w-xl">
-              <div className="h-1 w-20 bg-[var(--terracotta)]" />
-
-              <h2 className="font-display mt-5 text-4xl leading-[1.05] text-[var(--forest)]">
-                Reliable systems.
-                <br />
-                Simple solutions.
-                <br />
-                Built to last.
-              </h2>
-
-              <p className="mt-5 max-w-md text-lg leading-8 text-[var(--forest)]/85">
-                I enjoy building backend systems that are scalable, maintainable, and
-                reliable in production.
+        <aside aria-label="Design and engineering approach" className="grid min-w-0 gap-4 lg:grid-rows-[repeat(3,minmax(min-content,1fr))]">
+          {approachCards.map(card => (
+            <section key={card.id} aria-labelledby={`${card.id}-heading`} className={`${card.tone} min-w-0 rounded-[24px] p-5 text-[var(--forest)]`}>
+              <h3 id={`${card.id}-heading`} className="text-xs font-bold uppercase tracking-[0.16em]">
+                {card.label}
+              </h3>
+              <div className="mt-2 h-1 w-12 bg-[var(--terracotta)]" />
+              <p className="font-display mt-3 text-xl leading-tight xl:text-2xl">
+                {card.headline}
               </p>
-            </div>
-          </div>
-        </div>
+              <p className="mt-2 text-sm leading-6">{card.body}</p>
+            </section>
+          ))}
+        </aside>
       </div>
     </section>
   );
