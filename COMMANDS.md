@@ -1,77 +1,48 @@
 # Local commands
 
-Run these commands from the website folder:
+Run website commands from `portfolio/` inside the downloaded repository.
+Use npm; LaTeX commands additionally require Bash and `pdflatex`.
+See the README for platform setup.
 
-```bash
-cd /Users/julso/Developer/juliana-portfolio/portfolio
-```
-
-## Run the portfolio
-
-Install dependencies when setting up the project:
-
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
+```sh
+cd juliana-portfolio/portfolio
+npm ci
 npm run dev
 ```
 
-Open http://localhost:3000. Press Control-C to stop the server.
+Open http://localhost:3000. Stop with Control-C.
 
-## Check and build the site
+## Validate and build
 
-```bash
+```sh
 npm run lint
+npm run typecheck
+npm test
 npm run build
+npm start
 ```
 
-After a successful build, run the production server locally:
+## Generate the three published resume PDFs
 
-```bash
-npm run start
-```
-
-## Generate portfolio PDFs
-
-Requires `pdflatex`, provided by MacTeX.
-Generate the Backend, Platform, and Product PDFs:
-
-```bash
+```sh
 npm run build:resumes
 ```
 
 Or generate one PDF:
 
-```bash
+```sh
 npm run build:resume -- resumes/JulianaOBackend.tex
 npm run build:resume -- resumes/JulianaOPlatform.tex
 npm run build:resume -- resumes/JulianaOProduct.tex
 ```
 
-Resume sources stay in the repository’s `resumes/` folder.
-The build script resolves the source paths shown above.
+Paths resolve from the repository root. PDFs are saved in
+`portfolio/public/resumes/`. Keep `resumes/resume.sty`.
+The build script runs two passes and removes temporary files.
 
-PDFs are saved in `portfolio/public/resumes` from the repository root.
-Temporary LaTeX files are removed automatically.
-Keep `resumes/resume.sty`; it is required.
+## Clean leftover LaTeX artifacts
 
-## Generate the local UX PDF
-
-```bash
-npm run build:resume -- resumes/JulianaOyolaUX.tex
-```
-
-The PDF is saved in `portfolio/public/resumes/JulianaOyolaUX.pdf`.
-The UX source and PDF are ignored by Git and excluded from
-the default portfolio PDF build.
-
-## Remove leftover LaTeX build artifacts
-
-```bash
+```sh
 npm run clean:latex
 ```
 
