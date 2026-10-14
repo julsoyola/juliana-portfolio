@@ -25,7 +25,7 @@
 .mainColumn { min-width: 0; display: grid; gap: 18px; }
 .window { min-width: 0; border: 1px solid var(--archive-ink); border-radius: 3px; background: var(--archive-panel, #fff8ec); overflow: clip; }
 .page section[id] { scroll-margin-top: 16px; }
-.windowBar { display: flex; align-items: center; gap: 20px; padding: 12px 18px; min-height: 48px; border-bottom: 1px solid var(--archive-ink); background: var(--archive-yellow); font-size: 11px; }
+.windowBar { display: flex; align-items: center; gap: 20px; padding: 12px 18px; min-height: 50px; border-bottom: 1px solid var(--archive-ink); background: var(--archive-yellow); font-size: 11px; }
 .windowBar h2 { font: inherit; font-weight: 600; margin: 0; }
 .pinkBar { background: var(--archive-pink); }
 .orangeBar { background: var(--archive-orange); justify-content: space-between; }
@@ -43,7 +43,7 @@
 .archiveNav a:hover, .archiveNav a[aria-current] { background: var(--archive-selected, #e9dfca); }
 .folder { display: inline-block; position: relative; flex-shrink: 0; width: 20px; height: 15px; border: 1px solid var(--archive-ink); border-radius: 2px; background: var(--archive-yellow); }
 .folder::before { content: ""; position: absolute; top: -5px; left: -1px; width: 10px; height: 5px; border: 1px solid var(--archive-ink); border-bottom: 0; border-radius: 2px 2px 0 0; background: var(--archive-yellow); }
-.orangeBar .folder { width: 34px; height: 24px; margin-top: 3px; transform: rotate(3deg); }
+.orangeBar .folder { width: 34px; height: 24px; margin-top: 0; transform: rotate(3deg); }
 .projectDetails { padding: 18px; }
 .page .projectDetails h3 { margin: 0 0 16px; font: 600 11px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; letter-spacing: .065em; }
 .projectDetails dl { margin: 0; font-size: 12px; line-height: 1.5; }
@@ -292,3 +292,13 @@
 .sidebar > .desk { height: 90px; padding: 0; margin-bottom: 12px; }
 .sidebar .folderArchive { height: 90px; }
 .sidebar .archiveDecoration { width: 100px; height: 80px; }
+
+/* Shared grid rows keep adjacent title bars and panel bottoms aligned. */
+@media (min-width: 1101px) {
+  .decisionRow { grid-template-rows: auto 1fr; row-gap: 0; align-items: stretch; }
+  .decisionRow > .window { display: grid; grid-row: span 2; grid-template-rows: subgrid; }
+}
+@media (min-width: 801px) {
+  .lowerGrid { grid-template-rows: auto 1fr; row-gap: 0; align-items: stretch; }
+  .lowerGrid > .window { display: grid; grid-row: span 2; grid-template-rows: subgrid; }
+}
