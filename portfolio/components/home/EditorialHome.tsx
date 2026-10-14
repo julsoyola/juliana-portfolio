@@ -126,6 +126,7 @@ export default function EditorialHome() {
             <a href="mailto:julianaaoyola@gmail.com">email</a>
             <a href="https://linkedin.com/in/julianaoyola" target="_blank" rel="noopener noreferrer">linkedIn</a>
             <a href="https://github.com/julsoyola" target="_blank" rel="noopener noreferrer">github</a>
+            <a href="https://www.figma.com/@doobea" target="_blank" rel="noopener noreferrer">figma</a>
           </div></div>
           <p className={styles.signature}>built with care :)</p>
         </div>
