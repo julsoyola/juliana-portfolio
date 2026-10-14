@@ -95,7 +95,6 @@ export default function Projects() {
                   className={`${project.tone} flex h-full min-h-[310px] flex-col rounded-[18px] border border-[var(--forest)]/25 p-2.5 sm:p-6 transition duration-300 hover:-translate-y-1 motion-reduce:transform-none motion-reduce:transition-none`}
                 >
                   <div className="flex min-w-0 flex-1 flex-col [overflow-wrap:anywhere]">
-                    {index === 3 && <p className="mb-3 text-xs font-bold uppercase tracking-wide">Additional engineering work</p>}
                     <span className="text-xs font-semibold tracking-[0.16em] text-[var(--forest)]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
