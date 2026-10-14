@@ -3,7 +3,6 @@
 import { type ReactNode, useRef } from "react";
 import {
   motion,
-  useReducedMotion,
   useScroll,
   useSpring,
   useTransform,
@@ -15,7 +14,6 @@ type ResumeMotionProps = {
 
 export default function ResumeMotion({ children }: ResumeMotionProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const reduceMotion = useReducedMotion();
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -33,10 +31,8 @@ export default function ResumeMotion({ children }: ResumeMotionProps) {
   return (
     <motion.div
       ref={ref}
-      style={{
-        y: reduceMotion ? 0 : y,
-        opacity: reduceMotion ? 1 : rawOpacity,
-      }}
+      className="motion-reduce:!opacity-100 motion-reduce:!transform-none"
+      style={{ y, opacity: rawOpacity }}
     >
       {children}
     </motion.div>
