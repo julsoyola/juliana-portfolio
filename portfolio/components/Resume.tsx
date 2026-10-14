@@ -28,24 +28,20 @@ export default function Resume() {
   return (
     <section
       id="resume"
-      className="border-t border-[var(--forest)]/20 px-6 py-20 lg:px-10"
+      aria-labelledby="resume-heading"
+      className="border-t border-[var(--forest)]/20 px-6 py-16 lg:px-10"
     >
       <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="mb-10 grid gap-4 lg:grid-cols-[220px_1fr] lg:items-end lg:gap-12">
-          <p className="text-sm font-bold uppercase tracking-[0.14em] text-[var(--terracotta)]">
-            Resume
-          </p>
-
-          <h2 className="font-display max-w-3xl text-4xl leading-tight text-[var(--forest)] sm:text-5xl">
-            Experience tailored to different engineering roles.
-          </h2>
-        </div>
+        <h2 id="resume-heading" className="mb-6 text-sm font-bold uppercase tracking-[0.14em] text-[#a43b05]">
+          Resume
+        </h2>
 
         <ResumeMotion>
           <div className="grid auto-rows-fr gap-5 md:grid-cols-2 lg:grid-cols-3">
             {resumes.map((resume) => (
               <a
                 key={resume.title}
+                aria-label={`Open ${resume.title} resume PDF`}
                 href={resume.pdf}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -90,12 +86,11 @@ export default function Resume() {
                   {resume.description}
                 </p>
 
-                <p className="mt-auto pt-10 font-semibold text-[var(--forest)]">
-                  View Resume{" "}
-                  <span className="inline-block transition group-hover:translate-x-1">
-                    ↗
+                <span className="mt-auto pt-6">
+                  <span className="inline-flex min-h-11 items-center justify-center rounded-full border border-[var(--forest)]/40 bg-white/80 px-4 py-2 text-sm font-semibold text-[var(--forest)] transition-colors group-hover:bg-white">
+                    Resume
                   </span>
-                </p>
+                </span>
               </a>
             ))}
           </div>
