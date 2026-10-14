@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="relative z-10 mx-auto grid max-w-7xl gap-8 rounded-[24px] bg-[var(--forest)] px-6 py-9 text-[var(--paper)] sm:px-10 lg:grid-cols-[0.3fr_0.45fr_0.25fr] lg:items-center lg:gap-10 lg:py-10">
         <div>
           <h2 className="font-display text-5xl leading-tight text-[var(--paper)] sm:text-6xl">
-            Let's Connect.
+            Let&apos;s Connect.
           </h2>
 
           <div className="mt-4 h-1 w-24 bg-[var(--terracotta)]" />
@@ -17,9 +17,9 @@ export default function Footer() {
         </div>
 
         <p className="max-w-2xl text-lg leading-8 text-[var(--paper)]/85">
-          I'm currently seeking software engineering opportunities where I can build
-          reliable systems, grow alongside talented teams, and solve meaningful
-          technical problems.
+          I’m interested in product design, UX, and software engineering
+          opportunities where I can connect thoughtful interactions with
+          reliable implementation.
         </p>
 
         <div className="flex flex-col items-stretch gap-3 lg:ml-auto lg:w-36">

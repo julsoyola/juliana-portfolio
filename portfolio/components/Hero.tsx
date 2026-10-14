@@ -6,27 +6,28 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-[var(--paper)]">
       <div className="mx-auto grid max-w-7xl gap-8 px-6 pb-14 pt-24 md:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-10 lg:px-10 lg:pb-16 lg:pt-20">
         <div className="relative z-20 max-w-[600px]">
-          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-[var(--terracotta)]">
-            Backend · Platform · Cloud
+          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-[var(--forest)]">
+            Product thinking · Interaction design · Prototyping
           </p>
 
-          <h1 className="font-display text-[3.75rem] font-bold leading-[0.94] tracking-[-0.04em] text-[var(--forest)] sm:text-[4.5rem] lg:text-[clamp(4rem,6vw,5rem)]">
-            Building reliable
-            <br />
-            <span className="text-[var(--terracotta)]">software</span>
-            <br />
-            at scale.
+          <h1 className="font-display text-[2.8rem] font-bold leading-[1.05] tracking-[-0.04em] text-[var(--forest)] sm:text-[3.5rem] lg:text-[4rem]">
+            Designing thoughtful experiences for complex technology.
           </h1>
 
-          <p className="mt-9 max-w-[520px] text-lg leading-8 text-[var(--text)]">
-            Former Amazon Prime Video software engineer specializing in backend
-            systems, cloud infrastructure, and production-ready services.
+          <p className="mt-7 max-w-[520px] text-lg leading-8 text-[var(--text)]">
+            I’m a software engineer and emerging product designer combining
+            computer science, psychology, and hands-on prototyping to make
+            powerful tools easier to understand and use.
+          </p>
+          <p className="mt-4 text-sm font-semibold leading-6 text-[var(--forest)]">
+            Former Amazon Prime Video software engineer<br />
+            BS in Computer Science · AA in Psychology
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-5">
             <a
               href="#work"
-              className="rounded-[12px] border border-[var(--forest)] bg-[var(--mustard)] px-7 py-4 text-sm font-semibold text-[var(--text)] transition duration-200 hover:bg-[var(--terracotta)] hover:text-[var(--paper)]"
+              className="rounded-[12px] border border-[var(--forest)] bg-[var(--mustard)] px-7 py-4 text-sm font-semibold text-[var(--text)] transition duration-200 hover:bg-[var(--forest)] hover:text-[var(--paper)]"
             >
               View my work
             </a>
@@ -56,7 +57,7 @@ export default function Hero() {
                   fill
                   priority
                   sizes="(max-width: 1023px) 80vw, 390px"
-                  className="object-cover object-[50%_45%] saturate-[1.15] contrast-[1.03] transition duration-500 hover:scale-[1.025]"
+                  className="object-cover object-[50%_45%] saturate-[1.15] contrast-[1.03] transition duration-500 hover:scale-[1.025] motion-reduce:transform-none motion-reduce:transition-none"
                 />
               </div>
 

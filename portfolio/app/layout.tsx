@@ -15,9 +15,9 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Juliana Oyola-Pabon | Software Engineer",
+  title: "Juliana Oyola-Pabon | Product Design & Engineering",
   description:
-    "Software engineer specializing in backend systems, cloud infrastructure, and thoughtful product development.",
+    "Software engineer and emerging product designer combining computer science, psychology, and technical prototyping. Explore case studies and Amazon Prime Video engineering experience.",
 };
 
 export default function RootLayout({
