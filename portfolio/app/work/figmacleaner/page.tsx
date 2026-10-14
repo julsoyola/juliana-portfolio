@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import CaseStudyArchive from "@/components/case-study-archive/CaseStudyArchive";
-import { figmacleanerArchive } from "@/components/case-study-archive/figmacleaner";
-import FigmaCleanerSandbox from "@/components/FigmaCleanerSandbox";
+import { figmacleanerArchive } from "@/content/projects/figmacleaner";
+import FigmaCleanerSandbox from "@/components/demos/figmacleaner/FigmaCleanerSandbox";
 import styles from "@/components/case-study-archive/CaseStudyArchive.module.css";
 
 export const metadata: Metadata = {

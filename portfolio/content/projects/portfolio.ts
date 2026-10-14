@@ -1,5 +1,19 @@
-import { portfolio } from "@/components/caseStudies";
-import type { ArchiveData } from "./types";
+import type { Project } from "./types";
+export const portfolio = {
+  "technology": "Next.js / React / TypeScript / Tailwind CSS / Framer Motion",
+  "artifacts": [
+    {
+      "label": "Explore current homepage",
+      "href": "/#work"
+    },
+    {
+      "label": "Portfolio source",
+      "href": "https://github.com/julsoyola/juliana-portfolio"
+    }
+  ]
+};
+
+import type { ArchiveData } from "@/components/case-study-archive/types";
 
 const liveHref = "https://juliana-portfolio-two.vercel.app";
 const githubHref = portfolio.artifacts.find(artifact => artifact.label === "Portfolio source")?.href ?? "https://github.com/julsoyola/juliana-portfolio";
@@ -42,3 +56,13 @@ export const portfolioArchive: ArchiveData = {
   engineering: {heading: "Built with reusable, flexible components", text: "I built the portfolio to keep content organized, layouts responsive, and interactions consistent across the site.", highlights: [...engineering]},
   outcome: {heading: "A portfolio that reflects how I work", text: "This portfolio brings together my software engineering background and growing focus on user experience design. It gives visitors a clearer view of how I approach problems, explain decisions, and build working products.", reflection: "Good portfolio design is about helping people understand your work, not just displaying it."},
 };
+
+export const portfolioCard: Project = {
+    id: "portfolio",
+    liveLabel: "Live Site",
+    title: "Developer Portfolio", caseStudyUrl: "/work/portfolio",
+    description: "Give hiring teams a clear path from professional context to project decisions and evidence.",
+    skills: ["Content hierarchy", "Responsive design", "Accessibility"],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind", "Framer Motion"], tone: "bg-[#F3AD87]",
+    liveUrl: "https://juliana-portfolio-two.vercel.app", githubUrl: "https://github.com/julsoyola/juliana-portfolio",
+  };

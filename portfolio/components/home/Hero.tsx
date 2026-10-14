@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroParallax from "@/components/HeroParallax";
+import HeroParallax from "@/components/motion/HeroParallax";
 
 export default function Hero() {
   return (

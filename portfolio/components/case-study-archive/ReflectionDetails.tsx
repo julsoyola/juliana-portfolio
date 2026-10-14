@@ -1,7 +1,7 @@
-import type { CaseStudyData } from "@/components/caseStudies";
+import type { ReflectionData } from "./types";
 import styles from "./CaseStudyArchive.module.css";
 
-export default function ReflectionDetails({ study }: { study: CaseStudyData }) {
+export default function ReflectionDetails({ study }: { study: ReflectionData }) {
   const sentences = study.walkthrough.split(/(?<=[.!?])\s+/);
   const groupSize = Math.ceil(sentences.length / 4);
   const paragraphs = Array.from({ length: Math.ceil(sentences.length / groupSize) }, (_, index) =>

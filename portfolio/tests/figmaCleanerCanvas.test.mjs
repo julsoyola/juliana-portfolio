@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import ts from 'typescript';
 
-const source = fs.readFileSync(new URL('../components/figmaCleanerCanvas.ts', import.meta.url), 'utf8');
+const source = fs.readFileSync(new URL('../components/demos/figmacleaner/figmaCleanerCanvas.ts', import.meta.url), 'utf8');
 const compiled = ts.transpileModule(source, {
   compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2017 },
 }).outputText;

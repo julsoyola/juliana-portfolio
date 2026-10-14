@@ -1,4 +1,5 @@
-import type { StudyImage } from "@/components/caseStudies";
+export type StudyImage = { src: string; width: number; height: number; alt: string; caption: string };
+export type ReflectionData = { validation: string; metrics: string; walkthrough: string };
 
 export type ArchiveIcon = "computer" | "folder" | "heart" | "grid" | "accessibility" | "code";
 export type ArchiveTheme = "portfolio" | "macwipe" | "googlecleaner" | "figmacleaner";

@@ -1,7 +1,7 @@
 import CaseStudyArchive from "@/components/case-study-archive/CaseStudyArchive";
-import { macwipeArchive } from "@/components/case-study-archive/applications";
+import { macwipeArchive } from "@/content/projects/macwipe";
 import ReflectionDetails from "@/components/case-study-archive/ReflectionDetails";
-import { macwipe } from "@/components/caseStudies";
+import { macwipe } from "@/content/projects/macwipe";
 
 const repository = "https://github.com/julsoyola/macwipe";
 

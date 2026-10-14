@@ -1,5 +1,6 @@
 "use client";
 
+import { navigationLinks } from "@/content/navigation";
 import { useState } from "react";
 
 export default function Navigation() {
@@ -19,21 +20,11 @@ export default function Navigation() {
 
         <div className="flex items-center gap-4 lg:gap-6">
           <nav aria-label="Main navigation" className="hidden items-center gap-7 text-sm font-semibold md:flex">
-            <a className="nav-link" href="#experience">
-              experience
-            </a>
-            <a className="nav-link" href="#work">
-              work
-            </a>
-            <a className="nav-link" href="#skills">
-              skills
-            </a>
-            <a className="nav-link" href="#resume">
-              resume
-            </a>
-            <a className="nav-link" href="#contact">
-              contact
-            </a>
+            {navigationLinks.map(([label, href]) => (
+              <a key={label} className="nav-link" href={href}>
+                {label}
+              </a>
+            ))}
           </nav>
 
           <a
@@ -62,13 +53,7 @@ export default function Navigation() {
           aria-label="Mobile navigation"
           className="mx-auto mt-4 flex max-w-7xl flex-col gap-3 border border-[var(--forest)]/20 bg-[var(--cream)] p-5 md:hidden"
         >
-          {[
-            ["experience", "#experience"],
-            ["work", "#work"],
-            ["skills", "#skills"],
-            ["resume", "#resume"],
-            ["contact", "#contact"],
-          ].map(([label, href]) => (
+          {navigationLinks.map(([label, href]) => (
             <a
               key={label}
               href={href}

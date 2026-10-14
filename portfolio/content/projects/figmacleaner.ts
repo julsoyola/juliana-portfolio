@@ -1,4 +1,5 @@
-import type { ArchiveData, ArchiveScreen } from "./types";
+import type { Project } from "./types";
+import type { ArchiveData, ArchiveScreen } from "@/components/case-study-archive/types";
 
 export const figmaPlayground = "https://www.figma.com/design/25RA0YccPSJOPmuDAIsObC/FigmaCleaner-%E2%80%94-Interactive-Test-Canvas?node-id=0-1&t=9iR8tQTD2CrHGs6F-1";
 const source = "https://github.com/julsoyola/figmaCleaner";
@@ -32,3 +33,15 @@ export const figmacleanerArchive: ArchiveData = {
   outcome: {heading: "Clear actions for routine file maintenance", text: "The project provides three active-page cleanup actions and status feedback. The portfolio sandbox lets visitors explore similar operations on a sample layer tree. No measured memory savings, execution guarantees, or usability outcomes are documented.", reflection: "Removing a hidden layer still changes a design file. Clear action labels and a visible scope matter more than calling cleanup automatic."},
   decoration: "tags",
 };
+
+export const figmacleanerCard: Project = {
+    id: "figmacleaner",
+    title: "FigmaCleaner",
+    description:
+      "A native Figma plugin designed to automate canvas tree maintenance, purge hidden layers, and optimize rendering performance.",
+    stack: ["TypeScript", "Figma Plugin API", "HTML/CSS", "Node.js"],
+    tone: "bg-[var(--mustard)]",
+    caseStudyUrl: "/work/figmacleaner",
+    liveUrl: "https://github.com/julsoyola/figmaCleaner",
+    githubUrl: "https://github.com/julsoyola/figmaCleaner",
+  };

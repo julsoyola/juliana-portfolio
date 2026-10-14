@@ -1,11 +1,11 @@
-import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
-import Experience from "@/components/Experience";
-import Skills from "@/components/Skills";
-import Resume from "@/components/Resume";
-import Reveal from "@/components/Reveal";
-import Footer from "@/components/Footer";
+import Navigation from "@/components/home/Navigation";
+import Hero from "@/components/home/Hero";
+import Projects from "@/components/home/Projects";
+import Experience from "@/components/home/Experience";
+import Skills from "@/components/home/Skills";
+import Resume from "@/components/home/Resume";
+import Reveal from "@/components/motion/Reveal";
+import Footer from "@/components/home/Footer";
 
 export default function Home() {
   return (

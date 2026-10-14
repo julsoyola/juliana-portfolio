@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import MacWipeCaseStudy from "@/components/MacWipeCaseStudy";
+import MacWipeCaseStudy from "@/components/case-study-archive/MacWipeCaseStudy";
 
 export const metadata: Metadata = {
   title: "MacWipe Case Study | Juliana Oyola-Pabon",

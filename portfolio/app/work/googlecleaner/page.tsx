@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import CaseStudyArchive from "@/components/case-study-archive/CaseStudyArchive";
-import { googlecleanerArchive } from "@/components/case-study-archive/applications";
+import { googlecleanerArchive } from "@/content/projects/googlecleaner";
 import { GoogleCleanerEngineering, GoogleCleanerDemo } from "@/components/case-study-archive/GoogleCleanerNotes";
 import ReflectionDetails from "@/components/case-study-archive/ReflectionDetails";
-import { googlecleaner } from "@/components/caseStudies";
+import { googlecleaner } from "@/content/projects/googlecleaner";
 
 export const metadata: Metadata = {
   title: "GoogleCleaner Case Study | Juliana Oyola-Pabon",
