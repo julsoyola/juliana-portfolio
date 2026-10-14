@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import CaseStudy from "@/components/CaseStudy";
-import { portfolio } from "@/components/caseStudies";
+import PortfolioArchive from "./PortfolioArchive";
 
 export const metadata: Metadata = {
   title: "Portfolio Case Study | Juliana Oyola-Pabon",
@@ -8,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function PortfolioCaseStudy() {
-  return <CaseStudy study={portfolio} />;
+  return <PortfolioArchive />;
 }
