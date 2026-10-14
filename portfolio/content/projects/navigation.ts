@@ -5,4 +5,3 @@ export const navigation: [string, string][] = [
   ["outcome", "Outcome & Reflection"],
 ];
 export const role = { label: "Role", text: "Independent Designer & Developer" };
-
