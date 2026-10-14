@@ -32,6 +32,10 @@
 .cardBackdrop { position: absolute; inset: 0 16px 16px 0; border: 1px solid #252525; background: var(--card-backdrop); }
 .cardFront { position: relative; display: flex; flex-direction: column; min-height: 230px; height: 100%; padding: 18px; border: 1px solid #252525; background: #fffcf9; transition: transform 450ms cubic-bezier(.22, 1, .36, 1); }
 .cardFront h3 { margin: 0; font-size: 28px; line-height: 1.15; letter-spacing: -.06em; overflow-wrap: anywhere; }
+.cardTitleRow { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 12px; min-height: calc(28px * 1.15); container-type: inline-size; }
+.cardTitleRow h3 { font-size: clamp(12px, calc((100cqi - 86px) / 8.5), 28px); }
+.caseStudyLabel { display: inline-block; white-space: nowrap; padding: 5px 9px; border: 1px solid #252525; border-radius: 999px; background-color: #fffcf9; color: #202020; font: 500 9px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .06em; transition: background-color 200ms ease; }
+.projectCard:hover .caseStudyLabel, .projectCard:focus-visible .caseStudyLabel { background-color: var(--label-hover); }
 .cardFront p { margin: 8px 0 12px; font-size: 10px; line-height: 1.5; letter-spacing: .03em; }
 .cardColor { flex: 1; min-height: 105px; background: var(--card-fill); }
 .projectCard:hover .cardFront, .projectCard:focus-visible .cardFront { transform: translate(-16px, -16px); }
@@ -100,7 +104,8 @@
   .portrait { justify-self: center; width: min(100%, 320px); }
   .projectGrid { gap: 24px; padding: 20px; }
   .cardFront { padding: 14px; min-height: 210px; }
-  .cardFront h3 { font-size: 25px; }
+  .cardTitleRow { min-height: calc(25px * 1.15); }
+  .cardTitleRow h3 { font-size: clamp(12px, calc((100cqi - 86px) / 8.5), 25px); }
   .experience, .skills { padding: 16px; }
   .timeline > li { grid-template-columns: 20px minmax(0, 1fr); gap: 8px 14px; }
   .jobIdentity { grid-column: 2; }
@@ -119,9 +124,10 @@
   .contact a { min-height: 44px; }
   .signature { text-align: left; }
 }
+@media (min-width: 501px) and (max-width: 700px) { .projectCard:last-child .cardTitleRow { min-height: calc(25px * 1.15 * 2); } }
 @media (max-width: 500px) { .projectGrid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) {
-  .cardFront, .timeline > li::before, .footer > *::before { transition: none; }
+  .cardFront, .caseStudyLabel, .timeline > li::before, .footer > *::before { transition: none; }
   .projectCard:hover .cardFront, .projectCard:focus-visible .cardFront { transform: none; }
   .timeline > li:hover::before, .timeline > li:focus-visible::before, .footer > *:hover::before, .footer > *:focus-within::before { transform: none; }
 }

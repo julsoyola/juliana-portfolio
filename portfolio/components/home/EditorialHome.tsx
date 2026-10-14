@@ -9,10 +9,10 @@ import { skills } from "@/content/skills";
 import styles from "./EditorialHome.module.css";
 
 const projectPresentation = [
-  { id: "macwipe", category: "MACOS APP / PRODUCTIVITY", backdrop: "#FF9F96", fill: "#FFB5A7" },
-  { id: "googlecleaner", category: "CHROME EXTENSION / FILE MANAGEMENT", backdrop: "#C9BBF7", fill: "#D9CFF9" },
-  { id: "figmacleaner", category: "FIGMA PLUGIN / DESIGN TOOLS", backdrop: "#F9D58D", fill: "#FFBE94" },
-  { id: "portfolio", category: "PERSONAL PROJECT / WEB", backdrop: "#A9DFEA", fill: "#B7E5EB" },
+  { id: "macwipe", category: "MACOS APP / PRODUCTIVITY", backdrop: "#FF9F96", fill: "#FFB5A7", labelHover: "#FFB5A7" },
+  { id: "googlecleaner", category: "CHROME EXTENSION / FILE MANAGEMENT", backdrop: "#C9BBF7", fill: "#D9CFF9", labelHover: "#C9BBF7" },
+  { id: "figmacleaner", category: "FIGMA PLUGIN / DESIGN TOOLS", backdrop: "#F9D58D", fill: "#FFBE94", labelHover: "#F9D58D" },
+  { id: "portfolio", category: "PERSONAL PROJECT / WEB", backdrop: "#A9DFEA", fill: "#B7E5EB", labelHover: "#B7DCD6" },
 ];
 
 const accomplishments = [
@@ -67,10 +67,13 @@ export default function EditorialHome() {
           <div className={`${styles.panel} ${styles.projectGrid}`}>
             {projectPresentation.map(presentation => {
               const project = projects.find(item => item.id === presentation.id)!;
-              return <Link key={project.id} href={project.caseStudyUrl!} className={styles.projectCard} style={{ "--card-backdrop": presentation.backdrop, "--card-fill": presentation.fill } as CSSProperties}>
+              return <Link key={project.id} href={project.caseStudyUrl!} className={styles.projectCard} style={{ "--card-backdrop": presentation.backdrop, "--card-fill": presentation.fill, "--label-hover": presentation.labelHover } as CSSProperties}>
                 <span className={styles.cardBackdrop} aria-hidden="true" />
                 <article className={styles.cardFront}>
-                  <h3>{project.title}</h3>
+                  <div className={styles.cardTitleRow}>
+                    <h3>{project.title}</h3>
+                    <span className={styles.caseStudyLabel}>CASE STUDY</span>
+                  </div>
                   <p>{presentation.category}</p>
                   <div className={styles.cardColor} aria-hidden="true" />
                 </article>
