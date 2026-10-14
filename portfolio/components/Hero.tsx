@@ -7,11 +7,11 @@ export default function Hero() {
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1.65fr)_minmax(0,1fr)] items-center gap-4 px-4 pb-12 pt-24 sm:gap-8 sm:px-6 md:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10 lg:px-10 lg:pb-16 lg:pt-20">
         <div className="relative z-20 min-w-0 max-w-[600px]">
           <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.12em] sm:mb-5 sm:text-xs lg:text-sm lg:tracking-[0.28em] text-[var(--forest)]">
-            Product thinking · Interaction design · Prototyping
+            Product thinking · Interaction design
           </p>
 
           <h1 className="font-display text-[1.625rem] font-bold leading-[1.05] tracking-[-0.04em] text-[var(--forest)] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem]">
-            Designing thoughtful experiences for complex technology.
+            Designing thoughtful experiences
           </h1>
 
           <p className="mt-4 max-w-[520px] text-sm leading-6 sm:mt-7 sm:text-base lg:text-lg lg:leading-8 text-[var(--text)]">
