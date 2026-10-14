@@ -5,9 +5,10 @@ export const figmaPlayground = "https://www.figma.com/design/25RA0YccPSJOPmuDAIs
 const community = "https://www.figma.com/community/plugin/1690483707420309331/figmacleaner?fuid=1321948083579761206";
 const source = "https://github.com/julsoyola/figmaCleaner";
 const screens: ArchiveScreen[] = [
-  {placeholder: "figmacleaner-plugin-controls.png", caption: "01 / Plugin controls · screenshot pending"},
-  {placeholder: "figmacleaner-layer-tree.png", caption: "02 / Layer hierarchy · screenshot pending"},
-  {placeholder: "figmacleaner-status.png", caption: "03 / Cleanup feedback · screenshot pending"},
+  {src: "/images/figmaCleaner/figmaCleaner.png", width: 366, height: 337, alt: "FigmaCleaner plugin with three cleanup controls and a ready status", caption: "01 / Plugin controls"},
+  {src: "/images/figmaCleaner/beforeClean.png", width: 1413, height: 1092, alt: "Figma canvas and layer hierarchy before cleanup", caption: "02 / Before cleanup"},
+  {src: "/images/figmaCleaner/afterCleanContainers.png", width: 1413, height: 837, alt: "FigmaCleaner reports four empty containers removed from the active page", caption: "03 / After removing empty containers"},
+  {src: "/images/figmaCleaner/AfterChildClean.png", width: 1456, height: 1134, alt: "FigmaCleaner reports five single-child groups unwrapped in the layer hierarchy", caption: "04 / After unwrapping single-child groups"},
 ];
 export const figmacleanerArchive: ArchiveData = {
   theme: "figmacleaner", name: "FigmaCleaner", number: "04", sidebarTitle: ["FigmaCleaner"],
@@ -15,7 +16,7 @@ export const figmacleanerArchive: ArchiveData = {
   metadata: [{label: "Role", text: "Product Designer & Engineer"}, {label: "Type", text: "Personal Figma Plugin"}, {label: "Technology", text: "TypeScript, Figma Plugin API, HTML/CSS, Node.js"}],
   links: [{label: "Community", href: community, text: "FigmaCleaner community plugin"}, {label: "Playground", href: figmaPlayground, text: "Interactive Figma test canvas"}, {label: "Source", href: source, text: "github.com/julsoyola/figmaCleaner"}],
   navigation: [["overview", "Overview"], ["visual-design", "Interface Design"], ["design-decisions", "Design Decisions"], ["user-flow", "User Flow"], ["selected-screens", "Selected Screens"], ["implementation", "Implementation"], ["outcome", "Outcome & Reflection"]],
-  hero: {title: "Making layer maintenance easier to manage", summary: "FigmaCleaner brings three cleanup actions into a compact plugin: remove hidden layers, delete empty frames and groups, and unwrap single-child groups on the active page.", image: screens[0], notice: "The browser sandbox uses a simulated layer tree and does not modify Figma files."},
+  hero: {title: "Layer maintenance easier to manage", summary: "FigmaCleaner brings three cleanup actions into a compact plugin: remove hidden layers, delete empty frames and groups, and unwrap single-child groups on the active page.", image: screens[0], notice: "The browser sandbox uses a simulated layer tree and does not modify Figma files."},
   actions: [{label: "Get in Figma", href: community}, {label: "Try in Figma", href: figmaPlayground}, {label: "Try Sandbox", href: "#sandbox"}],
   interface: {title: "Interface Design", heading: "Keep the actions explicit", text: "Three labeled controls identify what each action changes. Figma theme tokens support light and dark modes, while ASCII indicators and a status line keep the interface compact.", image: screens[0], colors: [["Salmon Paste", "#e07970"], ["Cantaloupe", "#de8948"], ["Lemon Posset", "#f9d58d"], ["Yellow Green", "#bbab47"], ["Powder Blue", "#cdd7d8"]]},
   decisions: [
