@@ -1,8 +1,5 @@
-"use client";
-
-import { useRef, useState } from "react";
-import Link from "next/link";
-import styles from "./MacWipeCaseStudy.module.css";
+import CaseStudy from "@/components/CaseStudy";
+import { macwipe } from "@/components/caseStudies";
 
 type Source = { label: string; url: string };
 type Topic = { id: string; title: string; question: string; sections: { title: string; text: string }[]; sources?: Source[] };
@@ -83,69 +80,13 @@ const topics: Topic[] = [
 ];
 
 export default function MacWipeCaseStudy() {
-  const dialog = useRef<HTMLDialogElement>(null);
-  const [activeTopic, setActiveTopic] = useState<Topic | null>(null);
-
-  function openTopic(topic: Topic) {
-    setActiveTopic(topic);
-    dialog.current?.showModal();
-    if (dialog.current) dialog.current.scrollTop = 0;
-  }
-
-  return (
-    <main id="top" className={styles.page}>
-      <div className={styles.shell}>
-        <Link href="/#work" className={styles.back}>← Back to Projects</Link>
-        <article className={styles.window} aria-labelledby="macwipe-title">
-          <header className={styles.titleBar}><span>macwipe / case study</span><span aria-hidden="true" className={styles.windowControl}>−</span></header>
-          <div className={styles.content}>
-            <svg width="48" height="48" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 3h5l2 2h7v8H1z" fill="#fff6ec" stroke="#542b45" /><path d="M2 4h4l2 2h6v6H2z" fill="#a44875" /><path d="M4 8h8v1H4zm0 2h5v1H4z" fill="#fff6ec" /></svg>
-            <p className={styles.eyebrow}>design & engineering · macOS + web</p>
-            <h1 id="macwipe-title">macwipe</h1>
-            <p className={styles.tagline}>Inspect your storage. Choose what stays.</p>
-            <p className={styles.intro}>A native macOS utility for reviewing local files before moving selected items to Trash. Open a message below to explore the case study.</p>
-            <div className={styles.actions}>
-              <a href="https://macwipe.vercel.app/" target="_blank" rel="noopener noreferrer" className={styles.primary}>View Project ↗</a>
-              <a href={repository} target="_blank" rel="noopener noreferrer" className={styles.control}>GitHub ↗</a>
-            </div>
-            <div className={styles.divider} />
-            <h2 className={styles.topicsHeading}>case study messages</h2>
-            <div className={styles.topics}>
-              {topics.map((topic, index) => (
-                <button key={topic.id} type="button" className={styles.topicButton} aria-haspopup="dialog" aria-controls="macwipe-message" aria-expanded={activeTopic?.id === topic.id} onClick={() => openTopic(topic)}>
-                  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 2h14v11H8l-4 3v-3H2zM5 6h8M5 9h6" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg>
-                  <span>{topic.title}</span><span className={styles.topicNumber}>{String(index + 1).padStart(2, "0")}</span><span aria-hidden="true">›</span>
-                </button>
-              ))}
-            </div>
-          </div>
-          <footer className={styles.status}>8 topics · project notes & documented behavior</footer>
-        </article>
-        <p className={styles.note}>Based on the project README, engineering overview, and implementation. External sources explain the rationale; no measured user or performance outcomes are claimed.</p>
-      </div>
-      <dialog ref={dialog} id="macwipe-message" className={styles.dialog} aria-labelledby="message-title" onClose={() => setActiveTopic(null)} onClick={(event) => {
-        if (event.target !== event.currentTarget) return;
-        const bounds = event.currentTarget.getBoundingClientRect();
-        if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) event.currentTarget.close();
-      }}>
-        <header className={styles.titleBar}><span id="message-title">mac-chat / {activeTopic?.title ?? "case study"}</span><button type="button" autoFocus className={styles.windowControl} aria-label="Close topic" onClick={() => dialog.current?.close()}>×</button></header>
-        {activeTopic && <div className={styles.messageBody}>
-          <div className={styles.buddy}><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="2" width="24" height="24" fill="#fff6ec" stroke="#542b45" strokeWidth="2" /><path d="M9 9h14v10H9zM10 29h12M16 26v3M12 13h2m4 0h2m-7 3h6" fill="none" stroke="#a44875" strokeWidth="2" /></svg><span>macwipe</span></div>
-          <p className={styles.question}><strong>you:</strong> {activeTopic.question}</p>
-          <div className={styles.answer}>
-            <p className={styles.sender}>macwipe:</p>
-            {activeTopic.sections.map((section) => <section key={section.title}><h2>{section.title}</h2><p>{section.text}</p></section>)}
-            <aside className={styles.sources} aria-label="Sources for this topic">
-              <h2>Read the sources</h2>
-              <a href={`${repository}/blob/main/README.md`} target="_blank" rel="noopener noreferrer">Project README ↗</a>
-              <a href={`${repository}/blob/main/INfo.md`} target="_blank" rel="noopener noreferrer">Engineering overview ↗</a>
-              {activeTopic.sources?.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noopener noreferrer">{source.label} ↗</a>)}
-            </aside>
-          </div>
-          <button type="button" className={styles.control} onClick={() => dialog.current?.close()}>Back to topics</button>
-        </div>}
-        <footer className={styles.status}>Case study message · authored content</footer>
-      </dialog>
-    </main>
-  );
+  return <CaseStudy study={macwipe}>
+    <h2 className="font-display mb-4 text-2xl">Project notes and engineering detail</h2>
+    {topics.map(topic => <details key={topic.id}>
+      <summary>{topic.title}</summary>
+      {topic.sections.map(section => <section key={section.title}><h3>{section.title}</h3><p>{section.text}</p></section>)}
+      <p><a href={`${repository}/blob/main/README.md`}>Project README</a> · <a href={`${repository}/blob/main/INfo.md`}>Engineering overview</a></p>
+      {topic.sources && <ul>{topic.sources.map(source => <li key={source.url}><a href={source.url}>{source.label}</a></li>)}</ul>}
+    </details>)}
+  </CaseStudy>;
 }

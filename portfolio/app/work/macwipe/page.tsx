@@ -3,7 +3,7 @@ import MacWipeCaseStudy from "@/components/MacWipeCaseStudy";
 
 export const metadata: Metadata = {
   title: "MacWipe Case Study | Juliana Oyola-Pabon",
-  description: "Explore MacWipe through message-style case study topics: design decisions, cleanup review, native and web architecture, optimization, and current limitations.",
+  description: "Making macOS storage cleanup safer and more understandable through inspection, deliberate review, and native safeguards.",
 };
 
 export default function MacWipePage() {
