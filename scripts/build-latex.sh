@@ -21,8 +21,8 @@ trap 'exit 130' INT
 trap 'exit 143' TERM
 
 if [[ $# == 0 ]]; then
-  set -- "$root/resumes/JulianaOBackend.tex" \
-    "$root/resumes/JulianaOPlatform.tex" "$root/resumes/JulianaOProduct.tex"
+  set -- "$root/resumes/JulianaOUX.tex" \
+    "$root/resumes/JulianaOBackend.tex" "$root/resumes/JulianaOProduct.tex"
 fi
 
 mkdir -p "$output_dir"

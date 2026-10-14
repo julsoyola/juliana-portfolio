@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "resumes": "bash ../scripts/build-latex.sh resumes/JulianaOBackend.tex resumes/JulianaOPlatform.tex resumes/JulianaOProduct.tex",
+    "resumes": "bash ../scripts/build-latex.sh",
     "resume": "bash ../scripts/build-latex.sh resumes/JulianaOBackend.tex",
     "build:resumes": "bash ../scripts/build-latex.sh",
     "build:resume": "bash ../scripts/build-latex.sh",
