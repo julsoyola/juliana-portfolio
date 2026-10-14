@@ -17,11 +17,11 @@ export default function Home() {
       </Reveal>
 
       <Reveal>
-        <Experience />
+        <Projects />
       </Reveal>
 
       <Reveal>
-        <Projects />
+        <Experience />
       </Reveal>
 
       <Reveal>
