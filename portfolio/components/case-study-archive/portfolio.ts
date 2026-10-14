@@ -9,9 +9,9 @@ const screens = [
   { src: "/images/portfolio/archive-case-study.png", width: 1440, height: 1000, caption: "03 / Case Study Layout", alt: "MacWipe case study introduction, project links, and dashboard screenshot" },
 ];
 const decisions = [
-  { title: "Prioritize relevant work", icon: "computer", text: "I featured MacWipe, GoogleCleaner, and this portfolio so visitors can quickly understand the range of my design and engineering work.", tradeoff: "Additional projects receive less prominent placement but remain accessible." },
-  { title: "Progressive disclosure", icon: "folder", text: "I use concise project summaries on the homepage and dedicated case studies for visitors who want more detail.", tradeoff: "Some technical depth requires another interaction." },
-  { title: "Visual personality with clarity", icon: "heart", text: "I combined editorial typography, restrained animation, and retro-inspired details while maintaining clear navigation.", tradeoff: "Visual expression must remain secondary to readability and accessibility." },
+  { title: "Prioritize relevant work", icon: "computer", text: "I featured MacWipe, GoogleCleaner, and this portfolio.", why: "Dedicated case studies expose my decisions and contribution.", tradeoff: "Additional projects remain accessible with less prominent placement." },
+  { title: "Progressive disclosure", icon: "folder", text: "Start with summaries, then open detailed case studies.", why: "Visitors can choose their reading depth.", tradeoff: "Technical detail requires another interaction." },
+  { title: "Visual personality with clarity", icon: "heart", text: "Combine editorial typography and restrained retro details.", why: "Consistent navigation keeps the work easy to explore.", tradeoff: "Readability takes priority over visual effects." },
 ] as const;
 const engineering = [
   { title: "Reusable Components", icon: "grid", text: "Shared layout and case study components support consistency." },

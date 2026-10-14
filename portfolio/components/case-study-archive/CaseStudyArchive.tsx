@@ -1,8 +1,7 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import type { StudyImage } from "@/components/caseStudies";
-import type { ArchiveData, ArchiveIcon } from "./types";
+import type { ArchiveData, ArchiveIcon, ArchiveScreen } from "./types";
 import { themes } from "./themes";
 import ArchiveNavigation from "./ArchiveNavigation";
 import styles from "./CaseStudyArchive.module.css";
@@ -17,6 +16,14 @@ function Icon({ name }: { name: ArchiveIcon }) {
     {name === "code" && <path d="m11 8-8 8 8 8m10-16 8 8-8 8m-3-18-4 20" />}
   </svg>;
 }
+function ArchiveDecoration({ kind }: { kind: "papers" | "folders" | "tags" }) {
+  return <svg className={styles.archiveDecoration} viewBox="0 0 140 100" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" aria-hidden="true">
+    {kind === "papers" && <><path fill="var(--archive-blue)" d="M30 20h69v51H30z" /><path fill="var(--archive-yellow)" d="m39 12 65 6-5 51-65-6z" /><path d="m48 28 40 4m-42 5 40 4m-42 5 28 3" /><path fill="var(--archive-pink)" d="M22 60h92v22H22z" /><path d="M61 68h16v6H61z" /></>}
+    {kind === "folders" && <><path fill="var(--archive-blue)" d="M25 26h35l9 9h43v45H25z" /><path fill="var(--archive-panel, #fff8ec)" d="M36 17h61v49H36z" /><path d="M46 28h36m-36 9h36m-36 9h25" /><path fill="var(--archive-pink)" d="M22 49h96l-9 34H29z" /></>}
+    {kind === "tags" && <><path fill="var(--archive-blue)" d="M29 19h52v62H29z" /><path d="M40 31h30m-30 9h30m-30 9h20" /><path fill="var(--archive-yellow)" d="m60 60 21-33 26 1 9 24-21 33z" /><circle cx="97" cy="41" r="4" /><path d="m97 37 11-17" /></>}
+  </svg>;
+}
+
 function Dots() {
   return <span className={styles.dots} aria-hidden="true"><i /><i /><i /></span>;
 }
@@ -28,7 +35,8 @@ function Window({ id, number, title, pink = false, children, className = "" }: {
     {children}
   </section>;
 }
-function ScreenImage({ screen, className = "", eager = false }: { screen: StudyImage; className?: string; eager?: boolean }) {
+function ScreenImage({ screen, className = "", eager = false }: { screen: ArchiveScreen; className?: string; eager?: boolean }) {
+  if (!("src" in screen)) return <div className={`${styles.placeholder} ${className}`} data-placeholder={screen.placeholder} aria-label={screen.caption}><span>Screenshot pending</span><p>{screen.caption}</p></div>;
   return <a href={screen.src} className={`${styles.screenLink} ${className}`} aria-label={`Open full screenshot: ${screen.alt}`}>
     <Image src={screen.src} alt={screen.alt} width={screen.width} height={screen.height}
       sizes="(max-width: 700px) 90vw, (max-width: 1100px) 45vw, 500px"
@@ -58,17 +66,17 @@ export default function CaseStudyArchive({ study, engineeringDetail, gallerySupp
             <p>{study.sidebarSummary}</p>
           </div>
           <ArchiveNavigation sections={study.navigation} name={study.name} />
-          <div className={styles.projectDetails}>
-            <h3>Project details</h3>
+          <details className={styles.projectDetails}>
+            <summary>Project details</summary>
             <dl>
               {study.metadata.map(item => <div key={item.label}><dt>{item.label}</dt><dd>{item.text}</dd></div>)}
               {study.links.map(link => <div key={link.href}><dt>{link.label}</dt><dd><a href={link.href}
                 target={link.href.startsWith("https:") ? "_blank" : undefined}
                 rel={link.href.startsWith("https:") ? "noopener noreferrer" : undefined}>{link.text} ↗</a></dd></div>)}
             </dl>
-          </div>
+          </details>
           <div className={styles.desk} aria-hidden="true">
-            {study.icon ? <Image src={study.icon.src} width={study.icon.width} height={study.icon.height} alt="" className={styles.archiveIcon} /> : <div className={styles.folderArchive}><span className={styles.folder} /><span className={styles.folder} /><span className={styles.folder} /></div>}
+            {study.decoration ? <ArchiveDecoration kind={study.decoration} /> : <div className={styles.folderArchive}><span className={styles.folder} /><span className={styles.folder} /><span className={styles.folder} /></div>}
           </div>
         </aside>
         <div className={styles.mainColumn}>
@@ -108,25 +116,25 @@ export default function CaseStudyArchive({ study, engineeringDetail, gallerySupp
               </div>
             </div>
           </Window>
-          <div className={styles.decisionRow}>
-            <Window id="design-decisions" number="03" title="Key Design Decisions">
-              <div className={styles.decisionGrid}>{study.decisions.map((decision, index) => <article className={styles.decisionCard} key={decision.title}>
-                <div className={styles.decisionTop}><span>0{index + 1}</span><Icon name={decision.icon} /></div>
-                <h3>{decision.title}</h3><p>{decision.text}</p>{decision.why && <p className={styles.why}><strong>Why:</strong> {decision.why}</p>}
-                <div className={styles.tradeoff}><strong>Trade-off</strong><p>{decision.tradeoff}</p></div>
-              </article>)}</div>
-            </Window>
-            <Window id={study.flow.id} number="04" title={study.flow.title} pink>
-              <div className={styles.panelBody}>
-                <h3>{study.flow.heading}</h3>
-                <p>{study.flow.text}</p>
-                <ol className={`${styles.path} ${study.flow.horizontal ? styles.horizontalFlow : ""}`}>{study.flow.steps.map(([title, text], index) => <li key={title}>
-                  <span className={styles.pathNumber}>0{index + 1}</span><div><strong>{title}</strong><p>{text}</p></div>
-                </li>)}</ol>
-              </div>
-            </Window>
-          </div>
         </div>
+      </div>
+      <div className={styles.decisionRow}>
+        <Window id="design-decisions" number="03" title="Key Design Decisions">
+          <div className={styles.decisionGrid}>{study.decisions.map((decision, index) => <article className={styles.decisionCard} key={decision.title}>
+            <div className={styles.decisionTop}><span>0{index + 1}</span><Icon name={decision.icon} /></div>
+            <h3>{decision.title}</h3><div className={styles.decisionCopy}><p>{decision.text}</p>{decision.why && <p className={styles.why}><strong>Why:</strong> {decision.why}</p>}</div>
+            <div className={styles.tradeoff}><strong>Trade-off</strong><p>{decision.tradeoff}</p></div>
+          </article>)}</div>
+        </Window>
+        <Window id={study.flow.id} number="04" title={study.flow.title} pink>
+          <div className={styles.panelBody}>
+            <h3>{study.flow.heading}</h3>
+            <p>{study.flow.text}</p>
+            <ol className={`${styles.path} ${study.flow.horizontal ? styles.horizontalFlow : ""}`}>{study.flow.steps.map(([title, text], index) => <li key={title}>
+              <span className={styles.pathNumber}>0{index + 1}</span><div><strong>{title}</strong><p>{text}</p></div>
+            </li>)}</ol>
+          </div>
+        </Window>
       </div>
       <div className={styles.lowerGrid}>
         <Window id="selected-screens" number="05" title="Selected Screens" pink>

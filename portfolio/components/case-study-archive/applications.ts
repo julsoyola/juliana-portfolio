@@ -19,11 +19,11 @@ export const macwipeArchive: ArchiveData = {
   actions: [{label: "Try Web Demo", href: macwipe.artifacts[0].href}, {label: "View Source", href: macwipe.artifacts[1].href}],
   interface: {title: "Interface Design", heading: "Make complex storage information approachable", text: "I designed MacWipe around familiar desktop patterns, concise storage summaries, and focused category views. The retro interface adds personality, while file details and review dialogs keep important information accessible when users need it.", image: macwipe.screenshots[0], colors: [["Background", "#d7a6ba"], ["Panel", "#fff6ec"], ["Ink", "#542b45"], ["Button", "#a44875"], ["Status", "#eaccd7"], ["Menu", "#fff0e0"]]},
   decisions: [
-    {title: "Review before cleanup", icon: "accessibility", text: "Users can inspect file details and choose specific candidates before confirming cleanup.", why: "File age or size alone does not determine whether something is safe to remove.", tradeoff: "More interaction than one-click cleanup, but greater visibility and user control."},
-    {title: "Explore without unrestricted deletion", icon: "folder", text: "Storage exploration remains read-only. Cleanup operates through approved categories and native validation.", why: "Looking at a file should not automatically make it removable.", tradeoff: "Some visible files cannot be cleaned through MacWipe."},
-    {title: "Shared interface with native control", icon: "computer", text: "A shared JavaScript dashboard runs in a native WKWebView, while Swift handles validated filesystem operations.", why: "This keeps presentation consistent without giving browser code unrestricted file access.", tradeoff: "Additional integration complexity across native and browser environments."},
+    {title: "Review first", icon: "accessibility", text: "Inspect details and select eligible files before confirmation.", why: "Age and size do not establish whether removal is appropriate.", tradeoff: "An extra review step for a clearer action scope."},
+    {title: "Read-only exploration", icon: "folder", text: "Explore storage; clean only approved category candidates.", why: "Discovery does not grant cleanup permission.", tradeoff: "Some visible files cannot be cleaned through MacWipe."},
+    {title: "Native control", icon: "computer", text: "Share the dashboard; let Swift validate filesystem actions.", why: "The native host controls actual file operations.", tradeoff: "A bridge between web and native environments."},
   ],
-  flow: {id: "user-flow", title: "User Flow", heading: "From inspection to a deliberate action", text: "File discovery and cleanup permission remain separate throughout the flow.", horizontal: true, steps: [["Open", "Review available storage information."], ["Explore", "Browse categories and file details."], ["Select", "Choose eligible items or mark files to keep."], ["Review", "Inspect the full selection and consequences."], ["Confirm", "Move approved items to Trash and review results."]]},
+  flow: {id: "user-flow", title: "User Flow", heading: "Inspect, then confirm", text: "File discovery and cleanup permission remain separate throughout the flow.", horizontal: true, steps: [["Open", "Review storage information."], ["Explore", "Inspect categories and details."], ["Select", "Select candidates or mark Keep."], ["Review", "Check selection and consequences."], ["Confirm", "Confirm Trash; review results."]]},
   screens: [
     {...macwipe.image, caption: "01 / Home dashboard · browser demo"},
     {...macwipe.screenshots[0], caption: "02 / Read-only explorer · browser demo"},
@@ -37,7 +37,7 @@ export const macwipeArchive: ArchiveData = {
     {title: "Efficient interface updates", icon: "code", text: "Cached rows and delegated events avoid rebuilding the table; selection survives sorting."},
   ]},
   outcome: {heading: "Designing powerful tools around user trust", text: "MacWipe is a working native application and browser demo that brings storage exploration, selective cleanup, and explicit confirmation into one experience. The project reinforced the importance of making consequences visible before giving users powerful actions.", reflection: "A safer interface is not necessarily the one with the fewest steps. It's one where users understand what will happen before they commit."},
-  icon: {src: "/images/macwipe/archive-icon.png", width: 1254, height: 1254},
+  decoration: "papers",
 };
 
 export const googlecleanerArchive: ArchiveData = {
@@ -50,11 +50,11 @@ export const googlecleanerArchive: ArchiveData = {
   actions: [{label: "Try Interactive Demo", href: "#demo"}, {label: "View Source", href: "https://github.com/julsoyola/googleCleaner"}],
   interface: {title: "Interface Design", heading: "A simple, focused experience", text: "I kept the interface centered on three tasks: finding files, selecting them, and reviewing changes. Search, filters, and sorting support discovery, while visible selection states help users understand what they have chosen.", image: googlecleaner.screenshots[0], colors: [["Cream", "#f7f3e9"], ["Secondary", "#efe8d6"], ["Lavender", "#c4bcdd"], ["Selected", "#e5dff0"], ["Blush", "#e9b9c7"], ["Plum", "#302b3d"]]},
   decisions: [
-    {title: "Find files without losing selections", icon: "folder", text: "Search and filters narrow the visible inventory while selections remain associated with file IDs.", why: "Filtering should not silently change which files a user intends to modify.", tradeoff: "Additional state management to keep hidden selections understandable."},
-    {title: "Review before making changes", icon: "accessibility", text: "A dedicated review step displays the selected items before confirmation.", why: "Bulk actions can affect multiple files and entire folders.", tradeoff: "One more step in exchange for clearer action scope."},
-    {title: "Keep jobs independent of the popup", icon: "code", text: "Background processing stores progress, supports retries, and allows users to reopen the extension to inspect results.", why: "Chrome popups are temporary, and long-running operations must not rely on the popup remaining visible.", tradeoff: "Additional service-worker lifecycle and recovery complexity."},
+    {title: "Stable selection", icon: "folder", text: "Search and filter without changing selected file IDs.", why: "Hidden rows remain part of the selection.", tradeoff: "Extra state to track hidden selections."},
+    {title: "Review the scope", icon: "accessibility", text: "Review every selected item before confirming.", why: "Folder actions also affect their contents.", tradeoff: "One more step before dispatch."},
+    {title: "Background jobs", icon: "code", text: "Save progress and expose results when the popup reopens.", why: "Closing the popup does not lose the job state.", tradeoff: "Worker lifecycle and recovery complexity."},
   ],
-  flow: {id: "user-flow", title: "User Flow", heading: "From connection to visible results", text: "Review keeps the scope explicit before a background job begins.", horizontal: true, steps: [["Connect", "Authenticate with Google."], ["Find", "Search, sort, and filter Drive files."], ["Select", "Choose individual files or folders."], ["Review", "Verify all selected items and consequences."], ["Process", "Move selected items to Trash and review progress or failures."]]},
+  flow: {id: "user-flow", title: "User Flow", heading: "From connection to results", text: "Review keeps the scope explicit before a background job begins.", horizontal: true, steps: [["Connect", "Authenticate with Google."], ["Find", "Search, sort, and filter files."], ["Select", "Choose individual files or folders."], ["Review", "Check all selected items."], ["Process", "Move to Trash; inspect results."]]},
   screens: [
     {...googlecleaner.screenshots[0], caption: "01 / Connect account"},
     {...googlecleaner.image, caption: "02 / File discovery and filtering"},
@@ -68,5 +68,5 @@ export const googlecleanerArchive: ArchiveData = {
     {title: "Recovery and retries", icon: "accessibility", text: "Local checkpoints, alarms, authorization checks, and bounded retries support progress recovery."},
   ]},
   outcome: {heading: "Efficiency should never obscure consequences", text: "GoogleCleaner is a working personal-use Chrome extension with file discovery, explicit selection, confirmation, background processing, and retry functionality. It demonstrates how a small utility can combine efficient interaction design with predictable state management.", reflection: "The best shortcut is not always fewer clicks. A clear review step can make a complex action easier to understand."},
-  icon: {src: "/images/googlecleaner/archive-icon.png", width: 128, height: 128},
+  decoration: "folders",
 };
