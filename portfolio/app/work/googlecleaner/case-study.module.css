@@ -102,3 +102,13 @@
 @media (prefers-reduced-motion: reduce) { .page, .page * { scroll-behavior: auto; transition: none; animation: none; } }
 /* Keep workspace navigation immediate; portfolio scrolling remains unchanged. */
 :global(html):has(.page) { scroll-behavior: auto; }
+
+/* Retain the existing demo and engineering palette in the shared page. */
+.supplement {
+  --gc-cream: #f7f3e9;
+  --gc-secondary: #efe8d6;
+  --gc-lavender: #c4bcdd;
+  --gc-selected: #e5dff0;
+  --gc-plum: #302b3d;
+  --gc-muted: #706b7a;
+}
