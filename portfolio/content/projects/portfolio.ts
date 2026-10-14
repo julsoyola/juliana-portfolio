@@ -54,7 +54,7 @@ export const portfolioArchive: ArchiveData = {
   flow: {id: "information-architecture", title: "Information Architecture", heading: "A clear path through the content", text: "The navigation moves from a high-level introduction to detailed project evidence, making it easier for visitors to explore at their own pace.", steps: paths as [string, string][]},
   screens,
   engineering: {heading: "Built with reusable, flexible components", text: "I built the portfolio to keep content organized, layouts responsive, and interactions consistent across the site.", highlights: [...engineering]},
-  outcome: {heading: "A portfolio that reflects how I work", text: "This portfolio brings together my software engineering background and growing focus on user experience design. It gives visitors a clearer view of how I approach problems, explain decisions, and build working products.", reflection: "Good portfolio design is about helping people understand your work, not just displaying it."},
+  outcome: {heading: "A portfolio that reflects how I work", text: "This portfolio brings together my software engineering background and growing focus on user experience design. It gives visitors a clearer view of how I approach problems, explain decisions, and build working products.", reflection: "Working on this portfolio taught me to edit for clarity as carefully as I build features. A shared case-study layout lets visitors compare projects, while project-specific content explains the decisions and limitations that matter for each one."},
 };
 
 export const portfolioCard: Project = {

@@ -61,7 +61,7 @@ export const googlecleanerArchive: ArchiveData = {
     {title: "Background processing", icon: "code", text: "A Manifest V3 service worker manages jobs independently of popup visibility."},
     {title: "Recovery and retries", icon: "accessibility", text: "Local checkpoints, alarms, authorization checks, and bounded retries support progress recovery."},
   ]},
-  outcome: {heading: "Efficiency should never obscure consequences", text: "GoogleCleaner is a working personal-use Chrome extension with file discovery, explicit selection, confirmation, background processing, and retry functionality. It demonstrates how a small utility can combine efficient interaction design with predictable state management.", reflection: "The best shortcut is not always fewer clicks. A clear review step can make a complex action easier to understand."},
+  outcome: {heading: "Efficiency should never obscure consequences", text: "GoogleCleaner is a working personal-use Chrome extension with file discovery, explicit selection, confirmation, background processing, and retry functionality. It demonstrates how a small utility can combine efficient interaction design with predictable state management.", reflection: "I learned that the files a user can see and the files they have selected are different states. Keeping selection stable through filtering, reviewing the full set, and showing failures made the cleanup flow more explicit from discovery through recovery."},
   decoration: "folders",
 };
 

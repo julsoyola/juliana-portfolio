@@ -30,7 +30,7 @@ export const figmacleanerArchive: ArchiveData = {
     {title: "Status messages", icon: "code", text: "The host returns completion or warning messages and triggers Figma notifications."},
     {title: "Theme-aware controls", icon: "computer", text: "Figma CSS tokens provide native light and dark theme colors."},
   ]},
-  outcome: {heading: "Clear actions for routine file maintenance", text: "The project provides three active-page cleanup actions and status feedback. The portfolio sandbox lets visitors explore similar operations on a sample layer tree. No measured memory savings, execution guarantees, or usability outcomes are documented.", reflection: "Removing a hidden layer still changes a design file. Clear action labels and a visible scope matter more than calling cleanup automatic."},
+  outcome: {heading: "Clear actions for routine file maintenance", text: "The project provides three active-page cleanup actions and status feedback. The portfolio sandbox lets visitors explore similar operations on a sample layer tree. No measured memory savings, execution guarantees, or usability outcomes are documented.", reflection: "Building FigmaCleaner reinforced how much a small control needs to communicate. Separate actions, active-page scope, and completion feedback explain what changes in the layer tree. The sandbox also helped me make those operations easier to demonstrate."},
   decoration: "tags",
 };
 

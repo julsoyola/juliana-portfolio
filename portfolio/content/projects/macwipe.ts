@@ -61,7 +61,7 @@ export const macwipeArchive: ArchiveData = {
     {title: "Safety and validation", icon: "accessibility", text: "Native code rechecks approved targets before Trash operations. Persistent Keep exclusions prevent unwanted selection."},
     {title: "Efficient interface updates", icon: "code", text: "Cached rows and delegated events avoid rebuilding the table; selection survives sorting."},
   ]},
-  outcome: {heading: "Designing powerful tools around user trust", text: "MacWipe is a working native application and browser demo that brings storage exploration, selective cleanup, and explicit confirmation into one experience. The project reinforced the importance of making consequences visible before giving users powerful actions.", reflection: "A safer interface is not necessarily the one with the fewest steps. It's one where users understand what will happen before they commit."},
+  outcome: {heading: "Designing powerful tools around user trust", text: "MacWipe is a working native application and browser demo that brings storage exploration, selective cleanup, and explicit confirmation into one experience. The project reinforced the importance of making consequences visible before giving users powerful actions.", reflection: "Building MacWipe taught me to separate finding files from deciding what is safe to remove. File details, Keep exclusions, and a final review make that distinction visible, while native validation checks the action behind the interface."},
   decoration: "papers",
 };
 
