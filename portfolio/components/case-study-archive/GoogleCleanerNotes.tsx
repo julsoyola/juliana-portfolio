@@ -33,11 +33,36 @@ export function GoogleCleanerDemo() {
   return <section id="demo" className={styles.demo} aria-labelledby="demo-title">
     <header className={styles.windowBar}><h3 id="demo-title">Interactive sample demo · simulated</h3></header>
     <div className={styles.demoBody}>
-      <div><p>Sample files, no Google account required.</p>
-        <p>Connect the sample account, select Workshop notes, then filter to PDFs. Review shows both visible and hidden selections. Select a folder to inspect its warning; confirm to simulate progress, then choose Retry failed in job details.</p>
-        <p>Fixed reference date: October 9, 2026. Reset demo restores the examples. Results are simulated in memory.</p>
-      </div>
-      <iframe src="/demos/googlecleaner/popup.html" title="GoogleCleaner sample application demo" sandbox="allow-scripts" loading="lazy" className={styles.demoFrame} />
+      <section className={styles.demoPanel} aria-labelledby="demo-guide-title">
+        <header className={styles.windowBar}><h3 id="demo-guide-title">Try the cleanup flow</h3></header>
+        <div className={styles.demoGuide}>
+          <div className={styles.demoIntro}>
+            <svg className={styles.demoGuideIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" aria-hidden="true">
+              <path d="M5 2h10l4 4v16H5z" fill="var(--archive-yellow)" />
+              <path d="M15 2v4h4M8 11h8M8 14h8M8 17h5" />
+            </svg>
+            <div>
+              <h4>Sample files</h4>
+              <p className={styles.demoSubtitle}>No Google account required.</p>
+              <p>Explore how selection, review, and recovery work with a fictional Drive account.</p>
+            </div>
+          </div>
+          <ol className={styles.demoSteps}>
+            <li><div><h4>Connect and select</h4><p>Connect the sample account and select Workshop notes.</p></div></li>
+            <li><div><h4>Filter, then review</h4><p>Filter to PDFs. Open Review to see that Workshop notes stays selected even when its row is hidden.</p></div></li>
+            <li><div><h4>Check the scope</h4><p>Return to all file types and select a folder. Review and confirmation explain that its contents are included.</p></div></li>
+            <li><div><h4>Confirm and recover</h4><p>Confirm to simulate progress. Open job details and choose Retry failed to retry the simulated failure.</p></div></li>
+          </ol>
+          <div className={styles.demoNote}>
+            <p>Changes stay in this demo. Reset demo restores the sample files.</p>
+            <p>Fixed reference date: October 9, 2026. Results are simulated in memory.</p>
+          </div>
+        </div>
+      </section>
+      <section className={styles.demoPanel} aria-labelledby="demo-app-title">
+        <header className={styles.windowBar}><h3 id="demo-app-title">GoogleCleaner · sample account</h3></header>
+        <iframe src="/demos/googlecleaner/popup.html" title="GoogleCleaner sample application demo" sandbox="allow-scripts" loading="lazy" className={styles.demoFrame} />
+      </section>
     </div>
   </section>;
 }

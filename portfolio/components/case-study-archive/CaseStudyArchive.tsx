@@ -163,7 +163,7 @@ export default function CaseStudyArchive({ study, engineeringDetail, gallerySupp
       <Window id="outcome" number="07" title="Outcome & Reflection">
         <div className={styles.outcomeBody}>
           <div><h3>{study.outcome.heading}</h3><p>{study.outcome.text}</p></div>
-          <aside className={styles.reflection}><span aria-hidden="true">❧</span><div><h4>What I learned</h4><p>{study.outcome.reflection}</p></div></aside>
+          <aside className={styles.reflection}><h4>What I learned</h4><p>{study.outcome.reflection}</p></aside>
         </div>
         {reflectionDetail}
       </Window>
