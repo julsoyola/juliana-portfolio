@@ -138,15 +138,9 @@ export default function CaseStudyArchive({ study, engineeringDetail, gallerySupp
       </div>
       <div className={styles.lowerGrid}>
         <Window id="selected-screens" number="05" title="Selected Screens" pink>
-          {study.theme === "portfolio" ? <ul className={styles.screenLinks}>
-            {study.screens.map(screen => <li key={"src" in screen ? screen.src : screen.placeholder}>
-              {"src" in screen ? <a href={screen.src}>{screen.caption} <span aria-hidden="true">↗</span></a> : screen.caption}
-            </li>)}
-          </ul> : <>
           <div className={styles.screensGrid}>{study.screens.map(screen => <figure key={"src" in screen ? screen.src : screen.placeholder}>
             {"src" in screen ? <ScreenImage screen={screen} /> : <div className={styles.placeholder} data-placeholder={screen.placeholder} aria-label={screen.caption}><span>Screenshot pending</span></div>}<figcaption>{screen.caption}</figcaption>
           </figure>)}</div>
-          </>}
         </Window>
         <Window id="implementation" number="06" title="Engineering & Implementation">
           <div className={styles.panelBody}>

@@ -18,12 +18,37 @@ import type { ArchiveData } from "@/components/case-study-archive/types";
 const liveHref = "https://juliana-portfolio-two.vercel.app";
 const githubHref = portfolio.artifacts.find(artifact => artifact.label === "Portfolio source")?.href ?? "https://github.com/julsoyola/juliana-portfolio";
 const screens = [
-  { src: "/images/portfolio/archive-home.png", width: 1440, height: 1000, caption: "01 / Homepage", alt: "Portfolio homepage with an introduction and portrait" },
-  { src: "/images/portfolio/archive-work.png", width: 1440, height: 1000, caption: "02 / Featured Projects", alt: "Featured work with project descriptions and case study links" },
-  { src: "/images/portfolio/archive-case-study.png", width: 1440, height: 1000, caption: "03 / Case Study Layout", alt: "MacWipe case study introduction, project links, and dashboard screenshot" },
+  {
+    "src": "/images/portfolio/HeroImSc.png",
+    "width": 1392,
+    "height": 571,
+    "alt": "Homepage hero with a personal introduction, navigation, and animated illustrated portrait",
+    "caption": "01 / Hero"
+  },
+  {
+    "src": "/images/portfolio/ProjectsImSc.png",
+    "width": 1392,
+    "height": 564,
+    "alt": "Four pastel project cards with case study labels",
+    "caption": "02 / Selected work"
+  },
+  {
+    "src": "/images/portfolio/ExperienceSkillsImSc.png",
+    "width": 1392,
+    "height": 459,
+    "alt": "Engineering experience and mirrored skill groups arranged side by side",
+    "caption": "03 / Experience and skills"
+  },
+  {
+    "src": "/images/portfolio/ResumeContactImSc.png",
+    "width": 1392,
+    "height": 316,
+    "alt": "UX, Backend, and Product resume links above the contact footer",
+    "caption": "04 / Resumes and contact"
+  }
 ];
 const decisions = [
-  { title: "Prioritize relevant work", icon: "computer", text: "I featured MacWipe, GoogleCleaner, and this portfolio.", why: "Dedicated case studies expose my decisions and contribution.", tradeoff: "Additional projects remain accessible with less prominent placement." },
+  { title: "Prioritize relevant work", icon: "computer", text: "I featured MacWipe, GoogleCleaner, FigmaCleaner, and this portfolio.", why: "Dedicated case studies expose my decisions and contribution.", tradeoff: "The homepage stays concise; each project needs a separate case study for detail." },
   { title: "Progressive disclosure", icon: "folder", text: "Start with summaries, then open detailed case studies.", why: "Visitors can choose their reading depth.", tradeoff: "Technical detail requires another interaction." },
   { title: "Visual personality with clarity", icon: "heart", text: "Combine editorial typography and restrained retro details.", why: "Consistent navigation keeps the work easy to explore.", tradeoff: "Readability takes priority over visual effects." },
 ] as const;
@@ -46,10 +71,10 @@ export const portfolioArchive: ArchiveData = {
   sidebarSummary: "A personal archive where engineering, design, and product work come together.",
   metadata: [{label: "Role", text: "Independent Designer & Developer"}, {label: "Type", text: "Personal Portfolio"}, {label: "Stack", text: portfolio.technology.split(" / ").join(", ")}],
   links: [{label: "Live", href: liveHref, text: "juliana-portfolio-two.vercel.app"}, {label: "GitHub", href: githubHref, text: "github.com/julsoyola/juliana-portfolio"}],
-  navigation: [["overview", "Overview"], ["visual-design", "Visual Design"], ["design-decisions", "Design Decisions"], ["information-architecture", "Information Architecture"], ["implementation", "Implementation"], ["outcome", "Outcome & Reflection"]],
+  navigation: [["overview", "Overview"], ["visual-design", "Visual Design"], ["design-decisions", "Design Decisions"], ["information-architecture", "Information Architecture"], ["selected-screens", "Selected Screens"], ["implementation", "Implementation"], ["outcome", "Outcome & Reflection"]],
   hero: {title: "Designing my digital portfolio", summary: "A responsive portfolio that brings together my engineering experience, design decisions, and the products I've built.", image: screens[0], note: ["engineering", "×", "design", "×", "product"]},
   actions: [{label: "Visit Site", href: liveHref}, {label: "View GitHub", href: githubHref}],
-  interface: {title: "Visual Identity", heading: "A clean, warm, and personal aesthetic", text: "I wanted the portfolio to feel approachable and expressive while keeping the work easy to understand. Editorial typography, warm colors, and subtle retro details help establish a personal visual identity.", image: screens[1], colors: [["Orange", "var(--terracotta)"], ["Yellow", "var(--mustard)"], ["Cream", "var(--paper)"], ["Green", "var(--forest)"], ["Pink", "var(--pink)"], ["Blue", "var(--sky)"]], note: ["Clear", "Personal", "Approachable", "Organized"]},
+  interface: {title: "Visual Identity", heading: "A clean, warm, and personal aesthetic", text: "I wanted the portfolio to feel approachable and expressive while keeping the work easy to understand. Editorial typography, warm colors, and subtle retro details help establish a personal visual identity.", image: screens[1], colors: [["Cream", "#FFFCF9"], ["Ink", "#202020"], ["Coral", "#FFB5A7"], ["Lavender", "#C9BBF7"], ["Warm yellow", "#F9D58D"], ["Ocean mist", "#B7E5EB"]], note: ["Clear", "Personal", "Approachable", "Organized"]},
   decisions: [...decisions],
   flow: {id: "information-architecture", title: "Information Architecture", heading: "A clear path through the content", text: "The navigation moves from a high-level introduction to detailed project evidence, making it easier for visitors to explore at their own pace.", steps: paths as [string, string][]},
   screens,
