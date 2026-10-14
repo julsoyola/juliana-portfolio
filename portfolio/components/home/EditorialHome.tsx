@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { jobs } from "@/content/experience";
@@ -40,14 +41,23 @@ export default function EditorialHome() {
             </header>
             <div className={styles.heroContent}>
               <div className={styles.heroCopy}>
-                <h1 id="hero-title">Building<br />thoughtful<br />software.</h1>
-                <p id="about">I&apos;m a software engineer who enjoys turning ideas into simple, useful products. I care about thoughtful design, clean code, and work that makes life a little easier.</p>
+                <h1 id="hero-title">hi.</h1>
+                <p className={styles.heroIntro}>i&apos;m juliana ⊹﹒</p>
+                <p id="about">i&apos;m a software engineer and emerging designer with a background in computer science and psychology. i love finding creative ways to bring ideas to life</p>
                 <div className={styles.heroActions}>
                   <a className={styles.primaryButton} href="#work">View my work <span aria-hidden="true">→</span></a>
                   <a className={styles.button} href="#about">About me</a>
                 </div>
               </div>
-              <div className={styles.portrait} aria-hidden="true" />
+              <Image
+                className={styles.portrait}
+                src="/images/portfolio/AnimateHeroImg.port.gif"
+                alt="Illustrated portrait of juliana o."
+                width={864}
+                height={864}
+                unoptimized
+                loading="eager"
+              />
             </div>
           </div>
         </section>
