@@ -32,7 +32,7 @@ Or generate one PDF:
 
 ```sh
 npm run build:resume -- resumes/JulianaOBackend.tex
-npm run build:resume -- resumes/JulianaOPlatform.tex
+npm run build:resume -- resumes/JulianaOUX.tex
 npm run build:resume -- resumes/JulianaOProduct.tex
 ```
 

@@ -43,7 +43,7 @@ portfolio/
     resumes.ts                 Published PDF cards
   public/                      Images, PDFs, and static Drive demo
   tests/                       Canvas and Drive demo behavior tests
-resumes/                       Three LaTeX sources and shared style
+resumes/                       Resume LaTeX sources and shared style
 scripts/                       Resume build and cleanup script
 docs/                          Portfolio preview images
 ```
@@ -81,7 +81,7 @@ See [COMMANDS.md](COMMANDS.md) for individual build commands.
 
 ## Resume PDFs and LaTeX
 
-The site publishes only Backend, Platform, and Product resumes.
+The site publishes UX Designer, Backend Engineer, and Product Engineer resumes.
 Their PDFs are already included; LaTeX is optional for running the site.
 Sources live in `resumes/` and share `resume.sty`. Do not remove that
 style file. Avoid committing auxiliary LaTeX output.
