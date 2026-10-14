@@ -18,7 +18,7 @@ export default function Navigation() {
         </a>
 
         <div className="flex items-center gap-4 lg:gap-6">
-          <nav className="hidden items-center gap-7 text-sm font-semibold md:flex">
+          <nav aria-label="Main navigation" className="hidden items-center gap-7 text-sm font-semibold md:flex">
             <a className="nav-link" href="#experience">
               experience
             </a>
@@ -38,7 +38,7 @@ export default function Navigation() {
 
           <a
             href="#contact"
-            className="hidden rounded-full border border-[var(--forest)] bg-[var(--mustard)] px-5 py-3 text-sm font-semibold text-[var(--text)] transition hover:bg-[var(--terracotta)] hover:text-[var(--paper)] lg:inline-flex"
+            className="hidden rounded-full border border-[var(--forest)] bg-[var(--mustard)] px-5 py-3 text-sm font-semibold text-[var(--text)] transition hover:bg-[var(--forest)] hover:text-[var(--paper)] lg:inline-flex"
           >
             let&apos;s connect
           </a>
@@ -49,6 +49,7 @@ export default function Navigation() {
           onClick={() => setOpen((current) => !current)}
           className="border border-[var(--forest)]/40 bg-[var(--paper)] px-3.5 py-1.5 text-sm font-semibold text-[var(--forest)] md:hidden"
           aria-controls="mobile-navigation"
+          aria-expanded={open}
           aria-label={open ? "Close navigation" : "Open navigation"}
         >
           {open ? "close" : "menu"}
@@ -58,6 +59,7 @@ export default function Navigation() {
       {open && (
         <nav
           id="mobile-navigation"
+          aria-label="Mobile navigation"
           className="mx-auto mt-4 flex max-w-7xl flex-col gap-3 border border-[var(--forest)]/20 bg-[var(--cream)] p-5 md:hidden"
         >
           {[
