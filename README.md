@@ -1,6 +1,6 @@
 # Developer Portfolio
 
-![Portfolio Preview](docs/portfolio-preview.png)
+![Animated homepage preview](docs/screenshots/HeroPreview.gif)
 
 A responsive engineering and product design portfolio built with
 Next.js, React, TypeScript, Tailwind CSS, and Framer Motion.
@@ -118,7 +118,19 @@ Rebuild changed resume PDFs before committing their source changes.
 
 ## Preview
 
-![Portfolio sections preview](docs/portfolio-preview1.png)
+The hero preview above includes the actual animated portrait.
+
+### Selected work
+
+![Homepage project cards](portfolio/public/images/portfolio/ProjectsImSc.png)
+
+### Experience and skills
+
+![Experience and skills](portfolio/public/images/portfolio/ExperienceSkillsImSc.png)
+
+### Resumes and contact
+
+![Resumes and contact](portfolio/public/images/portfolio/ResumeContactImSc.png)
 
 ## Contact
 
