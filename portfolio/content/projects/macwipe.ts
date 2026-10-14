@@ -1,19 +1,19 @@
 import type { Project } from "./types";
 export const macwipe = {
   "image": {
-    "src": "/images/macwipe/home-demo.png",
-    "width": 2458,
-    "height": 1654,
-    "alt": "MacWipe demo Home showing disk capacity, category review cards, and system indicators",
-    "caption": "Browser-demo Home with fictional capacity, file sizes, and system readings. Review cards open categories without selecting files."
+    "src": "/images/macwipe/MacWipeWebHomeImSc.png",
+    "width": 607,
+    "height": 776,
+    "alt": "MacWipe website with macOS download, web dashboard demo, and frequently asked questions",
+    "caption": "MacWipe website entry point with native download and simulated web dashboard."
   },
   "screenshots": [
     {
-      "src": "/images/macwipe/explorer-demo.png",
-      "width": 2458,
-      "height": 1654,
-      "alt": "MacWipe read-only storage explorer with folder rows, sizes, and navigation",
-      "caption": "Read-only storage explorer in the browser demo. Folder navigation, size sorting, and Details support inspection."
+      "src": "/images/macwipe/MacWipeDashboardImSc.png",
+      "width": 980,
+      "height": 800,
+      "alt": "MacWipe simulated dashboard with storage summary and downloads and caches review cards",
+      "caption": "Browser dashboard with fictional storage data and review entry points."
     }
   ],
   "artifacts": [
@@ -50,11 +50,35 @@ export const macwipeArchive: ArchiveData = {
   ],
   flow: {id: "user-flow", title: "User Flow", heading: "Inspect, then confirm", text: "File discovery and cleanup permission remain separate throughout the flow.", horizontal: true, steps: [["Open", "Review storage information."], ["Explore", "Inspect categories and details."], ["Select", "Select candidates or mark Keep."], ["Review", "Check selection and consequences."], ["Confirm", "Confirm Trash; review results."]]},
   screens: [
-    {...macwipe.image, caption: "01 / Home dashboard · browser demo"},
-    {...macwipe.screenshots[0], caption: "02 / Read-only explorer · browser demo"},
-    {placeholder: "macwipe-file-details.png", caption: "03 / File details or selection · screenshot pending"},
-    {src: "/images/macwipe/review-demo.png", width: 960, height: 764, alt: "Earlier MacWipe demo review dialog listing fictional selected items and a Simulate cleanup button", caption: "04 / Confirmation · earlier simulated web demo"},
-  ],
+  {
+    "src": "/images/macwipe/MacWipeDashboardImSc.png",
+    "width": 980,
+    "height": 800,
+    "alt": "MacWipe simulated storage dashboard",
+    "caption": "01 / Home dashboard · browser demo"
+  },
+  {
+    "src": "/images/macwipe/MacWipeCachesImSc.png",
+    "width": 980,
+    "height": 800,
+    "alt": "Cache candidates with sizes, Details controls, and selection checkboxes",
+    "caption": "02 / Cache candidates · browser demo"
+  },
+  {
+    "src": "/images/macwipe/MacWipeDetailsImSc.png",
+    "width": 980,
+    "height": 800,
+    "alt": "File details dialog explaining a cache candidate and Keep exclusion",
+    "caption": "03 / File details and Keep · browser demo"
+  },
+  {
+    "src": "/images/macwipe/MacWipeReviewImSc.png",
+    "width": 980,
+    "height": 800,
+    "alt": "Review dialog listing two selected caches before simulated cleanup",
+    "caption": "04 / Selection review · browser demo"
+  }
+],
   engineering: {heading: "Native performance with deliberate safeguards", text: "I connected the shared dashboard to native operations while keeping expensive file work and cleanup validation outside the interface.", highlights: [
     {title: "Native macOS integration", icon: "computer", text: "Swift and AppKit provide access to approved local filesystem operations."},
     {title: "Scoped background scanning", icon: "grid", text: "Initial scans focus on Downloads and Caches. Other categories are measured when opened."},
