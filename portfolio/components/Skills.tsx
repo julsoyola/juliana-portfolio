@@ -37,7 +37,7 @@ export default function Skills() {
 
           <div className="mt-6 grid gap-5 md:grid-cols-2">
             {skills.map((group, index) => (
-              <section key={group.title} aria-labelledby={`skill-group-${index}`} className={`${group.tone} min-w-0 rounded-[24px] p-5 sm:p-6`}>
+              <section key={group.title} aria-labelledby={`skill-group-${index}`} className={`${group.tone} min-w-0 rounded-[24px] border border-[var(--forest)]/20 p-5 transition duration-300 hover:-translate-y-1 hover:border-[var(--forest)] motion-reduce:!translate-y-0 motion-reduce:transition-none sm:p-6`}>
                 <div className="flex items-baseline justify-between gap-4">
                   <h3 id={`skill-group-${index}`} className="font-display text-2xl text-[var(--forest)]">
                     {group.title}
@@ -46,10 +46,10 @@ export default function Skills() {
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <ul className="mt-3 text-sm leading-6 text-[var(--forest)]">
-                  {group.items.map((item, itemIndex) => (
-                    <li key={item} className="inline">
-                      {item}{itemIndex < group.items.length - 1 && <span aria-hidden="true"> · </span>}
+                <ul className="mt-4 flex flex-wrap gap-2" aria-label={`${group.title} skills`}>
+                  {group.items.map(item => (
+                    <li key={item} className="max-w-full rounded-full border border-[var(--forest)]/20 bg-[var(--paper)]/80 px-3 py-1.5 text-xs font-medium leading-5 text-[var(--forest)]">
+                      {item}
                     </li>
                   ))}
                 </ul>
