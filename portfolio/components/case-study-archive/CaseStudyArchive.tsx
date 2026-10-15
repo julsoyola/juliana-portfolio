@@ -44,8 +44,8 @@ function ScreenImage({ screen, className = "", eager = false }: { screen: Archiv
   </a>;
 }
 
-export default function CaseStudyArchive({ study, engineeringDetail, gallerySupplement, reflectionDetail }: {
-  study: ArchiveData; engineeringDetail?: ReactNode; gallerySupplement?: ReactNode; reflectionDetail?: ReactNode;
+export default function CaseStudyArchive({ study, engineeringDetail, gallerySupplement, reflectionDetail, overviewVisual }: {
+  study: ArchiveData; engineeringDetail?: ReactNode; gallerySupplement?: ReactNode; reflectionDetail?: ReactNode; overviewVisual?: ReactNode;
 }) {
   const application = study.theme !== "portfolio";
   return <main id="top" className={`${styles.page} ${application ? styles.application : ""}`} style={themes[study.theme]}>
@@ -94,7 +94,7 @@ export default function CaseStudyArchive({ study, engineeringDetail, gallerySupp
                 {study.hero.notice && <p className={styles.notice}>{study.hero.notice}</p>}
               </div>
               <div className={styles.heroCollage}>
-                <ScreenImage screen={study.hero.image} eager className={styles.heroScreen} />
+                {overviewVisual ?? <ScreenImage screen={study.hero.image} eager className={styles.heroScreen} />}
                 {study.hero.note && <p className={styles.pinkNote}>{study.hero.note.map((line, index) => <span key={index}>{index > 0 && <br />}{line}</span>)}</p>}
                 <span className={styles.heroStar} aria-hidden="true">✧</span>
               </div>

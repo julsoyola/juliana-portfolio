@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import CaseStudyArchive from "@/components/case-study-archive/CaseStudyArchive";
 import { figmacleanerArchive } from "@/content/projects/figmacleaner";
-import FigmaCleanerSandbox from "@/components/demos/figmacleaner/FigmaCleanerSandbox";
+import FigmaCleanerPlugin from "@/components/demos/figmacleaner/FigmaCleanerPlugin";
+import FigmaCleanerDemo from "@/components/demos/figmacleaner/FigmaCleanerDemo";
 import styles from "@/components/case-study-archive/CaseStudyArchive.module.css";
 
 export const metadata: Metadata = {
@@ -11,13 +12,14 @@ export const metadata: Metadata = {
 
 export default function FigmaCleanerCaseStudy() {
   return <CaseStudyArchive study={figmacleanerArchive}
+    overviewVisual={<FigmaCleanerPlugin />}
     engineeringDetail={<>
       <p>The plugin handles clean-hidden, clean-empty, and unwrap-groups messages synchronously. It checks removed nodes before acting and returns a status message in finally, including when an operation raises a warning.</p>
-      <p>The browser sandbox is a separate simulation. Its Clean All action and timing display describe that sample implementation; the native plugin exposes three individual actions. Plugin traversal is not verified as asynchronous or non-blocking.</p>
+      <p>The browser demo is a separate simulation using sample layers. Both previews expose the same three individual actions as the native plugin. Plugin traversal is not verified as asynchronous or non-blocking.</p>
       <p><a href="https://github.com/julsoyola/figmaCleaner/blob/main/src/code.ts">Plugin host source</a> · <a href="https://github.com/julsoyola/figmaCleaner/blob/main/src/ui.html">Plugin interface source</a></p>
     </>}
-    gallerySupplement={<section id="sandbox" className={styles.sandbox} aria-labelledby="sandbox-title">
-      <header><h3 id="sandbox-title">Interactive layer sandbox</h3><p>Simulated layers; changes stay in this browser demo.</p></header>
-      <FigmaCleanerSandbox />
+    gallerySupplement={<section id="demo" className={styles.sandbox} aria-labelledby="demo-title">
+      <header><h3 id="demo-title">Try FigmaCleaner</h3><p>Choose an action to watch the sample layers change. Reset demo restores the canvas; no Figma files are modified.</p></header>
+      <FigmaCleanerDemo />
     </section>} />;
 }
