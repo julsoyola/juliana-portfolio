@@ -53,8 +53,8 @@ export const googlecleanerArchive: ArchiveData = {
   screens: [
     {...googlecleaner.screenshots[0], caption: "01 / Connect account"},
     {...googlecleaner.image, caption: "02 / File discovery and filtering"},
-    {placeholder: "googlecleaner-selection-review.png", caption: "03 / Selection review · screenshot pending"},
-    {placeholder: "googlecleaner-progress-result.png", caption: "04 / Progress or results · screenshot pending"},
+    {src: "/images/googlecleaner/Screenshot 2026-10-15 at 10.55.22.png", width: 1396, height: 742, alt: "GoogleCleaner public website showing the Browse, Find, Review, and Move to Trash feature panels", caption: "03 / Public website · cleanup flow"},
+    {src: "/images/googlecleaner/Screenshot 2026-10-15 at 10.55.30.png", width: 1476, height: 784, alt: "GoogleCleaner public website explaining background progress and Google Drive access with a privacy policy link", caption: "04 / Public website · progress and permissions"},
   ],
   engineering: {heading: "Reliable cleanup in a temporary browser interface", text: "The popup handles discovery and review. A background worker keeps confirmed jobs and their recovery state independent of popup visibility.", highlights: [
     {title: "Drive API integration", icon: "folder", text: "Google authentication and paginated file retrieval support connected Drive operations."},
