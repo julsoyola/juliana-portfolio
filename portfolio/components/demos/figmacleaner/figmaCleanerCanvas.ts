@@ -8,6 +8,25 @@ export type CanvasLayer = {
 
 export type CleanupAction = "hidden" | "empty" | "groups" | "all";
 
+export function createDemoCanvas(): CanvasLayer[] {
+  const rectangle = (id: string, name: string, hidden = false): CanvasLayer => ({ id, name, type: "RECTANGLE", hidden, children: [] });
+  const frame = (id: string, name: string): CanvasLayer => ({ id, name, type: "FRAME", children: [] });
+  let nested = rectangle("rectangle-7", "Rectangle 7");
+  for (let i = 1; i <= 5; i++) nested = { id: `group-${i}`, name: `Group ${i}`, type: "GROUP", children: [nested] };
+  return [
+    rectangle("hidden-title", "FigmaCleaner (Pending cleanup)", true),
+    frame("frame-1", "Frame 1"),
+    frame("watch", "Apple Watch Series 10 42mm - 1"),
+    frame("ipad", "iPad Pro 11\" - 1"),
+    frame("iphone", "iPhone 16 & 17 Pro Max - 1"),
+    nested,
+    rectangle("rectangle-6", "Rectangle 6"),
+    rectangle("rectangle-5", "Rectangle 5", true),
+    rectangle("rectangle-2", "Rectangle 2", true),
+    rectangle("rectangle-1", "Rectangle 1"),
+  ];
+}
+
 export function createInitialCanvas(): CanvasLayer[] {
   return [
     { id: "group-3", name: "Group 3", type: "GROUP", children: [

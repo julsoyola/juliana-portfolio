@@ -10,7 +10,7 @@ const compiled = ts.transpileModule(source, {
 }).outputText;
 const exportsObject = {};
 vm.runInNewContext(compiled, { exports: exportsObject, performance });
-const { createInitialCanvas, cleanCanvas, formatLayerTree } = exportsObject;
+const { createInitialCanvas, createDemoCanvas, cleanCanvas, formatLayerTree } = exportsObject;
 const names = (layers) => Array.from(layers, (layer) => layer.name);
 
 test('clean all retains the three visible rectangles and counts every removed wrapper', () => {
@@ -48,4 +48,18 @@ test('empty cleanup cascades and multi-child groups retain their hierarchy', () 
   assert.equal(cleanCanvas(group, 'groups').removed, 0);
   assert.equal(cleanCanvas(group, 'groups').layers[0].children.length, 2);
   assert(formatLayerTree(createInitialCanvas()).includes('      [ ] Rectangle 5'));
+});
+
+test('screenshot demo cleans three hidden layers, four containers and five wrappers', () => {
+  const initial = createDemoCanvas();
+  const snapshot = JSON.stringify(initial);
+  const hidden = cleanCanvas(initial, 'hidden');
+  assert.equal(hidden.removed, 3);
+  const empty = cleanCanvas(hidden.layers, 'empty');
+  assert.equal(empty.removed, 4);
+  const groups = cleanCanvas(empty.layers, 'groups');
+  assert.equal(groups.removed, 5);
+  assert.deepEqual(names(groups.layers), ['Rectangle 7', 'Rectangle 6', 'Rectangle 1']);
+  assert.equal(cleanCanvas(groups.layers, 'groups').removed, 0);
+  assert.equal(JSON.stringify(initial), snapshot);
 });
