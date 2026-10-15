@@ -116,10 +116,6 @@ Set the Vercel project's Root Directory to `portfolio` and use npm.
 The connected deployment follows pushes to `main`.
 Rebuild changed resume PDFs before committing their source changes.
 
-## Preview
-
-The hero preview above includes the actual animated portrait.
-
 ### Selected work
 
 ![Homepage project cards](portfolio/public/images/portfolio/ProjectsImSc.png)
