@@ -56,7 +56,7 @@ export const googlecleanerArchive: ArchiveData = {
     {src: "/images/googlecleaner/Screenshot 2026-10-15 at 10.55.22.png", width: 1396, height: 742, alt: "GoogleCleaner public website showing the Browse, Find, Review, and Move to Trash feature panels", caption: "03 / Public website · cleanup flow"},
     {src: "/images/googlecleaner/Screenshot 2026-10-15 at 10.55.30.png", width: 1476, height: 784, alt: "GoogleCleaner public website explaining background progress and Google Drive access with a privacy policy link", caption: "04 / Public website · progress and permissions"},
   ],
-  engineering: {heading: "Reliable cleanup in a temporary browser interface", text: "The popup handles discovery and review. A background worker keeps confirmed jobs and their recovery state independent of popup visibility.", highlights: [
+  engineering: {heading: "Reliable cleanup in a temporary browser interface", text: "The popup handles file discovery, selection, and review. Once cleanup is confirmed, a background worker manages the job, tracks progress, and preserves recovery state; even after the popup closes.", highlights: [
     {title: "Drive API integration", icon: "folder", text: "Google authentication and paginated file retrieval support connected Drive operations."},
     {title: "Stable selection", icon: "grid", text: "File identifiers preserve selections when sorting or filtering changes."},
     {title: "Background processing", icon: "code", text: "A Manifest V3 service worker manages jobs independently of popup visibility."},
