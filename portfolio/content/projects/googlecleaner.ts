@@ -41,7 +41,7 @@ export const googlecleanerArchive: ArchiveData = {
   links: [{label: "Demo", href: "#demo", text: "Interactive simulated demo"}, {label: "GitHub", href: "https://github.com/julsoyola/googleCleaner", text: "github.com/julsoyola/googleCleaner"}],
   navigation,
   hero: {title: "Making Google Drive cleanup clearer and more efficient", summary: "GoogleCleaner helps users find files, review their selections, and move chosen items to Trash. Its focused interface and background processing make bulk actions easier to follow without sacrificing control.", image: googlecleaner.image, notice: "Interactive demo: simulated files and results, with no Google account required."},
-  actions: [{label: "Try Interactive Demo", href: "#demo"}, {label: "View Source", href: "https://github.com/julsoyola/googleCleaner"}],
+  actions: [{label: "Try Interactive Demo", href: "#demo"}, {label: "View Source", href: "https://chromewebstore.google.com/detail/googlecleaner/acijddppbcekpnlddndfomahlpgcnfoe"}],
   interface: {title: "Interface Design", heading: "A simple, focused experience", text: "I kept the interface centered on three tasks: finding files, selecting them, and reviewing changes. Search, filters, and sorting support discovery, while visible selection states help users understand what they have chosen.", image: googlecleaner.screenshots[0], colors: [["Cream", "#f7f3e9"], ["Secondary", "#efe8d6"], ["Lavender", "#c4bcdd"], ["Selected", "#e5dff0"], ["Blush", "#e9b9c7"], ["Plum", "#302b3d"]]},
   decisions: [
     {title: "Stable selection", icon: "folder", text: "Search and filter without changing selected file IDs.", why: "Hidden rows remain part of the selection.", tradeoff: "Extra state to track hidden selections."},
