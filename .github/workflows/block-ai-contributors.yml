@@ -51,11 +51,16 @@ jobs:
 
           git cat-file -e "${head}^{commit}"
           if [[ -n "$base" && "$base" != "$zero" ]]; then
-            if ! git cat-file -e "${base}^{commit}" 2>/dev/null; then
-              echo "::error::Cannot inspect the event base commit. History may have been force-pushed or removed. Restore access to the base commit and rerun this check."
+            if git cat-file -e "${base}^{commit}" 2>/dev/null; then
+              range="${base}..${head}"
+            elif [[ "$EVENT_NAME" == "push" ]]; then
+              # A force-push may remove the old tip. Scan all new history.
+              echo "Previous push tip unavailable; scanning incoming history."
+              range="$head"
+            else
+              echo "::error::Cannot inspect the pull request base commit. Restore access to the base commit and rerun this check."
               exit 1
             fi
-            range="${base}..${head}"
           else
             # New refs have no previous tip; scan reachable history.
             range="$head"
