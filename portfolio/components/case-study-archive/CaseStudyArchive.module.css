@@ -308,3 +308,80 @@
   .lowerGrid { grid-template-rows: auto 1fr; row-gap: 0; align-items: stretch; }
   .lowerGrid > .window { display: grid; grid-row: span 2; grid-template-rows: subgrid; }
 }
+
+/* Keep the existing desktop composition; adapt only below 1101px. */
+.galleryHint { display: none; }
+@media (max-width: 1100px) {
+  .upperGrid { grid-template-columns: minmax(0, 1fr); }
+  .topbar { flex-wrap: wrap; gap: 8px 24px; padding-inline: 0; }
+  .topbar nav { flex-wrap: wrap; gap: 4px 18px; }
+  .topbar nav a, .wordmark { min-height: 44px; }
+  .sidebarIntro { padding: 16px 18px; }
+  .sidebarIntro h2, .application .sidebarIntro h2 { font-size: 28px; margin-bottom: 10px; }
+  .sidebarIntro br { display: none; }
+  .archiveNav { grid-template-columns: repeat(3, minmax(0, 1fr)); padding-block: 12px; }
+  .archiveNav a { min-height: 44px; min-width: 0; }
+  .projectDetails { display: block; padding: 10px 18px; }
+  .projectDetails summary { min-height: 44px; padding-block: 12px; }
+  .desk, .application .desk { display: none; }
+  .windowBar { gap: 12px; padding: 12px 14px; }
+  .windowBar h2 { min-width: 0; overflow-wrap: anywhere; }
+  .overviewBody, .identityBody { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 24px; }
+  .introduction h1 { font-size: clamp(28px, 5.2vw, 36px); }
+  .introduction > p:not(.eyebrow) { max-width: 65ch; }
+  .actions { gap: 12px; }
+  .button, .primaryButton { flex: 1 1 160px; min-width: 0; min-height: 48px; padding: 12px 18px; text-align: center; }
+  .actions > a > span[aria-hidden] { display: none; }
+  .heroCollage, .identityCollage { position: static; display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 20px; min-height: 0; min-width: 0; max-width: none; width: 100%; margin: 0; }
+  .heroScreen, .heroScreen:hover, .identityScreen, .identityScreen:hover { position: static; width: 100%; max-width: 42rem; transform: none; }
+  .application .heroScreen, .application .identityScreen { width: 100%; max-width: 420px; }
+  .heroScreen img, .identityScreen img, .application .heroScreen img, .application .identityScreen img { width: 100%; height: auto; max-width: 100%; max-height: none; margin: 0; }
+  .pinkNote { position: static; justify-self: end; margin: 0; padding: 14px 20px; transform: none; }
+  .heroStar, .starSticker { display: none; }
+  .pinnedNote { position: relative; top: auto; left: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 16px; width: 100%; max-width: 26rem; margin: 0; padding: 14px 18px; font-size: 16px; transform: none; }
+  .pinnedNote li { display: flex; align-items: baseline; gap: 6px; }
+  .pinnedNote li > span { flex-shrink: 0; }
+  .lowerGrid { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; row-gap: 18px; }
+  .lowerGrid > .window { display: block; grid-row: auto; }
+  .path.horizontalFlow { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 20px !important; }
+  .path.horizontalFlow li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 12px; }
+  .path.horizontalFlow li > div { border: 0; padding: 0; font-size: 14px; }
+  .path.horizontalFlow .pathNumber { width: 40px; min-height: 40px; align-self: start; }
+  .path.horizontalFlow li:not(:last-child)::after { display: none; }
+  .footer { flex-wrap: wrap; }
+  .footer a { display: inline-flex; align-items: center; min-height: 44px; }
+  .galleryHint { display: block; padding: 16px 20px 0; margin: 0; font-size: 12px; line-height: 1.6; color: var(--archive-muted, #5b5b52); }
+  .screensGrid, .application .screensGrid { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(88%, 30rem); align-items: start; gap: 16px; padding: 14px 20px 20px; max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: 20px; scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: var(--archive-rule, #b4aa96) var(--archive-panel, #fff8ec); }
+  .screensGrid figure { scroll-snap-align: start; }
+  .screensGrid .screenLink { aspect-ratio: auto; }
+  .screensGrid .screenLink img { position: static; width: 100%; height: auto; }
+  .screensGrid figcaption { font-size: 13px; line-height: 1.6; }
+}
+@media (max-width: 800px) {
+  .topbar nav { width: 100%; justify-content: space-between; gap: 4px 12px; }
+  .outcomeBody { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .wordmark { font-size: 11px; }
+  .topbar nav { font-size: 11px; }
+  .archiveNav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .archiveNav a { font-size: 12px; }
+  .overviewBody, .identityBody { padding: 22px 18px; }
+  .swatches { gap: 14px; }
+  .swatches li { width: 28px; height: 28px; }
+  .path.horizontalFlow { grid-template-columns: minmax(0, 1fr) !important; }
+  .demoIntro { grid-template-columns: minmax(0, 1fr); padding: 14px; }
+  .demoGuide { padding: 16px 12px; }
+  .demoSteps li { padding: 12px; gap: 10px; }
+  .demoFrame { height: 880px; }
+}
+@media (max-width: 430px) {
+  .actions { flex-direction: column; align-items: stretch; }
+  .button, .primaryButton { flex-basis: auto; }
+}
+@media (max-width: 360px) {
+  .pinnedNote { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 1100px) and (prefers-reduced-motion: reduce) {
+  .screensGrid, .application .screensGrid { scroll-behavior: auto; }
+}

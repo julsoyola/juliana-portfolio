@@ -138,7 +138,8 @@ export default function CaseStudyArchive({ study, engineeringDetail, gallerySupp
       </div>
       <div className={styles.lowerGrid}>
         <Window id="selected-screens" number="05" title="Selected Screens" pink>
-          <div className={styles.screensGrid}>{study.screens.map(screen => <figure key={"src" in screen ? screen.src : screen.placeholder}>
+          <p className={styles.galleryHint}>Swipe or use arrow keys. Open a screenshot for full size.</p>
+          <div className={styles.screensGrid} role="region" aria-label={`${study.name} screenshots`}>{study.screens.map(screen => <figure key={"src" in screen ? screen.src : screen.placeholder}>
             {"src" in screen ? <ScreenImage screen={screen} /> : <div className={styles.placeholder} data-placeholder={screen.placeholder} aria-label={screen.caption}><span>Screenshot pending</span></div>}<figcaption>{screen.caption}</figcaption>
           </figure>)}</div>
         </Window>
