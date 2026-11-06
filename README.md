@@ -70,7 +70,7 @@ portfolio/
   content/                   Projects, skills, experience, resumes
   public/                    Images, PDFs, and GoogleCleaner demo
   tests/                     Demo behavior tests
-resumes/                     LaTeX sources and shared resume.sty
+.private/resumes/            Ignored local LaTeX sources and unpublished PDFs
 scripts/                     Resume build script
 docs/screenshots/             README previews
 ```
@@ -118,12 +118,16 @@ npm run build:resumes
 Build one resume:
 
 ```sh
-npm run build:resume -- resumes/JulianaOBackend.tex
+npm run build:resume -- .private/resumes/JulianaOBackend.tex
 ```
 
 Source paths resolve from the repository root. The script runs two
-LaTeX passes, copies PDFs to `portfolio/public/resumes/`, and removes
-temporary files. Keep `resumes/resume.sty`.
+LaTeX passes, saves previews in ignored `.private/resumes/generated/`,
+and removes temporary files. Keep `.private/resumes/resume.sty`.
+Existing public resume PDFs remain available at their original URLs.
+Publishing a reviewed replacement requires an explicit `LATEX_OUTPUT_DIR`
+as documented in [COMMANDS.md](COMMANDS.md). The original UX source is
+currently absent; build available private sources individually.
 
 Remove leftover LaTeX artifacts:
 

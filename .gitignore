@@ -56,3 +56,11 @@ next-env.d.ts
 /resumes/JulianaOyolaUX.tex
 /resumes/JulianaOyolaUX.pdf
 /portfolio/public/resumes/JulianaOyolaUX.pdf
+
+# Private local files; never publish.
+/.private/
+/resumes/
+/.resume-build/
+
+# Local credentials.
+client_secret*.json

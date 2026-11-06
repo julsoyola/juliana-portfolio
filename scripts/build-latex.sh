@@ -2,10 +2,11 @@
 set -euo pipefail
 
 root=$(cd "$(dirname "$0")/.." && pwd)
-output_dir=${LATEX_OUTPUT_DIR:-"$root/portfolio/public/resumes"}
+source_root="$root/.private/resumes"
+output_dir=${LATEX_OUTPUT_DIR:-"$source_root/generated"}
 
 if [[ ${1:-} == --clean ]]; then
-  for dir in "$root/resumes" "$root/portfolio/public/resumes" "$root/.resume-build"; do
+  for dir in "$source_root" "$root/.resume-build"; do
     [[ -d "$dir" ]] || continue
     find "$dir" -type f \( -name '*.aux' -o -name '*.log' -o -name '*.out' \
       -o -name '*.toc' -o -name '*.fls' -o -name '*.fdb_latexmk' \
@@ -21,13 +22,18 @@ trap 'exit 130' INT
 trap 'exit 143' TERM
 
 if [[ $# == 0 ]]; then
-  set -- "$root/resumes/JulianaOUX.tex" \
-    "$root/resumes/JulianaOBackend.tex" "$root/resumes/JulianaOProduct.tex"
+  set -- "$source_root/JulianaOUX.tex" \
+    "$source_root/JulianaOBackend.tex" "$source_root/JulianaOProduct.tex"
 fi
 
 mkdir -p "$output_dir"
 for source in "$@"; do
-  [[ "$source" == /* ]] || source="$root/$source"
+  # Preserve existing local command aliases after moving private sources.
+  if [[ "$source" == resumes/* ]]; then
+    source="$root/.private/$source"
+  else
+    [[ "$source" == /* ]] || source="$root/$source"
+  fi
   [[ -f "$source" && "$source" == *.tex ]] || {
     echo "Expected a .tex file: $source" >&2
     exit 1
@@ -35,10 +41,10 @@ for source in "$@"; do
   name=$(basename "$source" .tex)
   source_dir=$(dirname "$source")
   for pass in 1 2; do
-    if ! (cd "$source_dir" && TEXINPUTS="$source_dir//:$root/resumes//:${TEXINPUTS:-}" \
+    if ! (cd "$source_dir" && TEXINPUTS="$source_dir//:$source_root//:${TEXINPUTS:-}" \
       pdflatex -interaction=nonstopmode -halt-on-error \
       -output-directory="$build_dir" "$source") >"$build_dir/compiler.txt" 2>&1; then
-      cat "$build_dir/compiler.txt" >&2
+      echo "LaTeX compilation failed; private compiler output was not printed." >&2
       exit 1
     fi
   done
